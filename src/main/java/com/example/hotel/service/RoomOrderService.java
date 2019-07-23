@@ -1,5 +1,6 @@
 package com.example.hotel.service;
 
+import com.example.hotel.error.OrderException;
 import com.example.hotel.model.Essay;
 import com.example.hotel.model.RoomOrder;
 import com.example.hotel.model.RoomOrderExample;
@@ -57,5 +58,7 @@ public interface RoomOrderService {
     int selectCount();
 
     int selectPayCount();
+
+    OrderException checkOrder(String orderid);
 
 }

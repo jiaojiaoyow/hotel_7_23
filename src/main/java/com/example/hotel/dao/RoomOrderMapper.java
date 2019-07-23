@@ -54,4 +54,8 @@ public interface RoomOrderMapper {
     int selectCount();
 
     int selectPayCount();
+
+    RoomOrder findOrderid(String orderid);
+
+    int updateByOrderidForStatus(String orderid);
 }

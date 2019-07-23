@@ -1,6 +1,8 @@
 package com.example.hotel.service.Impl;
 
+import com.example.hotel.dao.RoomMapper;
 import com.example.hotel.dao.RoomOrderMapper;
+import com.example.hotel.error.OrderException;
 import com.example.hotel.model.RoomOrder;
 import com.example.hotel.model.RoomOrderExample;
 import com.example.hotel.model.RoomOrderKey;
@@ -8,6 +10,7 @@ import com.example.hotel.service.RoomOrderService;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Map;
@@ -17,6 +20,8 @@ public class RoomOrderServiceImpl implements RoomOrderService {
 
     @Autowired
     private RoomOrderMapper roomOrderMapper;
+    @Autowired
+    private RoomMapper roomMapper;
 
     @Override
     public long countByExample(RoomOrderExample example) {
@@ -122,6 +127,34 @@ public class RoomOrderServiceImpl implements RoomOrderService {
     @Override
     public int selectPayCount() {
         return roomOrderMapper.selectPayCount();
+    }
+
+    @Override
+    @Transactional
+    public OrderException checkOrder(String orderid) throws OrderException {
+
+        try {
+            RoomOrder roomOrder = roomOrderMapper.findOrderid(orderid);
+            if (roomOrder != null && roomOrder.getOrderstatus() == 1) {
+
+                int x = roomOrderMapper.updateByOrderidForStatus(orderid);
+                int y = roomMapper.updateByPrimaryKeyForReduce(roomOrder.getRoomname(), roomOrder.getRoomnumber());
+                if (x <= 0 || y <= 0) {
+                    throw new OrderException("无空余房间或订单已处理");
+                } else {
+                    //更新成功
+                    return new OrderException(true);
+                }
+
+            }
+
+        }catch (OrderException e){
+            throw  e;
+        }catch (Exception ee){
+            throw  ee;
+        }
+        return new OrderException(false);
+
     }
 
 
