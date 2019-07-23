@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hotel.dao.TroRoomMapper">
+  <resultMap id="BaseResultMap" type="com.example.hotel.model.TroRoom">
+    <id column="roomintroduce" jdbcType="VARCHAR" property="roomintroduce" />
+    <result column="roomimage" jdbcType="VARCHAR" property="roomimage" />
+    <result column="roomarea" jdbcType="VARCHAR" property="roomarea" />
+    <result column="roomwifi" jdbcType="VARCHAR" property="roomwifi" />
+    <result column="roombed" jdbcType="VARCHAR" property="roombed" />
+    <result column="roombreakfast" jdbcType="VARCHAR" property="roombreakfast" />
+    <result column="roomnum" jdbcType="VARCHAR" property="roomnum" />
+    <result column="roomprice" jdbcType="DOUBLE" property="roomprice" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    roomintroduce, roomimage, roomarea, roomwifi, roombed, roombreakfast, roomnum, roomprice
+  </sql>
+
+  <select id="selectRoomPage" resultType="com.example.hotel.model.TroRoom" parameterType="java.util.Map">
+  select * from troroom limit #{begin},#{num}
+</select>
+
+  <select id="selectAllTroRoom"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from troroom
+  </select>
+
+  <select id="selectCount" resultType="java.lang.Integer">
+    select count(*) from troroom
+  </select>
+
+  <select id="selectByExample" parameterType="com.example.hotel.model.TroRoomExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from troroom
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from troroom
+    where roomintroduce = #{roomintroduce,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from troroom
+    where roomintroduce = #{roomintroduce,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.hotel.model.TroRoomExample">
+    delete from troroom
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.hotel.model.TroRoom">
+    insert into troroom (roomintroduce, roomimage, roomarea, 
+      roomwifi, roombed, roombreakfast, 
+      roomnum, roomprice)
+    values (#{roomintroduce,jdbcType=VARCHAR}, #{roomimage,jdbcType=VARCHAR}, #{roomarea,jdbcType=VARCHAR}, 
+      #{roomwifi,jdbcType=VARCHAR}, #{roombed,jdbcType=VARCHAR}, #{roombreakfast,jdbcType=VARCHAR}, 
+      #{roomnum,jdbcType=VARCHAR}, #{roomprice,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.hotel.model.TroRoom">
+    insert into troroom
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roomintroduce != null">
+        roomintroduce,
+      </if>
+      <if test="roomimage != null">
+        roomimage,
+      </if>
+      <if test="roomarea != null">
+        roomarea,
+      </if>
+      <if test="roomwifi != null">
+        roomwifi,
+      </if>
+      <if test="roombed != null">
+        roombed,
+      </if>
+      <if test="roombreakfast != null">
+        roombreakfast,
+      </if>
+      <if test="roomnum != null">
+        roomnum,
+      </if>
+      <if test="roomprice != null">
+        roomprice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roomintroduce != null">
+        #{roomintroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="roomimage != null">
+        #{roomimage,jdbcType=VARCHAR},
+      </if>
+      <if test="roomarea != null">
+        #{roomarea,jdbcType=VARCHAR},
+      </if>
+      <if test="roomwifi != null">
+        #{roomwifi,jdbcType=VARCHAR},
+      </if>
+      <if test="roombed != null">
+        #{roombed,jdbcType=VARCHAR},
+      </if>
+      <if test="roombreakfast != null">
+        #{roombreakfast,jdbcType=VARCHAR},
+      </if>
+      <if test="roomnum != null">
+        #{roomnum,jdbcType=VARCHAR},
+      </if>
+      <if test="roomprice != null">
+        #{roomprice,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.hotel.model.TroRoomExample" resultType="java.lang.Long">
+    select count(*) from troroom
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update troroom
+    <set>
+      <if test="record.roomintroduce != null">
+        roomintroduce = #{record.roomintroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomimage != null">
+        roomimage = #{record.roomimage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomarea != null">
+        roomarea = #{record.roomarea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomwifi != null">
+        roomwifi = #{record.roomwifi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roombed != null">
+        roombed = #{record.roombed,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roombreakfast != null">
+        roombreakfast = #{record.roombreakfast,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomnum != null">
+        roomnum = #{record.roomnum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomprice != null">
+        roomprice = #{record.roomprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update troroom
+    set roomintroduce = #{record.roomintroduce,jdbcType=VARCHAR},
+      roomimage = #{record.roomimage,jdbcType=VARCHAR},
+      roomarea = #{record.roomarea,jdbcType=VARCHAR},
+      roomwifi = #{record.roomwifi,jdbcType=VARCHAR},
+      roombed = #{record.roombed,jdbcType=VARCHAR},
+      roombreakfast = #{record.roombreakfast,jdbcType=VARCHAR},
+      roomnum = #{record.roomnum,jdbcType=VARCHAR},
+      roomprice = #{record.roomprice,jdbcType=DOUBLE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.hotel.model.TroRoom">
+    update troroom
+    <set>
+      <if test="roomimage != null">
+        roomimage = #{roomimage,jdbcType=VARCHAR},
+      </if>
+      <if test="roomarea != null">
+        roomarea = #{roomarea,jdbcType=VARCHAR},
+      </if>
+      <if test="roomwifi != null">
+        roomwifi = #{roomwifi,jdbcType=VARCHAR},
+      </if>
+      <if test="roombed != null">
+        roombed = #{roombed,jdbcType=VARCHAR},
+      </if>
+      <if test="roombreakfast != null">
+        roombreakfast = #{roombreakfast,jdbcType=VARCHAR},
+      </if>
+      <if test="roomnum != null">
+        roomnum = #{roomnum,jdbcType=VARCHAR},
+      </if>
+      <if test="roomprice != null">
+        roomprice = #{roomprice,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where roomintroduce = #{roomintroduce,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.hotel.model.TroRoom">
+    update troroom
+    set roomimage = #{roomimage,jdbcType=VARCHAR},
+      roomarea = #{roomarea,jdbcType=VARCHAR},
+      roomwifi = #{roomwifi,jdbcType=VARCHAR},
+      roombed = #{roombed,jdbcType=VARCHAR},
+      roombreakfast = #{roombreakfast,jdbcType=VARCHAR},
+      roomnum = #{roomnum,jdbcType=VARCHAR},
+      roomprice = #{roomprice,jdbcType=DOUBLE}
+    where roomintroduce = #{roomintroduce,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByExampleWithRowbounds" parameterType="com.example.hotel.model.TroRoomExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from troroom
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>

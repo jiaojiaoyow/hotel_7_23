@@ -1,0 +1,19 @@
+spring:
+  thymeleaf:
+    mode: HTML5
+logging:
+  level:
+    org:
+      springframework: error
+server:
+  port: ${PORT:5000}
+
+wechat:
+  appid: ${WECHAT_APPID}
+  secret: ${WECHAT_SECRET}
+
+db:
+  url: jdbc:mysql://localhost:3308/lasthoteldb?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+  username: ${JDBC_DATABASE_USERNAME}
+  password: ${JDBC_DATABASE_PASSWORD}
+  driver: com.mysql.cj.jdbc.Driver

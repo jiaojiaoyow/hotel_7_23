@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hotel.dao.RoomOrderMapper">
+  <resultMap id="BaseResultMap" type="com.example.hotel.model.RoomOrder">
+    <id column="orderid" jdbcType="VARCHAR" property="orderid" />
+    <id column="uid" jdbcType="CHAR" property="uid" />
+    <id column="roomname" jdbcType="VARCHAR" property="roomname" />
+    <result column="uname" jdbcType="VARCHAR" property="uname" />
+    <result column="uphone" jdbcType="VARCHAR" property="uphone" />
+    <result column="roomnumber" jdbcType="INTEGER" property="roomnumber" />
+    <result column="ordertime" jdbcType="TIMESTAMP" property="ordertime" />
+    <result column="leavetime" jdbcType="TIMESTAMP" property="leavetime" />
+    <result column="orderday" jdbcType="INTEGER" property="orderday" />
+    <result column="totalprice" jdbcType="DOUBLE" property="totalprice" />
+    <result column="orderstatus" jdbcType="INTEGER" property="orderstatus" />
+    <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="arrivetime" jdbcType="VARCHAR" property="arrivetime" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    orderid, uid, roomname, uname, uphone, roomnumber, ordertime, leavetime, orderday, 
+    totalprice, orderstatus, cid, arrivetime, comment
+  </sql>
+  <select id="selectByExample" parameterType="com.example.hotel.model.RoomOrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from roomorder
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="com.example.hotel.model.RoomOrderKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from roomorder
+    where orderid = #{orderid,jdbcType=VARCHAR}
+      and uid = #{uid,jdbcType=CHAR}
+      and roomname = #{roomname,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.example.hotel.model.RoomOrderKey">
+    delete from roomorder
+    where orderid = #{orderid,jdbcType=VARCHAR}
+      and uid = #{uid,jdbcType=CHAR}
+      and roomname = #{roomname,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.hotel.model.RoomOrderExample">
+    delete from roomorder
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.hotel.model.RoomOrder">
+    insert into roomorder (orderid, uid, roomname, 
+      uname, uphone, roomnumber, 
+      ordertime, leavetime, orderday, 
+      totalprice, orderstatus, cid, 
+      arrivetime, comment)
+    values (#{orderid,jdbcType=VARCHAR}, #{uid,jdbcType=CHAR}, #{roomname,jdbcType=VARCHAR}, 
+      #{uname,jdbcType=VARCHAR}, #{uphone,jdbcType=VARCHAR}, #{roomnumber,jdbcType=INTEGER}, 
+      #{ordertime,jdbcType=TIMESTAMP}, #{leavetime,jdbcType=TIMESTAMP}, #{orderday,jdbcType=INTEGER}, 
+      #{totalprice,jdbcType=DOUBLE}, #{orderstatus,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, 
+      #{arrivetime,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.hotel.model.RoomOrder">
+    insert into roomorder
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderid != null">
+        orderid,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="roomname != null">
+        roomname,
+      </if>
+      <if test="uname != null">
+        uname,
+      </if>
+      <if test="uphone != null">
+        uphone,
+      </if>
+      <if test="roomnumber != null">
+        roomnumber,
+      </if>
+      <if test="ordertime != null">
+        ordertime,
+      </if>
+      <if test="leavetime != null">
+        leavetime,
+      </if>
+      <if test="orderday != null">
+        orderday,
+      </if>
+      <if test="totalprice != null">
+        totalprice,
+      </if>
+      <if test="orderstatus != null">
+        orderstatus,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="arrivetime != null">
+        arrivetime,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderid != null">
+        #{orderid,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=CHAR},
+      </if>
+      <if test="roomname != null">
+        #{roomname,jdbcType=VARCHAR},
+      </if>
+      <if test="uname != null">
+        #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="uphone != null">
+        #{uphone,jdbcType=VARCHAR},
+      </if>
+      <if test="roomnumber != null">
+        #{roomnumber,jdbcType=INTEGER},
+      </if>
+      <if test="ordertime != null">
+        #{ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leavetime != null">
+        #{leavetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderday != null">
+        #{orderday,jdbcType=INTEGER},
+      </if>
+      <if test="totalprice != null">
+        #{totalprice,jdbcType=DOUBLE},
+      </if>
+      <if test="orderstatus != null">
+        #{orderstatus,jdbcType=INTEGER},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="arrivetime != null">
+        #{arrivetime,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.hotel.model.RoomOrderExample" resultType="java.lang.Long">
+    select count(*) from roomorder
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update roomorder
+    <set>
+      <if test="record.orderid != null">
+        orderid = #{record.orderid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uid != null">
+        uid = #{record.uid,jdbcType=CHAR},
+      </if>
+      <if test="record.roomname != null">
+        roomname = #{record.roomname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uname != null">
+        uname = #{record.uname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uphone != null">
+        uphone = #{record.uphone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomnumber != null">
+        roomnumber = #{record.roomnumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.ordertime != null">
+        ordertime = #{record.ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.leavetime != null">
+        leavetime = #{record.leavetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.orderday != null">
+        orderday = #{record.orderday,jdbcType=INTEGER},
+      </if>
+      <if test="record.totalprice != null">
+        totalprice = #{record.totalprice,jdbcType=DOUBLE},
+      </if>
+      <if test="record.orderstatus != null">
+        orderstatus = #{record.orderstatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.cid != null">
+        cid = #{record.cid,jdbcType=INTEGER},
+      </if>
+      <if test="record.arrivetime != null">
+        arrivetime = #{record.arrivetime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.comment != null">
+        comment = #{record.comment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update roomorder
+    set orderid = #{record.orderid,jdbcType=VARCHAR},
+      uid = #{record.uid,jdbcType=CHAR},
+      roomname = #{record.roomname,jdbcType=VARCHAR},
+      uname = #{record.uname,jdbcType=VARCHAR},
+      uphone = #{record.uphone,jdbcType=VARCHAR},
+      roomnumber = #{record.roomnumber,jdbcType=INTEGER},
+      ordertime = #{record.ordertime,jdbcType=TIMESTAMP},
+      leavetime = #{record.leavetime,jdbcType=TIMESTAMP},
+      orderday = #{record.orderday,jdbcType=INTEGER},
+      totalprice = #{record.totalprice,jdbcType=DOUBLE},
+      orderstatus = #{record.orderstatus,jdbcType=INTEGER},
+      cid = #{record.cid,jdbcType=INTEGER},
+      arrivetime = #{record.arrivetime,jdbcType=VARCHAR},
+      comment = #{record.comment,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.hotel.model.RoomOrder">
+    update roomorder
+    <set>
+      <if test="uname != null">
+        uname = #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="uphone != null">
+        uphone = #{uphone,jdbcType=VARCHAR},
+      </if>
+      <if test="roomnumber != null">
+        roomnumber = #{roomnumber,jdbcType=INTEGER},
+      </if>
+      <if test="ordertime != null">
+        ordertime = #{ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leavetime != null">
+        leavetime = #{leavetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderday != null">
+        orderday = #{orderday,jdbcType=INTEGER},
+      </if>
+      <if test="totalprice != null">
+        totalprice = #{totalprice,jdbcType=DOUBLE},
+      </if>
+      <if test="orderstatus != null">
+        orderstatus = #{orderstatus,jdbcType=INTEGER},
+      </if>
+      <if test="cid != null">
+        cid = #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="arrivetime != null">
+        arrivetime = #{arrivetime,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where orderid = #{orderid,jdbcType=VARCHAR}
+      and uid = #{uid,jdbcType=CHAR}
+      and roomname = #{roomname,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.hotel.model.RoomOrder">
+    update roomorder
+    set uname = #{uname,jdbcType=VARCHAR},
+      uphone = #{uphone,jdbcType=VARCHAR},
+      roomnumber = #{roomnumber,jdbcType=INTEGER},
+      ordertime = #{ordertime,jdbcType=TIMESTAMP},
+      leavetime = #{leavetime,jdbcType=TIMESTAMP},
+      orderday = #{orderday,jdbcType=INTEGER},
+      totalprice = #{totalprice,jdbcType=DOUBLE},
+      orderstatus = #{orderstatus,jdbcType=INTEGER},
+      cid = #{cid,jdbcType=INTEGER},
+      arrivetime = #{arrivetime,jdbcType=VARCHAR},
+      comment = #{comment,jdbcType=VARCHAR}
+    where orderid = #{orderid,jdbcType=VARCHAR}
+      and uid = #{uid,jdbcType=CHAR}
+      and roomname = #{roomname,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByExampleWithRowbounds" parameterType="com.example.hotel.model.RoomOrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from roomorder
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+
+
+  <!-- 通过uid查询所有订单-->
+  <select id="selectByUserid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from roomorder
+    where uid = #{uid,jdbcType=VARCHAR}
+    and orderstatus = 2 or orderstatus = 4 order by orderid desc
+
+  </select>
+
+  <!--通过订单id查询当前订单-->
+  <select id="selectByOrderid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from roomorder
+    where orderid = #{orderid,jdbcType=VARCHAR} and orderstatus = 4
+
+  </select>
+
+  <!--通过用户id，订单起始时间，房间名确认id-->
+  <select id="selectByRDU" parameterType="com.example.hotel.model.RoomOrder" resultType="java.lang.String">
+    select
+     orderid
+    from roomorder
+    where uid = #{uid,jdbcType=VARCHAR}
+    and ordertime = #{ordertime,jdbcType=TIMESTAMP}
+     and roomname = #{roomname,jdbcType=VARCHAR}
+
+
+  </select>
+
+  <!--所有已成功付款待处理订单-->
+  <select id="selectAllPayOrder"  parameterType="java.util.Map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from roomorder
+    where  orderstatus= 2 limit #{begin},#{num}
+  </select>
+
+  <!--所有订单，包括失效完成-->
+  <select id="selectAllOrder" parameterType="java.util.Map"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from roomorder limit #{begin},#{num}
+  </select>
+
+  <!--所有已经完成订单-->
+  <select id="selectAllCompleteOrder"  parameterType="java.util.Map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from roomorder
+    where orderstatus = 4  limit #{begin},#{num}
+  </select>
+
+  <!--查询已完成订单数量-->
+  <select id="selectCount" resultType="java.lang.Integer">
+    select count(*) from roomorder
+    where  orderstatus = 4
+  </select>
+
+  <!--查询已支付订单数量-->
+  <select id="selectPayCount" resultType="java.lang.Integer">
+    select count(*) from roomorder
+    where  orderstatus = 2
+  </select>
+
+  <select id="selectPage" resultType="com.example.hotel.model.RoomOrder" parameterType="java.util.Map">
+    select * from roomorder  where orderstatus = 4  limit #{begin},#{num}
+  </select>
+</mapper>
