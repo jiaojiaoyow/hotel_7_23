@@ -33,6 +33,7 @@ public interface VipCardMapper {
 
     int updateByPrimaryKey(VipCard record);
 
+    //自己添加的
     List<VipCard> selectAllCard(Map map);
 
     int selectCount();
