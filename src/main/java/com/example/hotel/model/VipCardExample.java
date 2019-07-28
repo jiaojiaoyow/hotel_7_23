@@ -383,6 +383,266 @@ public class VipCardExample {
             addCriterion("username not between", value1, value2, "username");
             return (Criteria) this;
         }
+
+        public Criteria andBirthdayIsNull() {
+            addCriterion("birthday is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayIsNotNull() {
+            addCriterion("birthday is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayEqualTo(String value) {
+            addCriterion("birthday =", value, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayNotEqualTo(String value) {
+            addCriterion("birthday <>", value, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayGreaterThan(String value) {
+            addCriterion("birthday >", value, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayGreaterThanOrEqualTo(String value) {
+            addCriterion("birthday >=", value, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayLessThan(String value) {
+            addCriterion("birthday <", value, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayLessThanOrEqualTo(String value) {
+            addCriterion("birthday <=", value, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayLike(String value) {
+            addCriterion("birthday like", value, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayNotLike(String value) {
+            addCriterion("birthday not like", value, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayIn(List<String> values) {
+            addCriterion("birthday in", values, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayNotIn(List<String> values) {
+            addCriterion("birthday not in", values, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayBetween(String value1, String value2) {
+            addCriterion("birthday between", value1, value2, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andBirthdayNotBetween(String value1, String value2) {
+            addCriterion("birthday not between", value1, value2, "birthday");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelIsNull() {
+            addCriterion("viplevel is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelIsNotNull() {
+            addCriterion("viplevel is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelEqualTo(Integer value) {
+            addCriterion("viplevel =", value, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelNotEqualTo(Integer value) {
+            addCriterion("viplevel <>", value, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelGreaterThan(Integer value) {
+            addCriterion("viplevel >", value, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelGreaterThanOrEqualTo(Integer value) {
+            addCriterion("viplevel >=", value, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelLessThan(Integer value) {
+            addCriterion("viplevel <", value, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelLessThanOrEqualTo(Integer value) {
+            addCriterion("viplevel <=", value, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelIn(List<Integer> values) {
+            addCriterion("viplevel in", values, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelNotIn(List<Integer> values) {
+            addCriterion("viplevel not in", values, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelBetween(Integer value1, Integer value2) {
+            addCriterion("viplevel between", value1, value2, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andViplevelNotBetween(Integer value1, Integer value2) {
+            addCriterion("viplevel not between", value1, value2, "viplevel");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyIsNull() {
+            addCriterion("summoney is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyIsNotNull() {
+            addCriterion("summoney is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyEqualTo(Double value) {
+            addCriterion("summoney =", value, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyNotEqualTo(Double value) {
+            addCriterion("summoney <>", value, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyGreaterThan(Double value) {
+            addCriterion("summoney >", value, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyGreaterThanOrEqualTo(Double value) {
+            addCriterion("summoney >=", value, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyLessThan(Double value) {
+            addCriterion("summoney <", value, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyLessThanOrEqualTo(Double value) {
+            addCriterion("summoney <=", value, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyIn(List<Double> values) {
+            addCriterion("summoney in", values, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyNotIn(List<Double> values) {
+            addCriterion("summoney not in", values, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyBetween(Double value1, Double value2) {
+            addCriterion("summoney between", value1, value2, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andSummoneyNotBetween(Double value1, Double value2) {
+            addCriterion("summoney not between", value1, value2, "summoney");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayIsNull() {
+            addCriterion("endday is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayIsNotNull() {
+            addCriterion("endday is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayEqualTo(String value) {
+            addCriterion("endday =", value, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayNotEqualTo(String value) {
+            addCriterion("endday <>", value, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayGreaterThan(String value) {
+            addCriterion("endday >", value, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayGreaterThanOrEqualTo(String value) {
+            addCriterion("endday >=", value, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayLessThan(String value) {
+            addCriterion("endday <", value, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayLessThanOrEqualTo(String value) {
+            addCriterion("endday <=", value, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayLike(String value) {
+            addCriterion("endday like", value, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayNotLike(String value) {
+            addCriterion("endday not like", value, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayIn(List<String> values) {
+            addCriterion("endday in", values, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayNotIn(List<String> values) {
+            addCriterion("endday not in", values, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayBetween(String value1, String value2) {
+            addCriterion("endday between", value1, value2, "endday");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnddayNotBetween(String value1, String value2) {
+            addCriterion("endday not between", value1, value2, "endday");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

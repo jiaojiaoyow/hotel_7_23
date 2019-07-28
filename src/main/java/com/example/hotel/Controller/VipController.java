@@ -34,14 +34,23 @@ public class VipController {
             if(vipDTO.getPhone()==null){
                 return resultDTO.nothing();
             }
+
             //新增Vip
             VipCard vipCard=new VipCard();
+            //加时间
             Date date= new Date();
+            Calendar c = Calendar.getInstance();
+            c.setTime(date);
+            c.add(Calendar.YEAR, 2);
+            Date endDate=c.getTime();
             vipCard.setVid(DateUtil.change_str(date));
             vipCard.setGender(vipDTO.getGender());
             vipCard.setPhone(vipDTO.getPhone());
             vipCard.setUsername(vipDTO.getUsername());
-
+            vipCard.setBirthday(vipDTO.getBirthday());
+            vipCard.setEndday(DateUtil.change_str(endDate));
+            vipCard.setViplevel(1);
+            vipCard.setSummoney(0.00);
             int flag=vipService.insertSelective(vipCard);
             if(flag==0){
                 return resultDTO.fail("无法获得会员卡");
@@ -91,6 +100,11 @@ public class VipController {
             }
             if(user.getStatus()==1){
                 VipCard vipCard=vipService.selectByPrimaryKey(user.getVip());
+                Date date=new Date();
+                if(DateUtil.change_Date(vipCard.getEndday()).getTime()<date.getTime()){
+                    vipService.deleteByPrimaryKey(vipCard.getVid());
+                    return resultDTO.fail();
+                }
                 return resultDTO.ok(vipCard);
             }
             return resultDTO.ok("非Vip");

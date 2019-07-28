@@ -27,17 +27,7 @@ public class VipServiceImpl implements VipService {
         return 0;
     }
 
-    @Override
-    public int deleteByPrimaryKey(String vid) {
-        return vipCardMapper.deleteByPrimaryKey(vid);
-    }
 
-
-
-    @Override
-    public int insert(VipCard record) {
-        return vipCardMapper.insert(record);
-    }
 
     @Override
     public List<VipCard> selectByExampleWithRowbounds(VipCardExample example, RowBounds rowBounds) {
@@ -61,10 +51,7 @@ public class VipServiceImpl implements VipService {
         return 0;
     }
 
-    @Override
-    public int updateByPrimaryKeySelective(VipCard record) {
-        return vipCardMapper.updateByPrimaryKeySelective(record);
-    }
+
 
     @Override
     public int updateByPrimaryKey(VipCard record) {
@@ -90,6 +77,21 @@ public class VipServiceImpl implements VipService {
     @Override
     public VipCard selectByPrimaryKey(String vid) {
         return this.vipCardMapper.selectByPrimaryKey(vid);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(VipCard record) {
+        return vipCardMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public int deleteByPrimaryKey(String vid) {
+        return vipCardMapper.deleteByPrimaryKey(vid);
+    }
+
+    @Override
+    public int insert(VipCard record) {
+        return vipCardMapper.insert(record);
     }
 
 }

@@ -5,6 +5,15 @@ public class VipDTO {
     String phone;
     String gender;
     String username;
+    String birthday;
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
     public String getUid() {
         return uid;

@@ -9,6 +9,14 @@ public class VipCard {
 
     private String username;
 
+    private String birthday;
+
+    private Integer viplevel;
+
+    private Double summoney;
+
+    private String endday;
+
     public String getVid() {
         return vid;
     }
@@ -39,5 +47,37 @@ public class VipCard {
 
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday == null ? null : birthday.trim();
+    }
+
+    public Integer getViplevel() {
+        return viplevel;
+    }
+
+    public void setViplevel(Integer viplevel) {
+        this.viplevel = viplevel;
+    }
+
+    public Double getSummoney() {
+        return summoney;
+    }
+
+    public void setSummoney(Double summoney) {
+        this.summoney = summoney;
+    }
+
+    public String getEndday() {
+        return endday;
+    }
+
+    public void setEndday(String endday) {
+        this.endday = endday == null ? null : endday.trim();
     }
 }
