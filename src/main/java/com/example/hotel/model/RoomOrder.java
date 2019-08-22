@@ -3,19 +3,19 @@ package com.example.hotel.model;
 import java.util.Date;
 
 public class RoomOrder extends RoomOrderKey {
-    private String uname;
+    private String uname; //用户名字
 
-    private String uphone;
+    private String uphone; //手机号码
 
-    private Integer roomnumber;
+    private Integer roomnumber;//房间数量
 
-    private String ordertime;
+    private String ordertime;//到店时间
 
-    private String leavetime;
+    private String leavetime;//离店时间
 
-    private Integer orderday;
+    private Integer orderday;//天数
 
-    private Double totalprice;
+    private Double totalprice;//时间
 
     private Integer orderstatus;
 

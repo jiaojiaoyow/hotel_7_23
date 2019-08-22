@@ -61,4 +61,6 @@ public interface RoomOrderService {
 
     OrderException checkOrder(String orderid);
 
+    OrderException beforehandOrder(RoomOrder roomOrder);
+
 }

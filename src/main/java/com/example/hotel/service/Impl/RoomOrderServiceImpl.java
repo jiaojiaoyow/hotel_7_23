@@ -129,6 +129,11 @@ public class RoomOrderServiceImpl implements RoomOrderService {
         return roomOrderMapper.selectPayCount();
     }
 
+
+    /*
+    *
+    *
+    * */
     @Override
     @Transactional
     public OrderException checkOrder(String orderid) throws OrderException {
@@ -154,6 +159,37 @@ public class RoomOrderServiceImpl implements RoomOrderService {
             throw  ee;
         }
         return new OrderException(false);
+
+    }
+
+    /*
+     * 预创建订单
+     * @param 订单信息
+     * 预减房间处理
+     * */
+    @Override
+    @Transactional
+    public OrderException beforehandOrder(RoomOrder roomOrder) throws OrderException {
+        try {
+            int x=roomOrderMapper.insertSelective(roomOrder);
+            int y = roomMapper.updateByPrimaryKeyForReduce(roomOrder.getRoomname(), roomOrder.getRoomnumber());
+            if (x <= 0 || y <= 0) {
+                throw new OrderException("创建订单失败，无空余房间");
+
+            } else {
+                //更新成功
+                return new OrderException(true);
+            }
+
+
+        }catch (OrderException e){
+            throw  e;
+        }catch (Exception ee){
+            throw  ee;
+        }finally {
+            return new OrderException(false);
+        }
+
 
     }
 

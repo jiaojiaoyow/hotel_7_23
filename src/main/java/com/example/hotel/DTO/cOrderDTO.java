@@ -5,26 +5,16 @@ public class cOrderDTO {
     private String uid;  //用户id
     private String orderid; //订单id
     private int status; //状态 1
-    private double balance;  //余额
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
 
 
 
     public  cOrderDTO(){}
 
-    public cOrderDTO(String uid,String orderid,int status,double balance){
+    public cOrderDTO(String uid,String orderid,int status){
 
         this.orderid=orderid;
         this.uid=uid;
         this.status=status;
-        this.balance=balance;
     }
 
     public int getStatus() {

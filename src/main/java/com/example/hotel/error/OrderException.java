@@ -10,7 +10,6 @@ public class OrderException extends RuntimeException {
         super(message);
     };
     public OrderException(boolean flag){
-
         this.flag=flag;
     }
 

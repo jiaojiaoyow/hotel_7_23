@@ -9,12 +9,12 @@ public class Util {
 
     /*
      * Util工具类方法
-     * 获取一定长度的随机字符串，范围0-9，a-z
+     * 获取一定长度的随机字符串，范围0-9，a-z,A-Z
      * @param length：指定字符串长度
      * @return 一定长度的随机字符串
      */
     public static String getRandomStringByLength(int length) {
-        String base = "abcdefghijklmnopqrstuvwxyz0123456789";
+        String base = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < length; i++) {
