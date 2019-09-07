@@ -73,13 +73,17 @@ public class CreateOrderController {
     @RequestMapping("/api/backPay")
     public void BackPay(HttpServletRequest request, HttpServletResponse response){
         try {
-            WeChatPay.wxNotify(request, response);
+
+            Map map=WeChatPay.wxNotify(request, response);
+            if(map!=null){
+                String orderid=(String) map.get("out_trade_no");
+                String openid=(String) map.get("openid");
+                cOrderDTO cOrderDTO=new cOrderDTO(openid,orderid);
+                JudgeOrder( cOrderDTO);
+            }
         }catch (Exception e){
             System.out.println(e.toString());
         }
-
-
-
     }
 
     //调起支付,测试用
@@ -93,91 +97,93 @@ public class CreateOrderController {
         Date date=new Date();
         System.out.println("openid:"+temp[3]);
         openid= temp[3];
-        JSONObject json=WeChatPay.wxPay(openid,"100"+change_str2(date),0.01,request);//调用微信支付
+        JSONObject json=WeChatPay.wxPay(openid,"100"+change_str2(date),0.01,"https://wx.gdcpo.cn/api/backPay",request);//调用微信支付
          return json;
 
     }
 
     //创建订单，微信支付调用
     @RequestMapping("/api/createorder")
-    public ResultDTO createOrder(@RequestBody RoomOrder roomOrder, HttpServletRequest request){
+    public ResultDTO createOrder( RoomOrder roomOrder, HttpServletRequest request){
         ResultDTO resultDTO = new ResultDTO();
         try {
             System.out.println("roomname: " + roomOrder.getRoomname());
             System.out.println("uid: " + roomOrder.getUid());
             User user=userService.selectByPrimaryKey(roomOrder.getUid());
 
+
             if(roomOrder !=null && roomOrder.getUid()!=null && !roomOrder.equals("") &&user.getUid()!=null && !user.getUid().equals("")) {
 
-            String uid = roomOrder.getUid();                 //"1234";
-            String roomname = roomOrder.getRoomname();       //"阳光大床房";
-            String ordertime = roomOrder.getOrdertime();     //"2019-06-20";
-            String leavetime = roomOrder.getLeavetime();     //"2019-06-21";
-            int days = roomOrder.getOrderday();             //2;
-            int roomnumber = roomOrder.getRoomnumber();     //2;
-            String username = roomOrder.getUname();         //"许文强";
-            String uphone = roomOrder.getUphone();          //"18316102612";
-            String arrivetime = roomOrder.getArrivetime();    //到达时间
-            Room r = roomService.selectByPrimaryKey(roomname);//查询roomname的房间信息
-            if (r != null) {
-                int num = r.getRoomnumber(); //剩余房间数
-                if (num > 0 && num - roomnumber >= 0) {
-                    double amount = getCoupon(roomOrder.getCid(), uid);
-                    double price = r.getRoomprice() * roomnumber * days - amount; //总价，算优惠卷
-                    Date date=new Date();
-                    String s=change_str3(date);
-                    ordertime += s.substring(10);
-                    leavetime += s.substring(10);
-                    RoomOrder order = new RoomOrder();
-                    String orderid="100"+change_str2(date);//100+当前时间构成订单号
-                    order.setOrderid(orderid);
-                    order.setUid(uid);
-                    order.setRoomnumber(roomnumber);
-                    order.setUname(username);
-                    order.setUphone(uphone);
-                    order.setRoomname(roomname);
-                    order.setTotalprice(price);
-                    order.setOrdertime(ordertime);
-                    order.setLeavetime(leavetime);
-                    order.setArrivetime(arrivetime);
-                    order.setOrderday(days);
+                String uid = roomOrder.getUid();                 //"1234";
+                String roomname = roomOrder.getRoomname();       //"阳光大床房";
+                String ordertime = roomOrder.getOrdertime();     //"2019-06-20";
+                String leavetime = roomOrder.getLeavetime();     //"2019-06-21";
+                int days = roomOrder.getOrderday();             //2;
+                int roomnumber = roomOrder.getRoomnumber();     //2;
+                String username = roomOrder.getUname();         //"许文强";
+                String uphone = roomOrder.getUphone();          //"18316102612";
+                String arrivetime = roomOrder.getArrivetime();    //到达时间
+                Room r = roomService.selectByPrimaryKey(roomname);//查询roomname的房间信息
+                if (r != null) {
+                    int num = r.getRoomnumber(); //剩余房间数
+                    if (num > 0 && num - roomnumber >= 0) {
+                        double amount = getCoupon(roomOrder.getCid(), uid);
+                        //double price = r.getRoomprice() * roomnumber * days - amount; //总价，算优惠卷
+                        double price=roomOrder.getTotalprice();
+                        Date date=new Date();
+                        String s=change_str3(date);
+                        ordertime += s.substring(10);
+                        leavetime += s.substring(10);
+                        RoomOrder order = new RoomOrder();
+                        String orderid="100"+change_str2(date);//100+当前时间构成订单号
+                        order.setOrderid(orderid);
+                        order.setUid(uid);
+                        order.setRoomnumber(roomnumber);
+                        order.setUname(username);
+                        order.setUphone(uphone);
+                        order.setRoomname(roomname);
+                        order.setTotalprice(price);
+                        order.setOrdertime(ordertime);
+                        order.setLeavetime(leavetime);
+                        order.setArrivetime(arrivetime);
+                        order.setOrderday(days);
 
 
-                    OrderException oe=roomOrderService.beforehandOrder(order);  //预创建订单
-                    if(oe.isFlag()){
-                        //调用微信支付,openidd，订单id，金额
-                        JSONObject json = WeChatPay.wxPay(uid,orderid,price,request);
-                        return resultDTO.ok(json);
-                    }else {
+                        OrderException oe=roomOrderService.beforehandOrder(order);  //预创建订单
+                        if(oe.isFlag()){
+                            //调用微信支付,openid，订单id，金额
+                            JSONObject json = WeChatPay.wxPay(uid,orderid,price,"https://wx.gdcpo.cn/api/backPay",request);
+                            return resultDTO.ok(json);
+                        }else {
+                            System.out.println("房间不足");
+                            return resultDTO.fail("房间不足！");
+                        }
+
+
+                        // JSONObject json=wxPay(uid,"100"+change_str2(date),request);//调用微信支付
+
+                        //cOrderDTO cd = new cOrderDTO(uid, orderid, 1, 0.0);
+
+                        //return cd;
+                    } else {
                         System.out.println("房间不足");
-                       return resultDTO.fail("房间不足！");
+                        return resultDTO.fail("房间不足！");
                     }
 
-
-                   // JSONObject json=wxPay(uid,"100"+change_str2(date),request);//调用微信支付
-
-                    //cOrderDTO cd = new cOrderDTO(uid, orderid, 1, 0.0);
-
-                    //return cd;
-                } else {
-                    System.out.println("房间不足");
-                    return resultDTO.fail("房间不足！");
                 }
-
             }
-        }
         }catch(Exception e){
             return resultDTO.unkonwFail(e.toString());
 
         }
         System.out.println("数据为空或用户不存在");
-            return  resultDTO.fail("数据为空或用户不存在！");
+        return  resultDTO.fail("数据为空或用户不存在！");
     }
 
 
     //创建订单，余额支付调用
     @RequestMapping("/api/balancePay")
-    public ResultDTO balancePay(@RequestBody RoomOrder roomOrder){
+    public ResultDTO balancePay( RoomOrder roomOrder){
         ResultDTO resultDTO = new ResultDTO();
         try {
             System.out.println("roomname: " + roomOrder.getRoomname());
@@ -200,7 +206,8 @@ public class CreateOrderController {
                     int num = r.getRoomnumber(); //剩余房间数
                     if (num > 0 && num - roomnumber >= 0) {
                         double amount = getCoupon(roomOrder.getCid(), uid);
-                        double price = r.getRoomprice() * roomnumber * days - amount; //总价，算优惠卷
+                        //double price = r.getRoomprice() * roomnumber * days - amount; //总价，算优惠卷
+                        double price=roomOrder.getTotalprice();
                         Date date=new Date();
                         String s=change_str3(date);
                         ordertime += s.substring(10);
@@ -230,7 +237,7 @@ public class CreateOrderController {
                             roomOrderService.updateByPrimaryKeySelective(roo);//更改订单为2 成功
                             userService.updateByPrimaryKeyForBalance(uid,price);//减余额
                             setCoupon(uid,roomOrder.getCid());//优惠卷生效
-
+                            SetCard(uid,price);
                             return resultDTO.ok(null);
                         }else {
                             System.out.println("房间不足");
@@ -262,8 +269,7 @@ public class CreateOrderController {
     * @param orderid
     * @param  status 订单状态
     * */
-    @RequestMapping("/api/judgeorder")
-    public ResultDTO JudgeOrder( cOrderDTO Dt){
+    public  ResultDTO JudgeOrder( cOrderDTO Dt){
         ResultDTO resultDTO = new ResultDTO();
         try {
 
@@ -287,7 +293,8 @@ public class CreateOrderController {
                    */
                     //设定优惠卷生效
                     setCoupon(re.getUid(),re.getCid());
-
+                    //积分
+                    SetCard(Dt.getUid(),re.getTotalprice());
                     return resultDTO.ok(null);
 
                 }
@@ -302,6 +309,20 @@ public class CreateOrderController {
 
     }
 
+
+    /*
+    * 增加积分
+    * */
+    public void SetCard(String openid, double price){
+
+        User user =new User();
+        int jifen=((int) price)*5;
+        user.setUid(openid);
+        user.setUgrade(jifen);
+        userService.updateByPrimaryKeySelective(user);
+
+
+    }
 
 
     //获取当前时间

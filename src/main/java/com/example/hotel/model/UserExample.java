@@ -743,6 +743,66 @@ public class UserExample {
             addCriterion("vip not between", value1, value2, "vip");
             return (Criteria) this;
         }
+
+        public Criteria andTotalamountIsNull() {
+            addCriterion("totalamount is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountIsNotNull() {
+            addCriterion("totalamount is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountEqualTo(Integer value) {
+            addCriterion("totalamount =", value, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountNotEqualTo(Integer value) {
+            addCriterion("totalamount <>", value, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountGreaterThan(Integer value) {
+            addCriterion("totalamount >", value, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("totalamount >=", value, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountLessThan(Integer value) {
+            addCriterion("totalamount <", value, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountLessThanOrEqualTo(Integer value) {
+            addCriterion("totalamount <=", value, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountIn(List<Integer> values) {
+            addCriterion("totalamount in", values, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountNotIn(List<Integer> values) {
+            addCriterion("totalamount not in", values, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountBetween(Integer value1, Integer value2) {
+            addCriterion("totalamount between", value1, value2, "totalamount");
+            return (Criteria) this;
+        }
+
+        public Criteria andTotalamountNotBetween(Integer value1, Integer value2) {
+            addCriterion("totalamount not between", value1, value2, "totalamount");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

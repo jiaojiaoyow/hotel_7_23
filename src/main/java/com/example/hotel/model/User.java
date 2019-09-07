@@ -21,6 +21,8 @@ public class User {
 
     private String vip;
 
+    private Integer totalamount;
+
     public String getUid() {
         return uid;
     }
@@ -99,5 +101,13 @@ public class User {
 
     public void setVip(String vip) {
         this.vip = vip == null ? null : vip.trim();
+    }
+
+    public Integer getTotalamount() {
+        return totalamount;
+    }
+
+    public void setTotalamount(Integer totalamount) {
+        this.totalamount = totalamount;
     }
 }

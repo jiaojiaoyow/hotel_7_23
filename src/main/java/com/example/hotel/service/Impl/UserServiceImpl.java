@@ -50,5 +50,10 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectByVip(vip);
     }
 
+    @Override
+    public int updateByPrimaryKeySelective(User record) {
+        return userMapper.updateByPrimaryKeySelective(record);
+    }
+
 
 }

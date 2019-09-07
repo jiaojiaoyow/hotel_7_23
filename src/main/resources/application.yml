@@ -11,11 +11,12 @@ logging:
       codedrinker:
         dao: debug
 server:
-  port: ${port:8888}
+  port: ${port:443}
   ssl:
     key-store: classpath:2522595_wx.gdcpo.cn.pfx
     key-store-password: 62j5q4fW
     key-store-type: PKCS12
+    enabled: true
   tomcat:
     max-http-header-size: 9999999
 

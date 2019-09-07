@@ -7,7 +7,7 @@ public class WXConst {
     //微信小程序appsecret
     public static String appSecret = "f46ecb9014738dd62359b22408e86126";
     //微信支付主体
-    public static String title = "佛山银利酒店订房";
+    public static String title = "order_room";
     public static String orderNo = "";
     //微信商户号
     public static String mch_id="1281111001";
@@ -16,7 +16,7 @@ public class WXConst {
     //获取微信Openid的请求地址
     public static String WxGetOpenIdUrl = "";
     //支付成功后的服务器回调url
-    public static final String notify_url="https://gspj.gdcpo.cn:8888/api/backPay";
+//    public static final String notify_url="https://wx.gdcpo.cn/api/backPay";
     //签名方式
     public static final String SIGNTYPE = "MD5";
     //交易类型

@@ -17,6 +17,8 @@ public interface UserService {
 
     User  selectByVip(String vip);
 
+    int updateByPrimaryKeySelective(User record);
+
 
 
 

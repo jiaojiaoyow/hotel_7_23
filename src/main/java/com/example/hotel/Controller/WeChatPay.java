@@ -19,10 +19,10 @@ import java.util.*;
 public class WeChatPay {
 
     /*
-    * 微信支付调用
-    *
-    * */
-    public static JSONObject wxPay(String openid, String orderid,Double price, HttpServletRequest request){
+     * 微信支付调用
+     *
+     * */
+    public static JSONObject wxPay(String openid, String orderid,Double price,String backAddress, HttpServletRequest request){
         JSONObject json = new JSONObject();
         try{
 
@@ -45,7 +45,7 @@ public class WeChatPay {
             packageParams.put("out_trade_no", orderNo);//商户订单号
             packageParams.put("total_fee", money);
             packageParams.put("spbill_create_ip", spbill_create_ip);
-            packageParams.put("notify_url", WXConst.notify_url);
+            packageParams.put("notify_url", backAddress);
             packageParams.put("trade_type", WXConst.TRADETYPE);
             packageParams.put("openid", openid);
 
@@ -66,7 +66,7 @@ public class WeChatPay {
                     + "<body><![CDATA[" + body + "]]></body>"
                     + "<mch_id>" + WXConst.mch_id + "</mch_id>"
                     + "<nonce_str>" + nonce_str + "</nonce_str>"
-                    + "<notify_url>" + WXConst.notify_url + "</notify_url>"
+                    + "<notify_url>" + backAddress + "</notify_url>"
                     + "<openid>" + openid + "</openid>"
                     + "<out_trade_no>" + orderNo + "</out_trade_no>"
                     + "<spbill_create_ip>" + spbill_create_ip + "</spbill_create_ip>"
@@ -356,7 +356,7 @@ public class WeChatPay {
         return new ByteArrayInputStream(str.getBytes());
     }
 
-    public static void wxNotify(HttpServletRequest request, HttpServletResponse response) throws Exception{
+    public static Map wxNotify(HttpServletRequest request, HttpServletResponse response) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader((ServletInputStream)request.getInputStream()));
         String line = null;
         StringBuilder sb = new StringBuilder();
@@ -370,13 +370,19 @@ public class WeChatPay {
         System.out.println("接收到的报文：" + notityXml);
 
 
-        Map map = WeChatPay.doXMLParse(notityXml);
 
+
+        Map map = WeChatPay.doXMLParse(notityXml);
+        //签名相关
+        System.out.println("签名的盐为"+WeChatPay.createLinkString(map));
+        String sign=(String) map.get("sign");
+        System.out.println("签名为"+sign);
 
         String returnCode = (String) map.get("return_code");
         if("SUCCESS".equals(returnCode)){
-            //验证签名是否正确
-            if(WeChatPay.verify(WeChatPay.createLinkString(map), (String)map.get("sign"), WXConst.key, "utf-8")){
+
+            //少了验证签名的
+
                 /**此处添加自己的业务逻辑代码start**/
 
                 System.out.println("支付回调成功");
@@ -388,20 +394,25 @@ public class WeChatPay {
                 //通知微信服务器已经支付成功
                 resXml = "<xml>" + "<return_code><![CDATA[SUCCESS]]></return_code>"
                         + "<return_msg><![CDATA[OK]]></return_msg>" + "</xml> ";
-            }
+
+            System.out.println(resXml);
+            System.out.println("微信支付回调数据结束");
+
+
+            BufferedOutputStream out = new BufferedOutputStream(
+                    response.getOutputStream());
+            out.write(resXml.getBytes());
+            out.flush();
+            out.close();
+
+                return map;
+
         }else{
             resXml = "<xml>" + "<return_code><![CDATA[FAIL]]></return_code>"
                     + "<return_msg><![CDATA[报文为空]]></return_msg>" + "</xml> ";
+            return null;
         }
-        System.out.println(resXml);
-        System.out.println("微信支付回调数据结束");
 
-
-        BufferedOutputStream out = new BufferedOutputStream(
-                response.getOutputStream());
-        out.write(resXml.getBytes());
-        out.flush();
-        out.close();
     }
 
 
