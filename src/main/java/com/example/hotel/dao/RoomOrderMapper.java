@@ -41,6 +41,8 @@ public interface RoomOrderMapper {
 
     RoomOrder selectByOrderid(String  orderid);
 
+    RoomOrder selectByOrderidqu (String  orderid);
+
 
     List<RoomOrder> selectAllCompleteOrder(Map map);
 

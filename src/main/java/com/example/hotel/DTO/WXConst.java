@@ -14,7 +14,7 @@ public class WXConst {
     //微信支付的商户密钥
     public static final String key = "yljd2019082119880607abcdef103637";
     //获取微信Openid的请求地址
-    public static String WxGetOpenIdUrl = "";
+    public static String WxGetOpenIdUrl = "https://wx.gdcpo.cn/api/backPay";
     //支付成功后的服务器回调url
 //    public static final String notify_url="https://wx.gdcpo.cn/api/backPay";
     //签名方式

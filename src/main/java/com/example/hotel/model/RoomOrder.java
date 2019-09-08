@@ -15,7 +15,7 @@ public class RoomOrder extends RoomOrderKey {
 
     private Integer orderday;//天数
 
-    private Double totalprice;//时间
+    private Double totalprice;//总
 
     private Integer orderstatus;
 
@@ -111,5 +111,22 @@ public class RoomOrder extends RoomOrderKey {
 
     public void setComment(String comment) {
         this.comment = comment == null ? null : comment.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "RoomOrder{" +
+                "uname='" + uname + '\'' +
+                ", uphone='" + uphone + '\'' +
+                ", roomnumber=" + roomnumber +
+                ", ordertime='" + ordertime + '\'' +
+                ", leavetime='" + leavetime + '\'' +
+                ", orderday=" + orderday +
+                ", totalprice=" + totalprice +
+                ", orderstatus=" + orderstatus +
+                ", cid=" + cid +
+                ", arrivetime='" + arrivetime + '\'' +
+                ", comment='" + comment + '\'' +
+                '}';
     }
 }

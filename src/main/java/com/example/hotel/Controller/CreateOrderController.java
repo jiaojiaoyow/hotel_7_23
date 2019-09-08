@@ -107,12 +107,11 @@ public class CreateOrderController {
     public ResultDTO createOrder( RoomOrder roomOrder, HttpServletRequest request){
         ResultDTO resultDTO = new ResultDTO();
         try {
-            System.out.println("roomname: " + roomOrder.getRoomname());
-            System.out.println("uid: " + roomOrder.getUid());
+           System.out.println(roomOrder.toString());
             User user=userService.selectByPrimaryKey(roomOrder.getUid());
-
-
-            if(roomOrder !=null && roomOrder.getUid()!=null && !roomOrder.equals("") &&user.getUid()!=null && !user.getUid().equals("")) {
+            System.out.println("user.uid"+user.getUid());
+            //ookL25Q9bypvjSm8uYYJud6R0JIU
+            if(roomOrder !=null  && user.getUid()!=null ) {
 
                 String uid = roomOrder.getUid();                 //"1234";
                 String roomname = roomOrder.getRoomname();       //"阳光大床房";
@@ -135,7 +134,9 @@ public class CreateOrderController {
                         ordertime += s.substring(10);
                         leavetime += s.substring(10);
                         RoomOrder order = new RoomOrder();
-                        String orderid="100"+change_str2(date);//100+当前时间构成订单号
+
+                        int ram=10000+(int)(Math.random()*10000);
+                        String orderid=change_str2(date)+String.valueOf(ram);//100+当前时间构成订单号
                         order.setOrderid(orderid);
                         order.setUid(uid);
                         order.setRoomnumber(roomnumber);
@@ -152,6 +153,7 @@ public class CreateOrderController {
                         OrderException oe=roomOrderService.beforehandOrder(order);  //预创建订单
                         if(oe.isFlag()){
                             //调用微信支付,openid，订单id，金额
+                            System.out.println("调用微信支付,openid，订单id，金额");
                             JSONObject json = WeChatPay.wxPay(uid,orderid,price,"https://wx.gdcpo.cn/api/backPay",request);
                             return resultDTO.ok(json);
                         }else {
@@ -213,7 +215,10 @@ public class CreateOrderController {
                         ordertime += s.substring(10);
                         leavetime += s.substring(10);
                         RoomOrder order = new RoomOrder();
-                        String orderid="100"+change_str2(date);//100+当前时间构成订单号
+
+
+                        int ram=10000+(int)(Math.random()*10000);
+                        String orderid=change_str2(date)+String.valueOf(ram);//10000+当前时间构成订单号
                         order.setOrderid(orderid);
                         order.setUid(uid);
                         order.setRoomnumber(roomnumber);
@@ -264,7 +269,7 @@ public class CreateOrderController {
 
 
     /*
-    * 支付成功后，前端传值,修改订单为已支付状态，微信支付
+    *
     * @param uid
     * @param orderid
     * @param  status 订单状态
@@ -275,7 +280,7 @@ public class CreateOrderController {
 
             if(Dt !=null){
             User u=userService.selectByPrimaryKey(Dt.getUid());//查用户是否存在
-            RoomOrder re=roomOrderService.selectByOrderid(Dt.getOrderid());//查订单信息
+            RoomOrder re=roomOrderService.selectByOrderidqu(Dt.getOrderid());//查订单信息
 
             if( Dt.getUid().equals(re.getUid()) &&  re.getOrderstatus()==1 && re.getUid().equals(u.getUid())) { //uid相同且订单状态为1,and uid存在
                 RoomOrder roomOrder=new RoomOrder();

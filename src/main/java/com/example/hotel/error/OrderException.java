@@ -2,7 +2,7 @@ package com.example.hotel.error;
 
 public class OrderException extends RuntimeException {
 
-    private boolean flag;
+    private boolean flag=false;
 
     public OrderException(){};
 

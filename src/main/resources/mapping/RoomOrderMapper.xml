@@ -372,7 +372,7 @@
     <include refid="Base_Column_List" />
     from roomorder
     where uid = #{uid,jdbcType=VARCHAR}
-    and orderstatus = 2 or orderstatus = 4 order by orderid desc
+     order by orderid desc
 
   </select>
 
@@ -381,9 +381,19 @@
     select
     <include refid="Base_Column_List" />
     from roomorder
-    where orderid = #{orderid,jdbcType=VARCHAR} and orderstatus = 4
+    where orderid = #{orderid,jdbcType=VARCHAR} and orderstatus = 1
 
   </select>
+
+  <!--通过订单id查询当前订单-->
+  <select id="selectByOrderidqu" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from roomorder
+    where orderid = #{orderid,jdbcType=VARCHAR}
+
+  </select>
+
 
   <!--通过用户id，订单起始时间，房间名确认id-->
   <select id="selectByRDU" parameterType="com.example.hotel.model.RoomOrder" resultType="java.lang.String">

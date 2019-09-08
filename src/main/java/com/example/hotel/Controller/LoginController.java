@@ -185,8 +185,7 @@ public class LoginController {
             allUserMesDto.setTotalamount(user.getTotalamount());
             allUserMesDto.setUbalance(user.getUbalance());
             allUserMesDto.setUgrade(user.getUgrade());
-            return resultDTO.ok(
-                    .erMesDto);
+            return resultDTO.ok(allUserMesDto);
         }catch (Exception e){
             return resultDTO.fail(e.toString());
         }

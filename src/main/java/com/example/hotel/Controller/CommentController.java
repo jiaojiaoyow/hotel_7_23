@@ -54,7 +54,7 @@ public class CommentController {
         Date nowtime=new Date();
         ResultDTO resultDTO=new ResultDTO();
         try{
-            RoomOrder roomOrder=roomOrderService.selectByOrderid(orderid);
+            RoomOrder roomOrder=roomOrderService.selectByOrderidqu(orderid);
             if(roomOrder.getOrderid()==null){
                 return resultDTO.fail();
             }

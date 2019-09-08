@@ -99,6 +99,11 @@ public class RoomOrderServiceImpl implements RoomOrderService {
     }
 
     @Override
+    public RoomOrder selectByOrderidqu(String orderid) {
+        return roomOrderMapper.selectByOrderidqu(orderid);
+    }
+
+    @Override
     public List<RoomOrder> selectAllCompleteOrder(Map map) {
         return roomOrderMapper.selectAllCompleteOrder(map);
     }
@@ -174,10 +179,12 @@ public class RoomOrderServiceImpl implements RoomOrderService {
             int x=roomOrderMapper.insertSelective(roomOrder);
             int y = roomMapper.updateByPrimaryKeyForReduce(roomOrder.getRoomname(), roomOrder.getRoomnumber());
             if (x <= 0 || y <= 0) {
+                System.out.println("创建订单失败，无空余房间");
                 throw new OrderException("创建订单失败，无空余房间");
 
             } else {
                 //更新成功
+                System.out.println("更新成功");
                 return new OrderException(true);
             }
 
@@ -186,8 +193,6 @@ public class RoomOrderServiceImpl implements RoomOrderService {
             throw  e;
         }catch (Exception ee){
             throw  ee;
-        }finally {
-            return new OrderException(false);
         }
 
 
