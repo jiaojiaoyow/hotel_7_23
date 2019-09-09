@@ -1,15 +1,10 @@
 package com.example.hotel.util;
-import com.example.hotel.model.Coupon;
-import com.example.hotel.service.CouponService;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.xml.crypto.Data;
-import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
+
 
 public class DateUtil {
     static SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");

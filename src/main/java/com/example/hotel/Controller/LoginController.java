@@ -81,7 +81,8 @@ public class LoginController {
             return resultDTO.fail("没有接受到数据");
         }
         Date date=new Date();
-        String orderid="100"+change_str2(date);
+        int ram=10000+(int)(Math.random()*10000);
+        String orderid=change_str2(date)+String.valueOf(ram);//100+当前时间构成订单号
         BalanceOrder balanceOrder=new BalanceOrder();
         //首先设置一个订单，设置为未支付
         balanceOrder.setOrderid(orderid);

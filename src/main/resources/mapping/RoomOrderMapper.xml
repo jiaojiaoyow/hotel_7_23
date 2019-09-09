@@ -14,6 +14,7 @@
     <result column="totalprice" jdbcType="DOUBLE" property="totalprice" />
     <result column="orderstatus" jdbcType="INTEGER" property="orderstatus" />
     <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="createdate" jdbcType="TIMESTAMP" property="createdate" />
     <result column="arrivetime" jdbcType="VARCHAR" property="arrivetime" />
     <result column="comment" jdbcType="VARCHAR" property="comment" />
   </resultMap>
@@ -77,7 +78,7 @@
   </sql>
   <sql id="Base_Column_List">
     orderid, uid, roomname, uname, uphone, roomnumber, ordertime, leavetime, orderday, 
-    totalprice, orderstatus, cid, arrivetime, comment
+    totalprice, orderstatus, cid, createdate, arrivetime, comment
   </sql>
   <select id="selectByExample" parameterType="com.example.hotel.model.RoomOrderExample" resultMap="BaseResultMap">
     select
@@ -118,12 +119,14 @@
       uname, uphone, roomnumber, 
       ordertime, leavetime, orderday, 
       totalprice, orderstatus, cid, 
-      arrivetime, comment)
+      createdate, arrivetime, comment
+      )
     values (#{orderid,jdbcType=VARCHAR}, #{uid,jdbcType=CHAR}, #{roomname,jdbcType=VARCHAR}, 
       #{uname,jdbcType=VARCHAR}, #{uphone,jdbcType=VARCHAR}, #{roomnumber,jdbcType=INTEGER}, 
       #{ordertime,jdbcType=TIMESTAMP}, #{leavetime,jdbcType=TIMESTAMP}, #{orderday,jdbcType=INTEGER}, 
       #{totalprice,jdbcType=DOUBLE}, #{orderstatus,jdbcType=INTEGER}, #{cid,jdbcType=INTEGER}, 
-      #{arrivetime,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR})
+      #{createdate,jdbcType=TIMESTAMP}, #{arrivetime,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.example.hotel.model.RoomOrder">
     insert into roomorder
@@ -163,6 +166,9 @@
       </if>
       <if test="cid != null">
         cid,
+      </if>
+      <if test="createdate != null">
+        createdate,
       </if>
       <if test="arrivetime != null">
         arrivetime,
@@ -207,6 +213,9 @@
       </if>
       <if test="cid != null">
         #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
       </if>
       <if test="arrivetime != null">
         #{arrivetime,jdbcType=VARCHAR},
@@ -261,6 +270,9 @@
       <if test="record.cid != null">
         cid = #{record.cid,jdbcType=INTEGER},
       </if>
+      <if test="record.createdate != null">
+        createdate = #{record.createdate,jdbcType=TIMESTAMP},
+      </if>
       <if test="record.arrivetime != null">
         arrivetime = #{record.arrivetime,jdbcType=VARCHAR},
       </if>
@@ -286,6 +298,7 @@
       totalprice = #{record.totalprice,jdbcType=DOUBLE},
       orderstatus = #{record.orderstatus,jdbcType=INTEGER},
       cid = #{record.cid,jdbcType=INTEGER},
+      createdate = #{record.createdate,jdbcType=TIMESTAMP},
       arrivetime = #{record.arrivetime,jdbcType=VARCHAR},
       comment = #{record.comment,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -322,6 +335,9 @@
       <if test="cid != null">
         cid = #{cid,jdbcType=INTEGER},
       </if>
+      <if test="createdate != null">
+        createdate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
       <if test="arrivetime != null">
         arrivetime = #{arrivetime,jdbcType=VARCHAR},
       </if>
@@ -344,6 +360,7 @@
       totalprice = #{totalprice,jdbcType=DOUBLE},
       orderstatus = #{orderstatus,jdbcType=INTEGER},
       cid = #{cid,jdbcType=INTEGER},
+      createdate = #{createdate,jdbcType=TIMESTAMP},
       arrivetime = #{arrivetime,jdbcType=VARCHAR},
       comment = #{comment,jdbcType=VARCHAR}
     where orderid = #{orderid,jdbcType=VARCHAR}
@@ -366,13 +383,14 @@
   </select>
 
 
+
   <!-- 通过uid查询所有订单-->
   <select id="selectByUserid" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from roomorder
     where uid = #{uid,jdbcType=VARCHAR}
-     order by orderid desc
+    order by orderid desc
 
   </select>
 
@@ -436,6 +454,13 @@
     where  orderstatus = 4
   </select>
 
+
+  <!--查询已完成订单数量，包括成功退房，作用于评论-->
+  <select id="selectByCount" resultType="java.lang.Integer">
+    select count(*) from roomorder
+    where  orderstatus = 4 or orderstatus = 5
+  </select>
+
   <!--查询已支付订单数量-->
   <select id="selectPayCount" resultType="java.lang.Integer">
     select count(*) from roomorder
@@ -443,6 +468,6 @@
   </select>
 
   <select id="selectPage" resultType="com.example.hotel.model.RoomOrder" parameterType="java.util.Map">
-    select * from roomorder  where orderstatus = 4  limit #{begin},#{num}
+    select * from roomorder  where orderstatus = 4 or orderstatus = 5 limit #{begin},#{num}
   </select>
 </mapper>

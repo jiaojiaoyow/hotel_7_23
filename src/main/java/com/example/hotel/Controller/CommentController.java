@@ -23,7 +23,7 @@ public class CommentController {
     public ResultDTO selComment(int currPage,int pageSize){
         ResultDTO resultDTO=new ResultDTO();
         try {
-            int total= roomOrderService.selectCount();
+            int total= roomOrderService.selectByCount();
             if((currPage-1)*pageSize>total){
                 return resultDTO.ok(null);
             }
@@ -59,7 +59,7 @@ public class CommentController {
                 return resultDTO.fail();
             }
         //订单已使用并且还没有写评论的时候
-        if(roomOrder.getOrderstatus()==4&&DateUtil.change_Date(roomOrder.getLeavetime()).getTime()<nowtime.getTime()&&roomOrder.getComment()==null){
+        if((roomOrder.getOrderstatus()==4 || roomOrder.getOrderstatus()==5) &&DateUtil.change_Date(roomOrder.getLeavetime()).getTime()<nowtime.getTime()&&roomOrder.getComment()==null){
             roomOrder.setComment(comment);
             int flag=roomOrderService.updateByPrimaryKeySelective(roomOrder);
             if(flag==0){

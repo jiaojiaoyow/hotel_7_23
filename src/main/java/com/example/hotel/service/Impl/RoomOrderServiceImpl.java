@@ -198,5 +198,10 @@ public class RoomOrderServiceImpl implements RoomOrderService {
 
     }
 
+    @Override
+    public int selectByCount() {
+        return roomOrderMapper.selectByCount();
+    }
+
 
 }

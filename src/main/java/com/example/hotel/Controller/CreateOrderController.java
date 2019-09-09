@@ -148,6 +148,7 @@ public class CreateOrderController {
                         order.setLeavetime(leavetime);
                         order.setArrivetime(arrivetime);
                         order.setOrderday(days);
+                        order.setCreatedate(s);
 
 
                         OrderException oe=roomOrderService.beforehandOrder(order);  //预创建订单
@@ -230,6 +231,7 @@ public class CreateOrderController {
                         order.setLeavetime(leavetime);
                         order.setArrivetime(arrivetime);
                         order.setOrderday(days);
+                        order.setCreatedate(s);
 
                         OrderException oe=roomOrderService.beforehandOrder(order);  //预创建订单
                         if(oe.isFlag()){

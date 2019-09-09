@@ -60,4 +60,6 @@ public interface RoomOrderMapper {
     RoomOrder findOrderid(String orderid);
 
     int updateByOrderidForStatus(String orderid);
+
+    int  selectByCount();
 }

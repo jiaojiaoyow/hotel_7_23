@@ -105,6 +105,26 @@ public class RoomController {
 
     }
 
+
+    //退房
+    @RequestMapping("api/back/CheckOutRoom")
+    public ResultDTO CheckOutRoom(String orderid){
+        ResultDTO resultDTO = new ResultDTO();
+        try {
+        RoomOrder roomOrder=roomOrderService.selectByOrderidqu(orderid);
+        if (roomOrder.getOrderstatus() == 4){
+            roomOrder.setOrderstatus(5);
+            roomOrderService.updateByPrimaryKeySelective(roomOrder);
+            return resultDTO.ok(null);
+        }
+        System.out.println("无效的orderid");
+        return resultDTO.fail("无效的orderid");
+        } catch (Exception e) {
+            return resultDTO.unkonwFail(e.toString());
+        }
+
+    }
+
     @RequestMapping("/api/back/getallcompleteorder")
     public ResultDTO getAllCompleteOrder(int currPage, int pageSize) {   //所有已经完成订单
         ResultDTO resultDTO = new ResultDTO();

@@ -65,4 +65,6 @@ public interface RoomOrderService {
 
     OrderException beforehandOrder(RoomOrder roomOrder);
 
+    int  selectByCount();
+
 }
