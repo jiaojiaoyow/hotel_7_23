@@ -225,6 +225,16 @@ const disposeOrder = params => {
 /* harmony export (immutable) */ __webpack_exports__["c"] = disposeOrder;
  //处理订单
 
+const CheckOutRoom = params => {
+    return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(`/api/back/CheckOutRoom`, __WEBPACK_IMPORTED_MODULE_1_qs___default.a.stringify(params), {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        }
+    });
+};
+/* unused harmony export CheckOutRoom */
+ //退房
+
 
 //<========积分商品订单部分========>
 const selGoodsOrder = params => {
@@ -352,7 +362,7 @@ let routes = [{
     path: '/',
     component: __WEBPACK_IMPORTED_MODULE_2__views_Home_vue___default.a,
     name: '信息管理',
-    iconCls: 'el-icon-message', //图标样式class
+    // iconCls: 'el-icon-message',//图标样式class
     children: [{ path: '/main', component: __WEBPACK_IMPORTED_MODULE_3__views_Main_vue___default.a, name: '主页', hidden: true },
     // { path: '/table', component: Table, name: 'Table' },
     // { path: '/form', component: Form, name: 'Form' },
@@ -362,7 +372,7 @@ let routes = [{
     path: '/',
     component: __WEBPACK_IMPORTED_MODULE_2__views_Home_vue___default.a,
     name: '内部管理',
-    iconCls: 'fa fa-id-card-o',
+    // iconCls: 'fa fa-id-card-o',
     children: [{ path: '/company', component: __WEBPACK_IMPORTED_MODULE_11__views_nav2_company_vue___default.a, name: '公司信息' }, { path: '/member', component: __WEBPACK_IMPORTED_MODULE_12__views_nav2_member_vue___default.a, name: '会员管理' }, { path: '/admin', component: __WEBPACK_IMPORTED_MODULE_10__views_nav2_admin_vue___default.a, name: '管理员' }]
 },
 // {
@@ -379,7 +389,7 @@ let routes = [{
     path: '/',
     component: __WEBPACK_IMPORTED_MODULE_2__views_Home_vue___default.a,
     name: '房间订单管理',
-    iconCls: 'fa fa-bar-chart',
+    // iconCls: 'fa fa-bar-chart',
     children: [{ path: '/getAllPayOrder', component: __WEBPACK_IMPORTED_MODULE_13__views_nav3_getAllPayOrder_vue___default.a, name: '待入住' }, { path: '/getAllCompleteOrder', component: __WEBPACK_IMPORTED_MODULE_14__views_nav3_getAllCompleteOrder_vue___default.a, name: '已入住' }]
 }, {
     path: '*',
@@ -655,7 +665,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data() {
 		return {
-			sysName: '后台管理系统',
+			sysName: '佛山银利酒店',
 			collapsed: false,
 			sysUserName: '',
 			sysUserAvatar: '',
@@ -755,8 +765,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       logining: false,
       ruleForm2: {
-        account: "123",
-        checkPass: "123"
+        account: "admin",
+        checkPass: "admin"
       },
       rules2: {
         account: [{ required: true, message: "请输入账号", trigger: "blur"
@@ -4496,17 +4506,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "span": 10
     }
-  }, [_c('div', {
-    staticClass: "tools",
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        return _vm.collapse($event)
-      }
-    }
-  }, [_c('i', {
-    staticClass: "fa fa-align-justify"
-  })])]), _vm._v(" "), _c('el-col', {
+  }), _vm._v(" "), _c('el-col', {
     staticClass: "userinfo",
     attrs: {
       "span": 4
@@ -7628,4 +7628,4 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ })
 
 },[270]);
-//# sourceMappingURL=app.2fdc846425162a9eb96c.js.map
+//# sourceMappingURL=app.0c10a1328e86f6d474a9.js.map
