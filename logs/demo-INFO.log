@@ -1,0 +1,14 @@
+2019-09-21 16:11:12.715 [main] INFO  com.example.hotel.HotelApplication - Starting HotelApplication on DESKTOP-PV2SNR5 with PID 14168 (started by 15625 in C:\Users\15625\Desktop\新建文件夹\last_hotel)
+2019-09-21 16:11:12.718 [main] INFO  com.example.hotel.HotelApplication - No active profile set, falling back to default profiles: default
+2019-09-21 16:11:14.501 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["https-jsse-nio-443"]
+2019-09-21 16:11:14.510 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-21 16:11:14.511 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-09-21 16:11:14.628 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-21 16:11:14.760 [MLog-Init-Reporter] INFO  com.mchange.v2.log.MLog - MLog clients using slf4j logging.
+2019-09-21 16:11:14.789 [main] INFO  com.mchange.v2.c3p0.C3P0Registry - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2019-09-21 16:11:15.920 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["https-jsse-nio-443"]
+2019-09-21 16:11:15.935 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["https-jsse-nio-443"]
+2019-09-21 16:11:15.935 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2019-09-21 16:11:15.939 [main] INFO  org.apache.catalina.util.LifecycleBase - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2019-09-21 16:11:15.940 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["https-jsse-nio-443"]
+2019-09-21 16:11:15.941 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["https-jsse-nio-443"]
