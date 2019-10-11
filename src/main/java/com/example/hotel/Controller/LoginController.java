@@ -72,6 +72,7 @@ public class LoginController {
 
     /*
     充值接口
+    充值的id为100+openid
      */
     @RequestMapping("/api/reCharge")
     public ResultDTO reCharge(String openid, double price, HttpServletRequest request){
@@ -81,8 +82,7 @@ public class LoginController {
             return resultDTO.fail("没有接受到数据");
         }
         Date date=new Date();
-        int ram=10000+(int)(Math.random()*10000);
-        String orderid=change_str2(date)+String.valueOf(ram);//100+当前时间构成订单号
+        String orderid="100"+openid;
         BalanceOrder balanceOrder=new BalanceOrder();
         //首先设置一个订单，设置为未支付
         balanceOrder.setOrderid(orderid);
@@ -135,11 +135,15 @@ public class LoginController {
                         user.setUgrade(user.getUgrade()+50);
                         price+=50;
                     }
-                    user.setUbalance(price+user.getUbalance());
-
+                    if(user.getUbalance()==null){
+                        user.setUbalance(price);
+                    }else {
+                        user.setUbalance(price+user.getUbalance());
+                    }
+                    System.out.println("改变金额为"+user.getUbalance());
                     if(user.getVip()!=null){
                         //累积的金额到达限额就升级会员
-                        if(user.getTotalamount()<5000){
+                        if(user.getTotalamount()!=null&&user.getTotalamount()<5000){
                             user.setTotalamount(user.getTotalamount()+(int)price);
                             int totalamount=user.getTotalamount();
                             if(totalamount>=5000){
@@ -153,7 +157,7 @@ public class LoginController {
                             }
                         }
                     }
-
+                    System.out.println("开始修改数据库");
                     userService.saveOrUpdate(user);
                     System.out.println("修改数据库");
                     //设置为已支付
@@ -194,49 +198,64 @@ public class LoginController {
 
 //    @RequestMapping("/api/reChargeBacktest")
 //    public void reChargeBackPaytest(String openid, double price,String orderid){
-//        BalanceOrder balanceOrder=balanceOrderService.selectByPrimaryKey(orderid);
-//        if(balanceOrder==null){
-//            System.out.println("没有此订单");
-//        }
-//        if(balanceOrder.getFlag()==0){
-//            User user=userService.selectByPrimaryKey(openid);
-//            //贵宾卡，金额是以分为单位，所以要除一百，变成以元为单位
-//            price/=100;
-//            if(price>=5000){
-//                user.setUgrade(user.getUgrade()+1288);
-//                price+=1288;
-//            }else if(price>=3000){
-//                user.setUgrade(user.getUgrade()+800);
-//                price+=800;
-//            }else if(price>=1000){
-//                user.setUgrade(user.getUgrade()+179);
-//                price+=179;
-//            }else if(price>=500){
-//                user.setUgrade(user.getUgrade()+50);
-//                price+=50;
-//            }
-//            user.setUbalance(price+user.getUbalance());
+//        try {
+//                System.out.println("回调函数的下一步,修改数据库"+orderid);
 //
-//            if(user.getVip()!=null){
-//                //累积的金额到达限额就升级会员
-//                if(user.getTotalamount()<5000){
-//                    user.setTotalamount(user.getTotalamount()+(int)price);
-//                    int totalamount=user.getTotalamount();
-//                    if(totalamount>=5000){
-//                        VipCard vipCard=vipService.selectByPrimaryKey(user.getVip());
-//                        vipCard.setViplevel(3);
-//                        vipService.updateByPrimaryKey(vipCard);
-//                    }else if(totalamount>=3000){
-//                        VipCard vipCard=vipService.selectByPrimaryKey(user.getVip());
-//                        vipCard.setViplevel(2);
-//                        vipService.updateByPrimaryKey(vipCard);
-//                    }
+//                BalanceOrder balanceOrder=balanceOrderService.selectByPrimaryKey(orderid);
+//                System.out.println("价格为"+price+"openid为"+openid+"oreder_id为"+orderid);
+//                if(balanceOrder==null){
+//                    System.out.println("没有此订单");
 //                }
-//            }
-//            userService.saveOrUpdate(user);
-//            //设置为已支付
-//            balanceOrder.setFlag(1);
-//            balanceOrderService.updateByPrimaryKey(balanceOrder);
+//                if(balanceOrder.getFlag()==0){
+//                    System.out.println("进入订单");
+//                    User user=userService.selectByPrimaryKey(openid);
+//                    //贵宾卡，金额是以分为单位，所以要除一百，变成以元为单位
+//                    price/=100;
+//                    if(price>=5000){
+//                        user.setUgrade(user.getUgrade()+1288);
+//                        price+=1288;
+//                    }else if(price>=3000){
+//                        user.setUgrade(user.getUgrade()+800);
+//                        price+=800;
+//                    }else if(price>=1000){
+//                        user.setUgrade(user.getUgrade()+179);
+//                        price+=179;
+//                    }else if(price>=500){
+//                        user.setUgrade(user.getUgrade()+50);
+//                        price+=50;
+//                    }
+//                    if(user.getUbalance()==null){
+//                        user.setUbalance(price);
+//                    }else {
+//                        user.setUbalance(price+user.getUbalance());
+//                    }
+//                    System.out.println("改变金额为"+user.getUbalance());
+//                    if(user.getVip()!=null){
+//                        //累积的金额到达限额就升级会员
+//                        if(user.getTotalamount()!=null&&user.getTotalamount()<5000){
+//                            user.setTotalamount(user.getTotalamount()+(int)price);
+//                            int totalamount=user.getTotalamount();
+//                            if(totalamount>=5000){
+//                                VipCard vipCard=vipService.selectByPrimaryKey(user.getVip());
+//                                vipCard.setViplevel(3);
+//                                vipService.updateByPrimaryKey(vipCard);
+//                            }else if(totalamount>=3000){
+//                                VipCard vipCard=vipService.selectByPrimaryKey(user.getVip());
+//                                vipCard.setViplevel(2);
+//                                vipService.updateByPrimaryKey(vipCard);
+//                            }
+//                        }
+//                    }
+//                    System.out.println("开始修改数据库");
+//                    userService.saveOrUpdate(user);
+//                    System.out.println("修改数据库");
+//                    //设置为已支付
+//                    balanceOrder.setFlag(1);
+//                    balanceOrderService.updateByPrimaryKey(balanceOrder);
+//                }
+//
+//        }catch (Exception e){
+//            System.out.println(e.toString());
 //        }
 //    }
 
