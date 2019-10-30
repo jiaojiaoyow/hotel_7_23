@@ -3,12 +3,13 @@ package com.example.hotel.Controller;
 import com.example.hotel.DTO.ResultDTO;
 import com.example.hotel.model.Activity;
 import com.example.hotel.service.ActivityService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+@Slf4j
 @RestController
 public class ActivityController {
 
@@ -36,6 +37,7 @@ public class ActivityController {
 
     @RequestMapping("/api/selActivity")
     public ResultDTO selActivity(){
+        log.info("活动");
         ResultDTO resultDTO=new ResultDTO();
         try {
 

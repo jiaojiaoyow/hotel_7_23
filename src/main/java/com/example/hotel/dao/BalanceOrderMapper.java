@@ -3,6 +3,8 @@ package com.example.hotel.dao;
 import com.example.hotel.model.BalanceOrder;
 import com.example.hotel.model.BalanceOrderExample;
 import java.util.List;
+
+import com.example.hotel.model.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 

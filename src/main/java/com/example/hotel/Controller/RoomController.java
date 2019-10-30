@@ -107,9 +107,9 @@ public class RoomController {
 
 
     //退房
+    ResultDTO resultDTO = new ResultDTO();
     @RequestMapping("api/back/CheckOutRoom")
     public ResultDTO CheckOutRoom(String orderid){
-        ResultDTO resultDTO = new ResultDTO();
         try {
         RoomOrder roomOrder=roomOrderService.selectByOrderidqu(orderid);
         if (roomOrder.getOrderstatus() == 4){
@@ -165,10 +165,13 @@ public class RoomController {
             Map<String, Integer> parameter = new HashMap<>(2);
             parameter.put("begin", peoplePageBean.getCurrPage() * peoplePageBean.getPageSize() - peoplePageBean.getPageSize());
             parameter.put("num", peoplePageBean.getPageSize());
-            List<TroRoom> troRooms = new ArrayList<>();
-            troRooms = troRoomService.selectRoomPage(parameter);
-            if (troRooms != null) {
-                ObjectDTO objectDTO=new ObjectDTO(total,troRooms);
+//            List<TroRoom> troRooms = new ArrayList<>();
+//            troRooms = troRoomService.selectRoomPage(parameter);
+
+            List<RoomDTO> list = roomService.selectall(parameter);
+
+            if (list != null) {
+                ObjectDTO objectDTO=new ObjectDTO(total,list);
                 return resultDTO.ok(objectDTO);
             }
             return resultDTO.fail();
@@ -176,6 +179,7 @@ public class RoomController {
             return resultDTO.unkonwFail(e.toString());
         }
     }
+
 
 
 

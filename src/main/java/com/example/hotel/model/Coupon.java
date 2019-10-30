@@ -13,6 +13,8 @@ public class Coupon {
 
     private String sendEndDate;
 
+    private Integer number;
+
     public Integer getCid() {
         return cid;
     }
@@ -59,5 +61,13 @@ public class Coupon {
 
     public void setSendEndDate(String sendEndDate) {
         this.sendEndDate = sendEndDate == null ? null : sendEndDate.trim();
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.hotel.service;
 
+import com.example.hotel.DTO.RoomDTO;
 import com.example.hotel.model.Room;
 import com.example.hotel.model.RoomExample;
 import org.apache.ibatis.annotations.Param;
@@ -40,6 +41,6 @@ public interface RoomService {
 
     int selectCount();
 
-
+    List<RoomDTO> selectall(Map map);
 
 }

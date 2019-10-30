@@ -1,5 +1,6 @@
 package com.example.hotel.service.Impl;
 
+import com.example.hotel.DTO.RoomDTO;
 import com.example.hotel.dao.RoomMapper;
 import com.example.hotel.model.Room;
 import com.example.hotel.model.RoomExample;
@@ -90,6 +91,11 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public int selectCount() {
         return roomMapper.selectCount();
+    }
+
+    @Override
+    public List<RoomDTO> selectall(Map map) {
+        return roomMapper.selectall(map);
     }
 
 

@@ -172,28 +172,29 @@ public class RoomOrderServiceImpl implements RoomOrderService {
      * @param 订单信息
      * 预减房间处理
      * */
-    @Override
-    @Transactional
-    public OrderException beforehandOrder(RoomOrder roomOrder) throws OrderException {
-        try {
-            int x=roomOrderMapper.insertSelective(roomOrder);
-            int y = roomMapper.updateByPrimaryKeyForReduce(roomOrder.getRoomname(), roomOrder.getRoomnumber());
-            if (x <= 0 || y <= 0) {
-                System.out.println("创建订单失败，无空余房间");
-                throw new OrderException("创建订单失败，无空余房间");
+        @Override
+        @Transactional(rollbackFor=Exception.class)
+        public OrderException beforehandOrder(RoomOrder roomOrder) throws OrderException {
+            try {
 
-            } else {
-                //更新成功
-                System.out.println("更新成功");
-                return new OrderException(true);
+                int x=roomOrderMapper.insertSelective(roomOrder);
+                int y = roomMapper.updateByPrimaryKeyForReduce(roomOrder.getRoomname(), roomOrder.getRoomnumber());
+                if (x <= 0 || y <= 0) {
+                    System.out.println("创建订单失败，无空余房间");
+                    throw new OrderException("创建订单失败，无空余房间");
+
+                } else {
+                    //更新成功
+                    System.out.println("更新成功");
+                    return new OrderException(true);
+                }
+
+
+            }catch (OrderException e){
+                throw  e;
+            }catch (Exception ee){
+                throw  new OrderException("创建订单失败，无空余房间");
             }
-
-
-        }catch (OrderException e){
-            throw  e;
-        }catch (Exception ee){
-            throw  ee;
-        }
 
 
     }

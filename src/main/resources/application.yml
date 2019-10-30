@@ -37,3 +37,4 @@ db:
   username: root
   password: root
   driver: com.mysql.cj.jdbc.Driver
+

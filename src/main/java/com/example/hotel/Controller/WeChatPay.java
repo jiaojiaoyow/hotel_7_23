@@ -3,6 +3,7 @@ package com.example.hotel.Controller;
 import com.alibaba.fastjson.JSONObject;
 import com.example.hotel.DTO.WXConst;
 import com.example.hotel.tools.Util;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -15,7 +16,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
-
+@Slf4j
 public class WeChatPay {
 
     /*
@@ -32,10 +33,10 @@ public class WeChatPay {
             String body = new String(WXConst.title.getBytes("ISO-8859-1"),"UTF-8");
             //获取本机的ip地址
             String spbill_create_ip = Util.getIpAddr(request);
-            System.out.println("本机地址："+spbill_create_ip);
+            log.info("本机地址："+spbill_create_ip);
             String orderNo = orderid;
             String money = ""+(int)(price*100);//支付金额，单位：分，这边需要转成字符串类型，否则后面的签名会失败
-
+//            String money="1";
 
             Map<String, String> packageParams = new HashMap<String, String>();
             packageParams.put("appid", WXConst.appId);
@@ -57,7 +58,7 @@ public class WeChatPay {
 
             //MD5运算生成签名，这里是第一次签名，用于调用统一下单接口
             String mysign = WeChatPay.sign(prestr, WXConst.key, "utf-8").toUpperCase();
-            // logger.info("=======================第一次签名：" + mysign + "=====================");
+            log.info("=======================第一次签名：" + mysign + "=====================");
 
 
             //拼接统一下单接口使用的xml数据，要将上一步生成的签名一起拼接进去
@@ -76,14 +77,14 @@ public class WeChatPay {
                     + "</xml>";
 
 
-            System.out.println("调试模式_统一下单接口 请求XML数据：" + xml);
+            log.info("调试模式_统一下单接口 请求XML数据：" + xml);
 
 
             //调用统一下单接口，并接受返回的结果
             String result = WeChatPay.httpRequest(WXConst.pay_url, "POST", xml);
 
 
-            System.out.println("调试模式_统一下单接口 返回XML数据：" + result);
+            log.info("调试模式_统一下单接口 返回XML数据：" + result);
 
 
             // 将解析结果存储在HashMap中
@@ -107,7 +108,7 @@ public class WeChatPay {
                 String stringSignTemp = "appId=" + WXConst.appId + "&nonceStr=" + nonce_str + "&package=prepay_id=" + prepay_id+ "&signType=" + WXConst.SIGNTYPE + "&timeStamp=" + timeStamp;
                 //再次签名，这个签名用于小程序端调用wx.requesetPayment方法
                 String paySign = WeChatPay.sign(stringSignTemp, WXConst.key, "utf-8").toUpperCase();
-                System.out.println("二次签名："+paySign);
+                log.info("二次签名："+paySign);
                 // logger.info("=======================第二次签名：" + paySign + "=====================");
 
 
@@ -121,7 +122,7 @@ public class WeChatPay {
 
             response.put("appid", WXConst.appId);
 
-            System.out.println("调用下单成功！");
+            log.info("调用下单成功！");
             //json.setSuccess(true);
             json.put("data", response);
             //json.setData(response);
@@ -237,7 +238,7 @@ public class WeChatPay {
                 prestr = prestr + key + "=" + value + "&";
             }
         }
-        System.out.println("Sign拼接："+prestr);
+        log.info("Sign拼接："+prestr);
         return prestr;
     }
     /*
@@ -367,16 +368,16 @@ public class WeChatPay {
         //sb为微信返回的xml
         String notityXml = sb.toString();
         String resXml = "";
-        System.out.println("接收到的报文：" + notityXml);
+        log.info("接收到的报文：" + notityXml);
 
 
 
 
         Map map = WeChatPay.doXMLParse(notityXml);
         //签名相关
-        System.out.println("签名的盐为"+WeChatPay.createLinkString(map));
+        log.info("签名的盐为"+WeChatPay.createLinkString(map));
         String sign=(String) map.get("sign");
-        System.out.println("签名为"+sign);
+        log.info("签名为"+sign);
 
         String returnCode = (String) map.get("return_code");
         if("SUCCESS".equals(returnCode)){
@@ -385,7 +386,7 @@ public class WeChatPay {
 
                 /**此处添加自己的业务逻辑代码start**/
 
-                System.out.println("支付回调成功");
+                log.info("支付回调成功");
 
 
                 /**此处添加自己的业务逻辑代码end**/
@@ -396,7 +397,7 @@ public class WeChatPay {
                         + "<return_msg><![CDATA[OK]]></return_msg>" + "</xml> ";
 
             System.out.println(resXml);
-            System.out.println("微信支付回调数据结束");
+            log.info("微信支付回调数据结束");
 
 
             BufferedOutputStream out = new BufferedOutputStream(

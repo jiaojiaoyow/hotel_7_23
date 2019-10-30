@@ -1,6 +1,8 @@
 package com.example.hotel;
 
+import com.example.hotel.model.BalanceOrder;
 import com.example.hotel.model.RoomOrder;
+import com.example.hotel.service.BalanceOrderService;
 import javafx.application.Application;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,39 +24,45 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 @SpringBootTest(classes = Application.class)
 public class TestController {
 
-    @LocalServerPort
-    private int port;
+//    @LocalServerPort
+//    private int port;
+//
+//    private MockMvc mockMvc;
+//    @Autowired
+//    private WebApplicationContext webApplicationContext;
 
-    private MockMvc mockMvc;
     @Autowired
-    private WebApplicationContext webApplicationContext;
+    private BalanceOrderService balanceOrderService;
 
-    @Before
-    public void setUp() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-    }
-
-
-
-
-
+//    @Before
+//    public void setUp() {
+//        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+//    }
+//
+//
+//
+//
+//
+//    @Test
+//    public void shouldReturnDefaultMessage() throws Exception {
+//        try {
+//            RoomOrder roomOrder=new RoomOrder();
+//            roomOrder.setUid("ookL25Q9bypvjSm8uYYJud6R0JIU");
+//            roomOrder.setRoomname("阳光大床");
+//            roomOrder.setTotalprice(500.0);
+//            MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/api/createorder").param("uid",
+//                    "ookL25Q9bypvjSm8uYYJud6R0JIU"))
+//                    .andReturn();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//
+//
+//    }}
     @Test
-    public void shouldReturnDefaultMessage() throws Exception {
-        try {
-            RoomOrder roomOrder=new RoomOrder();
-            roomOrder.setUid("ookL25Q9bypvjSm8uYYJud6R0JIU");
-            roomOrder.setRoomname("阳光大床");
-            roomOrder.setTotalprice(500.0);
-            MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/api/createorder").param("uid",
-                    "ookL25Q9bypvjSm8uYYJud6R0JIU"))
-                    .andReturn();
-        } catch (Exception e) {
-            e.printStackTrace();
-
-
-    }}
-    public void test1(){
-
+    public void test1() throws Exception{
+//        BalanceOrder balanceOrder=new BalanceOrder();
+//        balanceOrder.setOrderid("sdadasd");
+//        balanceOrderService.insertSelective(balanceOrder);
 
 
     }

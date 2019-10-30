@@ -1,5 +1,6 @@
 package com.example.hotel.dao;
 
+import com.example.hotel.DTO.RoomDTO;
 import com.example.hotel.model.Room;
 import com.example.hotel.model.RoomExample;
 import java.util.List;
@@ -39,6 +40,8 @@ public interface RoomMapper {
     int updateByPrimaryKeyForReduce(@Param("rname") String rname,@Param("roomnum") int roomnum);
 
     int selectCount();
+
+    List<RoomDTO> selectall(Map map);
 
 
 

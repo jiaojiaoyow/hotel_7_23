@@ -213,6 +213,12 @@
     select count(*) from room
   </select>
 
+  <select id="selectall" resultType="com.example.hotel.DTO.RoomDTO"  parameterType="java.util.Map">
+
+    select t.*,r.roomnumber from troroom  t join room r on t.roomintroduce= r.roomname limit #{begin},#{num}
+
+  </select>
+
   <select id="selectByExampleWithRowbounds" parameterType="com.example.hotel.model.RoomExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

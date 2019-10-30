@@ -8,6 +8,7 @@
     <result column="amount" jdbcType="DOUBLE" property="amount" />
     <result column="send_start_date" jdbcType="VARCHAR" property="sendStartDate" />
     <result column="send_end_date" jdbcType="VARCHAR" property="sendEndDate" />
+    <result column="number" jdbcType="INTEGER" property="number" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    cid, cname, min_amount, amount, send_start_date, send_end_date
+    cid, cname, min_amount, amount, send_start_date, send_end_date, number
   </sql>
   <select id="selectByExample" parameterType="com.example.hotel.model.CouponExample" resultMap="BaseResultMap">
     select
@@ -102,11 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.example.hotel.model.Coupon">
     insert into coupon (cid, cname, min_amount, 
-      amount, send_start_date, send_end_date
-      )
+      amount, send_start_date, send_end_date, 
+      number)
     values (#{cid,jdbcType=INTEGER}, #{cname,jdbcType=VARCHAR}, #{minAmount,jdbcType=DOUBLE}, 
-      #{amount,jdbcType=DOUBLE}, #{sendStartDate,jdbcType=VARCHAR}, #{sendEndDate,jdbcType=VARCHAR}
-      )
+      #{amount,jdbcType=DOUBLE}, #{sendStartDate,jdbcType=VARCHAR}, #{sendEndDate,jdbcType=VARCHAR}, 
+      #{number,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.example.hotel.model.Coupon">
     insert into coupon
@@ -129,6 +130,9 @@
       <if test="sendEndDate != null">
         send_end_date,
       </if>
+      <if test="number != null">
+        number,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="cid != null">
@@ -148,6 +152,9 @@
       </if>
       <if test="sendEndDate != null">
         #{sendEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -178,6 +185,9 @@
       <if test="record.sendEndDate != null">
         send_end_date = #{record.sendEndDate,jdbcType=VARCHAR},
       </if>
+      <if test="record.number != null">
+        number = #{record.number,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -190,7 +200,8 @@
       min_amount = #{record.minAmount,jdbcType=DOUBLE},
       amount = #{record.amount,jdbcType=DOUBLE},
       send_start_date = #{record.sendStartDate,jdbcType=VARCHAR},
-      send_end_date = #{record.sendEndDate,jdbcType=VARCHAR}
+      send_end_date = #{record.sendEndDate,jdbcType=VARCHAR},
+      number = #{record.number,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -213,6 +224,9 @@
       <if test="sendEndDate != null">
         send_end_date = #{sendEndDate,jdbcType=VARCHAR},
       </if>
+      <if test="number != null">
+        number = #{number,jdbcType=INTEGER},
+      </if>
     </set>
     where cid = #{cid,jdbcType=INTEGER}
   </update>
@@ -222,7 +236,8 @@
       min_amount = #{minAmount,jdbcType=DOUBLE},
       amount = #{amount,jdbcType=DOUBLE},
       send_start_date = #{sendStartDate,jdbcType=VARCHAR},
-      send_end_date = #{sendEndDate,jdbcType=VARCHAR}
+      send_end_date = #{sendEndDate,jdbcType=VARCHAR},
+      number = #{number,jdbcType=INTEGER}
     where cid = #{cid,jdbcType=INTEGER}
   </update>
   <select id="selectByExampleWithRowbounds" parameterType="com.example.hotel.model.CouponExample" resultMap="BaseResultMap">
@@ -256,5 +271,4 @@
   <select id="selectPage" resultType="com.example.hotel.model.Coupon" parameterType="java.util.Map">
   select * from coupon limit #{begin},#{num}
 </select>
-
 </mapper>

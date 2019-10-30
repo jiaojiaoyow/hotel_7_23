@@ -33,7 +33,7 @@ public interface CouponMapper {
 
     int updateByPrimaryKey(Coupon record);
 
-//    自己增加的
+    //    自己增加的
     List<Coupon> SelectAll();
 
     List<Coupon> selectByCname(String cname);

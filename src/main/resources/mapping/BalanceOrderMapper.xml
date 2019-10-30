@@ -4,6 +4,9 @@
   <resultMap id="BaseResultMap" type="com.example.hotel.model.BalanceOrder">
     <id column="orderid" jdbcType="VARCHAR" property="orderid" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
+    <result column="balance" jdbcType="DOUBLE" property="balance" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="create_time" jdbcType="VARCHAR" property="createTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    orderid, flag
+    orderid, flag, balance, openid, create_time
   </sql>
   <select id="selectByExample" parameterType="com.example.hotel.model.BalanceOrderExample" resultMap="BaseResultMap">
     select
@@ -97,8 +100,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.example.hotel.model.BalanceOrder">
-    insert into balanceorder (orderid, flag)
-    values (#{orderid,jdbcType=VARCHAR}, #{flag,jdbcType=INTEGER})
+    insert into balanceorder (orderid, flag, balance, 
+      openid, create_time)
+    values (#{orderid,jdbcType=VARCHAR}, #{flag,jdbcType=INTEGER}, #{balance,jdbcType=DOUBLE}, 
+      #{openid,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.example.hotel.model.BalanceOrder">
     insert into balanceorder
@@ -109,6 +114,15 @@
       <if test="flag != null">
         flag,
       </if>
+      <if test="balance != null">
+        balance,
+      </if>
+      <if test="openid != null">
+        openid,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="orderid != null">
@@ -116,6 +130,15 @@
       </if>
       <if test="flag != null">
         #{flag,jdbcType=INTEGER},
+      </if>
+      <if test="balance != null">
+        #{balance,jdbcType=DOUBLE},
+      </if>
+      <if test="openid != null">
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -134,6 +157,15 @@
       <if test="record.flag != null">
         flag = #{record.flag,jdbcType=INTEGER},
       </if>
+      <if test="record.balance != null">
+        balance = #{record.balance,jdbcType=DOUBLE},
+      </if>
+      <if test="record.openid != null">
+        openid = #{record.openid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -142,7 +174,10 @@
   <update id="updateByExample" parameterType="map">
     update balanceorder
     set orderid = #{record.orderid,jdbcType=VARCHAR},
-      flag = #{record.flag,jdbcType=INTEGER}
+      flag = #{record.flag,jdbcType=INTEGER},
+      balance = #{record.balance,jdbcType=DOUBLE},
+      openid = #{record.openid,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -153,12 +188,24 @@
       <if test="flag != null">
         flag = #{flag,jdbcType=INTEGER},
       </if>
+      <if test="balance != null">
+        balance = #{balance,jdbcType=DOUBLE},
+      </if>
+      <if test="openid != null">
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=VARCHAR},
+      </if>
     </set>
     where orderid = #{orderid,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.example.hotel.model.BalanceOrder">
     update balanceorder
-    set flag = #{flag,jdbcType=INTEGER}
+    set flag = #{flag,jdbcType=INTEGER},
+      balance = #{balance,jdbcType=DOUBLE},
+      openid = #{openid,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR}
     where orderid = #{orderid,jdbcType=VARCHAR}
   </update>
   <select id="selectByExampleWithRowbounds" parameterType="com.example.hotel.model.BalanceOrderExample" resultMap="BaseResultMap">

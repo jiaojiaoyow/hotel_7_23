@@ -1,4 +1,4 @@
-2019-10-30 17:10:10.459 [main] ERROR org.apache.catalina.util.LifecycleBase - Failed to start component [Connector[HTTP/1.1-443]]
+2019-10-27 18:53:03.882 [main] ERROR org.apache.catalina.util.LifecycleBase - Failed to start component [Connector[HTTP/1.1-8080]]
 org.apache.catalina.LifecycleException: Protocol handler start failed
 	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
@@ -28,7 +28,7 @@ Caused by: java.net.BindException: Address already in use: bind
 	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:568)
 	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
 	... 14 common frames omitted
-2019-10-30 17:10:10.492 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
+2019-10-27 18:53:04.025 [main] ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - 
 
 ***************************
 APPLICATION FAILED TO START
@@ -36,9 +36,9 @@ APPLICATION FAILED TO START
 
 Description:
 
-The Tomcat connector configured to listen on port 443 failed to start. The port may already be in use or the connector may be misconfigured.
+The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
 
 Action:
 
-Verify the connector's configuration, identify and stop any process that's listening on port 443, or configure this application to listen on another port.
+Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
 

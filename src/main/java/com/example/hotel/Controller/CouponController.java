@@ -12,6 +12,7 @@ import com.example.hotel.service.GetCouponService;
 import com.example.hotel.adapter.CouponUtil;
 import com.example.hotel.util.DateUtil;
 import com.example.hotel.util.PageUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.text.ParseException;
 import java.util.*;
-
+@Slf4j
 @RestController
 public class CouponController {
     @Autowired

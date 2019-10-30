@@ -233,6 +233,206 @@ public class BalanceOrderExample {
             addCriterion("flag not between", value1, value2, "flag");
             return (Criteria) this;
         }
+
+        public Criteria andBalanceIsNull() {
+            addCriterion("balance is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceIsNotNull() {
+            addCriterion("balance is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceEqualTo(Double value) {
+            addCriterion("balance =", value, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceNotEqualTo(Double value) {
+            addCriterion("balance <>", value, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceGreaterThan(Double value) {
+            addCriterion("balance >", value, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceGreaterThanOrEqualTo(Double value) {
+            addCriterion("balance >=", value, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceLessThan(Double value) {
+            addCriterion("balance <", value, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceLessThanOrEqualTo(Double value) {
+            addCriterion("balance <=", value, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceIn(List<Double> values) {
+            addCriterion("balance in", values, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceNotIn(List<Double> values) {
+            addCriterion("balance not in", values, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceBetween(Double value1, Double value2) {
+            addCriterion("balance between", value1, value2, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andBalanceNotBetween(Double value1, Double value2) {
+            addCriterion("balance not between", value1, value2, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidIsNull() {
+            addCriterion("openid is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidIsNotNull() {
+            addCriterion("openid is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidEqualTo(String value) {
+            addCriterion("openid =", value, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidNotEqualTo(String value) {
+            addCriterion("openid <>", value, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidGreaterThan(String value) {
+            addCriterion("openid >", value, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidGreaterThanOrEqualTo(String value) {
+            addCriterion("openid >=", value, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidLessThan(String value) {
+            addCriterion("openid <", value, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidLessThanOrEqualTo(String value) {
+            addCriterion("openid <=", value, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidLike(String value) {
+            addCriterion("openid like", value, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidNotLike(String value) {
+            addCriterion("openid not like", value, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidIn(List<String> values) {
+            addCriterion("openid in", values, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidNotIn(List<String> values) {
+            addCriterion("openid not in", values, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidBetween(String value1, String value2) {
+            addCriterion("openid between", value1, value2, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenidNotBetween(String value1, String value2) {
+            addCriterion("openid not between", value1, value2, "openid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("create_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("create_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeEqualTo(String value) {
+            addCriterion("create_time =", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotEqualTo(String value) {
+            addCriterion("create_time <>", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThan(String value) {
+            addCriterion("create_time >", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThanOrEqualTo(String value) {
+            addCriterion("create_time >=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThan(String value) {
+            addCriterion("create_time <", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThanOrEqualTo(String value) {
+            addCriterion("create_time <=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLike(String value) {
+            addCriterion("create_time like", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotLike(String value) {
+            addCriterion("create_time not like", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIn(List<String> values) {
+            addCriterion("create_time in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotIn(List<String> values) {
+            addCriterion("create_time not in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeBetween(String value1, String value2) {
+            addCriterion("create_time between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotBetween(String value1, String value2) {
+            addCriterion("create_time not between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

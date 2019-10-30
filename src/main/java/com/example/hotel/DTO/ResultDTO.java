@@ -13,6 +13,17 @@ public class ResultDTO {
     private Integer status;
     private Object data;
     private String message;
+    private Integer total;
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+
+
 
     public Integer getStatus() {
         return status;
@@ -39,15 +50,26 @@ public class ResultDTO {
     }
 
     public static ResultDTO ok(Object data) {
+
+
         ResultDTO resultDTO = new ResultDTO();
+        if(data==null){
+            resultDTO.setData("");
+            resultDTO.setTotal(0);
+        }else {
+            resultDTO.setData(data);
+            resultDTO.setTotal(1);
+        }
+
         resultDTO.setStatus(200);
-        resultDTO.setData(data);
         resultDTO.setMessage("请求成功");
         return resultDTO;
     }
 
     public static ResultDTO fail() {
         ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setData("");
+        resultDTO.setTotal(0);
         resultDTO.setStatus(201);
         resultDTO.setMessage("没有相应的数据");
         return resultDTO;
@@ -55,6 +77,8 @@ public class ResultDTO {
 
     public static ResultDTO unkonwFail(String message) {
         ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setData("");
+        resultDTO.setTotal(0);
         resultDTO.setStatus(202);
         resultDTO.setMessage("请求失败，因为："+message);
         return resultDTO;
@@ -62,6 +86,8 @@ public class ResultDTO {
 
     public static ResultDTO fail(String message) {
         ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setData("");
+        resultDTO.setTotal(0);
         resultDTO.setStatus(204);
         resultDTO.setMessage("请求失败,"+message);
         return resultDTO;
@@ -71,6 +97,8 @@ public class ResultDTO {
 
     public static ResultDTO interFail(String message) {
         ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setData("");
+        resultDTO.setTotal(0);
         resultDTO.setStatus(205);
         resultDTO.setMessage(message+"已存在");
         return resultDTO;
@@ -78,7 +106,10 @@ public class ResultDTO {
 
 
     public static ResultDTO nothing() {
+
         ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setData("");
+        resultDTO.setTotal(0);
         resultDTO.setStatus(206);
         resultDTO.setMessage("没有接受到数据");
         return resultDTO;

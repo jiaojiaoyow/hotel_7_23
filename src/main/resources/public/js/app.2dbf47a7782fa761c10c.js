@@ -480,13 +480,13 @@ const state = {
 
 
 /* styles */
-__webpack_require__(528)
+__webpack_require__(524)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(255),
   /* template */
-  __webpack_require__(564),
+  __webpack_require__(560),
   /* scopeId */
   null,
   /* cssModules */
@@ -1513,6 +1513,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 //import NProgress from 'nprogress'
@@ -1539,6 +1546,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         cname: { required: true, message: "请输入优惠券名称", trigger: "blur" },
         minAmount: { required: true, message: "请输入使用条件" },
         amount: { required: true, message: "请输入优惠金额" },
+        number: { required: true, message: "请输入剩余优惠券数量" },
         sendStartDate: { required: true, message: "请输入开始时间" },
         sendEndDate: { required: true, message: "请输入结束时间" }
       },
@@ -1548,6 +1556,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         cid: '',
         minAmount: '',
         amount: '',
+        number: '',
         sendStartDate: '',
         sendEndDate: ''
       },
@@ -1558,6 +1567,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         cname: { required: true, message: "请输入优惠券名称", trigger: "blur" },
         minAmount: { required: true, message: "请输入使用条件" },
         amount: { required: true, message: "请输入优惠金额" },
+        number: { required: true, message: "请输入剩余优惠券数量" },
         sendStartDate: { required: true, message: "请输入开始时间" },
         sendEndDate: { required: true, message: "请输入结束时间" }
       },
@@ -1566,6 +1576,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         cname: '',
         minAmount: '',
         amount: '',
+        number: '',
         sendStartDate: '',
         sendEndDate: ''
       }
@@ -1642,6 +1653,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         cname: '',
         minAmount: '',
         amount: '',
+        number: '',
         sendStartDate: '',
         sendEndDate: ''
       };
@@ -2421,6 +2433,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 //import NProgress from 'nprogress'
@@ -2450,6 +2470,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				roombed: { required: true, message: '请输入床大小' },
 				roombreakfast: { required: true, message: '请选择是否有早餐' },
 				roomnum: { required: true, message: '请输入可住人数' },
+				roomnumber: { required: true, message: '请输入剩余房间数' },
 				roomprice: { required: true, message: '请输入房间价格' }
 			},
 			//编辑界面数据
@@ -2462,6 +2483,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				roombed: '',
 				roombreakfast: '',
 				roomnum: '',
+				roomnumber: '',
 				roomprice: ''
 			},
 
@@ -2476,6 +2498,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				roombed: { required: true, message: '请输入床大小' },
 				roombreakfast: { required: true, message: '请选择是否有早餐' },
 				roomnum: { required: true, message: '请输入可住人数' },
+				roomnumber: { required: true, message: '请输入剩余房间数' },
 				roomprice: { required: true, message: '请输入房间价格' }
 			},
 			//新增界面数据
@@ -2488,6 +2511,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				roombed: '',
 				roombreakfast: 1,
 				roomnum: '',
+				roomnumber: '',
 				roomprice: ''
 			}
 
@@ -2556,6 +2580,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				roombed: '',
 				roombreakfast: 1,
 				roomnum: '',
+				roomnumber: '',
 				roomprice: ''
 			};
 		},
@@ -4320,15 +4345,15 @@ const getCount = state => {
 
 
 /* styles */
-__webpack_require__(526)
+__webpack_require__(537)
 
 var Component = __webpack_require__(11)(
   /* script */
   null,
   /* template */
-  __webpack_require__(562),
+  __webpack_require__(574),
   /* scopeId */
-  "data-v-18c43354",
+  "data-v-7708c702",
   /* cssModules */
   null
 )
@@ -4343,15 +4368,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(524)
+__webpack_require__(532)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(256),
   /* template */
-  __webpack_require__(560),
+  __webpack_require__(569),
   /* scopeId */
-  "data-v-06898e51",
+  "data-v-51629d48",
   /* cssModules */
   null
 )
@@ -4366,15 +4391,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(531)
+__webpack_require__(527)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(257),
   /* template */
-  __webpack_require__(567),
+  __webpack_require__(563),
   /* scopeId */
-  "data-v-2ee5bb32",
+  "data-v-0e541b60",
   /* cssModules */
   null
 )
@@ -4389,15 +4414,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(529)
+__webpack_require__(536)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(258),
   /* template */
-  __webpack_require__(565),
+  __webpack_require__(573),
   /* scopeId */
-  "data-v-2303a22b",
+  "data-v-6ddcb122",
   /* cssModules */
   null
 )
@@ -4412,15 +4437,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(535)
+__webpack_require__(525)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(259),
   /* template */
-  __webpack_require__(571),
+  __webpack_require__(561),
   /* scopeId */
-  "data-v-61f930b2",
+  "data-v-0614e0c4",
   /* cssModules */
   null
 )
@@ -4435,15 +4460,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(534)
+__webpack_require__(531)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(260),
   /* template */
-  __webpack_require__(570),
+  __webpack_require__(568),
   /* scopeId */
-  "data-v-6063bcea",
+  "data-v-4ce8c298",
   /* cssModules */
   null
 )
@@ -4458,15 +4483,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(532)
+__webpack_require__(530)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(261),
   /* template */
-  __webpack_require__(568),
+  __webpack_require__(567),
   /* scopeId */
-  "data-v-31a26d85",
+  "data-v-3b5feaae",
   /* cssModules */
   null
 )
@@ -4481,15 +4506,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(537)
+__webpack_require__(535)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(262),
   /* template */
-  __webpack_require__(574),
+  __webpack_require__(572),
   /* scopeId */
-  "data-v-71cc1772",
+  "data-v-6c93adfe",
   /* cssModules */
   null
 )
@@ -4504,15 +4529,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(533)
+__webpack_require__(529)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(263),
   /* template */
-  __webpack_require__(569),
+  __webpack_require__(566),
   /* scopeId */
-  "data-v-596aae0f",
+  "data-v-2c84f610",
   /* cssModules */
   null
 )
@@ -4527,15 +4552,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(530)
+__webpack_require__(526)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(264),
   /* template */
-  __webpack_require__(566),
+  __webpack_require__(562),
   /* scopeId */
-  "data-v-2e570d0c",
+  "data-v-06f12ce3",
   /* cssModules */
   null
 )
@@ -4550,15 +4575,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(525)
+__webpack_require__(538)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(265),
   /* template */
-  __webpack_require__(561),
+  __webpack_require__(575),
   /* scopeId */
-  "data-v-0a2c6e81",
+  "data-v-a0b3af90",
   /* cssModules */
   null
 )
@@ -4575,7 +4600,7 @@ var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(266),
   /* template */
-  __webpack_require__(572),
+  __webpack_require__(576),
   /* scopeId */
   null,
   /* cssModules */
@@ -4592,15 +4617,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(538)
+__webpack_require__(534)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(267),
   /* template */
-  __webpack_require__(575),
+  __webpack_require__(571),
   /* scopeId */
-  "data-v-75e52950",
+  "data-v-626a2efe",
   /* cssModules */
   null
 )
@@ -4615,15 +4640,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(536)
+__webpack_require__(533)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(268),
   /* template */
-  __webpack_require__(573),
+  __webpack_require__(570),
   /* scopeId */
-  "data-v-70cc0a1d",
+  "data-v-5a26f794",
   /* cssModules */
   null
 )
@@ -4638,15 +4663,15 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(527)
+__webpack_require__(528)
 
 var Component = __webpack_require__(11)(
   /* script */
   __webpack_require__(269),
   /* template */
-  __webpack_require__(563),
+  __webpack_require__(565),
   /* scopeId */
-  "data-v-1a31bea4",
+  "data-v-18cd64d7",
   /* cssModules */
   null
 )
@@ -4663,7 +4688,7 @@ var Component = __webpack_require__(11)(
   /* script */
   null,
   /* template */
-  __webpack_require__(576),
+  __webpack_require__(564),
   /* scopeId */
   null,
   /* cssModules */
@@ -4676,784 +4701,6 @@ module.exports = Component.exports
 /***/ }),
 
 /***/ 560:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('el-row', {
-    staticClass: "container"
-  }, [_c('el-col', {
-    staticClass: "header",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-col', {
-    staticClass: "logo",
-    class: _vm.collapsed ? 'logo-collapse-width' : 'logo-width',
-    attrs: {
-      "span": 10
-    }
-  }, [_vm._v("\n\t\t\t" + _vm._s(_vm.collapsed ? '' : _vm.sysName) + "\n\t\t")]), _vm._v(" "), _c('el-col', {
-    attrs: {
-      "span": 10
-    }
-  }), _vm._v(" "), _c('el-col', {
-    staticClass: "userinfo",
-    attrs: {
-      "span": 4
-    }
-  }, [_c('el-dropdown', {
-    attrs: {
-      "trigger": "hover"
-    }
-  }, [_c('span', {
-    staticClass: "el-dropdown-link userinfo-inner"
-  }, [_vm._v("\n\t\t\t\t\t管理员")]), _vm._v(" "), _c('el-dropdown-menu', {
-    attrs: {
-      "slot": "dropdown"
-    },
-    slot: "dropdown"
-  }, [_c('el-dropdown-item', {
-    nativeOn: {
-      "click": function($event) {
-        return _vm.logout($event)
-      }
-    }
-  }, [_vm._v("退出登录")])], 1)], 1)], 1)], 1), _vm._v(" "), _c('el-col', {
-    staticClass: "main",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('aside', {
-    class: _vm.collapsed ? 'menu-collapsed' : 'menu-expanded'
-  }, [_c('el-menu', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (!_vm.collapsed),
-      expression: "!collapsed"
-    }],
-    staticClass: "el-menu-vertical-demo",
-    attrs: {
-      "default-active": _vm.$route.path,
-      "unique-opened": "",
-      "router": ""
-    },
-    on: {
-      "open": _vm.handleopen,
-      "close": _vm.handleclose,
-      "select": _vm.handleselect
-    }
-  }, [_vm._l((_vm.$router.options.routes), function(item, index) {
-    return (!item.hidden) ? [(!item.leaf) ? _c('el-submenu', {
-      attrs: {
-        "index": index + ''
-      }
-    }, [_c('template', {
-      slot: "title"
-    }, [_c('i', {
-      class: item.iconCls
-    }), _vm._v(_vm._s(item.name))]), _vm._v(" "), _vm._l((item.children), function(child) {
-      return (!child.hidden) ? _c('el-menu-item', {
-        key: child.path,
-        attrs: {
-          "index": child.path
-        }
-      }, [_vm._v(_vm._s(child.name))]) : _vm._e()
-    })], 2) : _vm._e(), _vm._v(" "), (item.leaf && item.children.length > 0) ? _c('el-menu-item', {
-      attrs: {
-        "index": item.children[0].path
-      }
-    }, [_c('i', {
-      class: item.iconCls
-    }), _vm._v(_vm._s(item.children[0].name))]) : _vm._e()] : _vm._e()
-  })], 2), _vm._v(" "), _c('ul', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.collapsed),
-      expression: "collapsed"
-    }],
-    ref: "menuCollapsed",
-    staticClass: "el-menu el-menu-vertical-demo collapsed"
-  }, _vm._l((_vm.$router.options.routes), function(item, index) {
-    return (!item.hidden) ? _c('li', {
-      staticClass: "el-submenu item"
-    }, [(!item.leaf) ? [_c('div', {
-      staticClass: "el-submenu__title",
-      staticStyle: {
-        "padding-left": "20px"
-      },
-      on: {
-        "mouseover": function($event) {
-          return _vm.showMenu(index, true)
-        },
-        "mouseout": function($event) {
-          return _vm.showMenu(index, false)
-        }
-      }
-    }, [_c('i', {
-      class: item.iconCls
-    })]), _vm._v(" "), _c('ul', {
-      staticClass: "el-menu submenu",
-      class: 'submenu-hook-' + index,
-      on: {
-        "mouseover": function($event) {
-          return _vm.showMenu(index, true)
-        },
-        "mouseout": function($event) {
-          return _vm.showMenu(index, false)
-        }
-      }
-    }, _vm._l((item.children), function(child) {
-      return (!child.hidden) ? _c('li', {
-        key: child.path,
-        staticClass: "el-menu-item",
-        class: _vm.$route.path == child.path ? 'is-active' : '',
-        staticStyle: {
-          "padding-left": "40px"
-        },
-        on: {
-          "click": function($event) {
-            return _vm.$router.push(child.path)
-          }
-        }
-      }, [_vm._v(_vm._s(child.name))]) : _vm._e()
-    }), 0)] : [_c('li', {
-      staticClass: "el-submenu"
-    }, [_c('div', {
-      staticClass: "el-submenu__title el-menu-item",
-      class: _vm.$route.path == item.children[0].path ? 'is-active' : '',
-      staticStyle: {
-        "padding-left": "20px",
-        "height": "56px",
-        "line-height": "56px",
-        "padding": "0 20px"
-      },
-      on: {
-        "click": function($event) {
-          return _vm.$router.push(item.children[0].path)
-        }
-      }
-    }, [_c('i', {
-      class: item.iconCls
-    })])])]], 2) : _vm._e()
-  }), 0)], 1), _vm._v(" "), _c('section', {
-    staticClass: "content-container"
-  }, [_c('div', {
-    staticClass: "grid-content bg-purple-light"
-  }, [_c('el-col', {
-    staticClass: "breadcrumb-container",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('strong', {
-    staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.$route.name))]), _vm._v(" "), _c('el-breadcrumb', {
-    staticClass: "breadcrumb-inner",
-    attrs: {
-      "separator": "/"
-    }
-  }, _vm._l((_vm.$route.matched), function(item) {
-    return _c('el-breadcrumb-item', {
-      key: item.path
-    }, [_vm._v("\n\t\t\t\t\t\t\t" + _vm._s(item.name) + "\n\t\t\t\t\t\t")])
-  }), 1)], 1), _vm._v(" "), _c('el-col', {
-    staticClass: "content-wrapper",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('transition', {
-    attrs: {
-      "name": "fade",
-      "mode": "out-in"
-    }
-  }, [_c('router-view')], 1)], 1)], 1)])])], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 561:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('el-col', {
-    staticClass: "toolbar",
-    staticStyle: {
-      "padding-bottom": "0px"
-    },
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-form', {
-    attrs: {
-      "inline": true,
-      "model": _vm.filters
-    }
-  }, [_c('el-form-item', [_c('el-input', {
-    attrs: {
-      "placeholder": "登录名"
-    },
-    model: {
-      value: (_vm.filters.uname),
-      callback: function($$v) {
-        _vm.$set(_vm.filters, "uname", $$v)
-      },
-      expression: "filters.uname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.findAdmin
-    }
-  }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.handleAdd
-    }
-  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
-    directives: [{
-      name: "loading",
-      rawName: "v-loading",
-      value: (_vm.listLoading),
-      expression: "listLoading"
-    }],
-    staticStyle: {
-      "width": "100%"
-    },
-    attrs: {
-      "data": _vm.admins,
-      "highlight-current-row": ""
-    },
-    on: {
-      "selection-change": _vm.selsChange
-    }
-  }, [_c('el-table-column', {
-    attrs: {
-      "type": "selection",
-      "width": "55"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "type": "index",
-      "width": "60"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "uname",
-      "label": "登录名",
-      "width": "250",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "password",
-      "label": "密码",
-      "width": "250",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "label": "操作",
-      "min-width": "150"
-    },
-    scopedSlots: _vm._u([{
-      key: "default",
-      fn: function(scope) {
-        return [_c('el-button', {
-          attrs: {
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handleEdit(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
-          attrs: {
-            "type": "danger",
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handleDel(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("删除")])]
-      }
-    }])
-  })], 1), _vm._v(" "), _c('el-col', {
-    staticClass: "toolbar",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-pagination', {
-    staticStyle: {
-      "float": "right"
-    },
-    attrs: {
-      "layout": "prev, pager, next",
-      "page-size": 20,
-      "total": _vm.total
-    },
-    on: {
-      "current-change": _vm.handleCurrentChange
-    }
-  })], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "编辑",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.editFormVisible),
-      callback: function($$v) {
-        _vm.editFormVisible = $$v
-      },
-      expression: "editFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "editForm",
-    attrs: {
-      "model": _vm.editForm,
-      "label-width": "80px",
-      "rules": _vm.editFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "姓名",
-      "prop": "uname"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.editForm.uname),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "uname", $$v)
-      },
-      expression: "editForm.uname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "密码",
-      "prop": "password"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "password"
-    },
-    model: {
-      value: (_vm.editForm.password),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "password", $$v)
-      },
-      expression: "editForm.password"
-    }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.editFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.editLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.editSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "新增",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.addFormVisible),
-      callback: function($$v) {
-        _vm.addFormVisible = $$v
-      },
-      expression: "addFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "addForm",
-    attrs: {
-      "model": _vm.addForm,
-      "label-width": "80px",
-      "rules": _vm.addFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "登录名",
-      "prop": "uname"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.uname),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "uname", $$v)
-      },
-      expression: "addForm.uname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "密码",
-      "prop": "password"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "password"
-    },
-    model: {
-      value: (_vm.addForm.password),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "password", $$v)
-      },
-      expression: "addForm.password"
-    }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.addFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.addLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.addSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 562:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', {
-    staticClass: "page-container"
-  }, [_vm._v("404 page not found")])
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 563:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('el-col', {
-    staticClass: "toolbar",
-    staticStyle: {
-      "padding-bottom": "0px"
-    },
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-form', {
-    attrs: {
-      "inline": true,
-      "model": _vm.filters
-    }
-  }, [_c('el-form-item', [_c('el-input', {
-    attrs: {
-      "placeholder": "客户姓名"
-    },
-    model: {
-      value: (_vm.filters.uname),
-      callback: function($$v) {
-        _vm.$set(_vm.filters, "uname", $$v)
-      },
-      expression: "filters.uname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.getAllPayOrders
-    }
-  }, [_vm._v("查询")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
-    directives: [{
-      name: "loading",
-      rawName: "v-loading",
-      value: (_vm.listLoading),
-      expression: "listLoading"
-    }],
-    staticStyle: {
-      "width": "100%"
-    },
-    attrs: {
-      "data": _vm.allPayOrder,
-      "highlight-current-row": ""
-    },
-    on: {
-      "selection-change": _vm.selsChange
-    }
-  }, [_c('el-table-column', {
-    attrs: {
-      "type": "selection",
-      "width": "55"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "type": "index",
-      "width": "60"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "orderid",
-      "label": "订单ID",
-      "width": "120",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "uname",
-      "label": "客户姓名",
-      "width": "120",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "uphone",
-      "label": "联系方式",
-      "width": "150",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roomname",
-      "label": "房间类型",
-      "width": "120",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roomnumber",
-      "label": "房间数量",
-      "width": "120",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "orderday",
-      "label": "入住天数",
-      "width": "120",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "totalprice",
-      "label": "总价格",
-      "width": "120",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "arrivetime",
-      "label": "到店时间",
-      "width": "120",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "ordertime",
-      "label": "订单时间",
-      "width": "200",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "leavetime",
-      "label": "离开时间",
-      "width": "200",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "label": "操作",
-      "min-width": "150"
-    },
-    scopedSlots: _vm._u([{
-      key: "default",
-      fn: function(scope) {
-        return [_c('el-button', {
-          attrs: {
-            "type": "primary",
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handle(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("入住")])]
-      }
-    }])
-  })], 1), _vm._v(" "), _c('el-col', {
-    staticClass: "toolbar",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-pagination', {
-    staticStyle: {
-      "float": "right"
-    },
-    attrs: {
-      "layout": "prev, pager, next",
-      "page-size": 20,
-      "total": _vm.total
-    },
-    on: {
-      "current-change": _vm.handleCurrentChange
-    }
-  })], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "更改状态",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.editFormVisible),
-      callback: function($$v) {
-        _vm.editFormVisible = $$v
-      },
-      expression: "editFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "editForm",
-    attrs: {
-      "model": _vm.editForm,
-      "label-width": "80px",
-      "rules": _vm.editFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "客户ID",
-      "prop": "uid"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off",
-      "disabled": "disabled"
-    },
-    model: {
-      value: (_vm.editForm.uid),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "uid", $$v)
-      },
-      expression: "editForm.uid"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "订单ID",
-      "prop": "orderid"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off",
-      "disabled": "disabled"
-    },
-    model: {
-      value: (_vm.editForm.orderid),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "orderid", $$v)
-      },
-      expression: "editForm.orderid"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "房间名称",
-      "prop": "roomname"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.editForm.roomname),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roomname", $$v)
-      },
-      expression: "editForm.roomname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "订单状态",
-      "prop": "orderstatus"
-    }
-  }, [_c('el-radio-group', {
-    model: {
-      value: (_vm.editForm.orderstatus),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "orderstatus", $$v)
-      },
-      expression: "editForm.orderstatus"
-    }
-  }, [_c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 2
-    }
-  }, [_vm._v("待入住")]), _vm._v(" "), _c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 4
-    }
-  }, [_vm._v("已入住")])], 1)], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.editFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.editLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.editSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 564:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -5471,1421 +4718,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 565:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_vm._v("\n\tWelcome...\n")])
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 566:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('el-col', {
-    staticClass: "toolbar",
-    staticStyle: {
-      "padding-bottom": "0px"
-    },
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-form', {
-    attrs: {
-      "inline": true,
-      "model": _vm.filters
-    }
-  }, [_c('el-form-item', [_c('el-input', {
-    attrs: {
-      "placeholder": "房间名称"
-    },
-    model: {
-      value: (_vm.filters.roomintroduce),
-      callback: function($$v) {
-        _vm.$set(_vm.filters, "roomintroduce", $$v)
-      },
-      expression: "filters.roomintroduce"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.getAllRooms
-    }
-  }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.handleAdd
-    }
-  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
-    directives: [{
-      name: "loading",
-      rawName: "v-loading",
-      value: (_vm.listLoading),
-      expression: "listLoading"
-    }],
-    staticStyle: {
-      "width": "100%"
-    },
-    attrs: {
-      "data": _vm.rooms,
-      "highlight-current-row": ""
-    },
-    on: {
-      "selection-change": _vm.selsChange
-    }
-  }, [_c('el-table-column', {
-    attrs: {
-      "type": "selection",
-      "width": "55"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "type": "index",
-      "width": "60"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roomintroduce",
-      "label": "房间名称",
-      "width": "150",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roomarea",
-      "label": "房间面积(m²)",
-      "width": "150",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roomwifi",
-      "label": "wifi",
-      "width": "100",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roombed",
-      "label": "床大小(m)",
-      "width": "150",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roombreakfast",
-      "label": "早餐",
-      "width": "100",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roomnum",
-      "label": "可住人数",
-      "width": "150",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "roomprice",
-      "label": "价格",
-      "width": "120",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "label": "操作",
-      "min-width": "150"
-    },
-    scopedSlots: _vm._u([{
-      key: "default",
-      fn: function(scope) {
-        return [_c('el-button', {
-          attrs: {
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handleEdit(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
-          attrs: {
-            "type": "danger",
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handleDel(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("删除")])]
-      }
-    }])
-  })], 1), _vm._v(" "), _c('el-col', {
-    staticClass: "toolbar",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-pagination', {
-    staticStyle: {
-      "float": "right"
-    },
-    attrs: {
-      "layout": "prev, pager, next",
-      "page-size": 20,
-      "total": _vm.total
-    },
-    on: {
-      "current-change": _vm.handleCurrentChange
-    }
-  })], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "编辑",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.editFormVisible),
-      callback: function($$v) {
-        _vm.editFormVisible = $$v
-      },
-      expression: "editFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "editForm",
-    attrs: {
-      "model": _vm.editForm,
-      "label-width": "80px",
-      "rules": _vm.editFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "房间名称",
-      "prop": "roomintroduce"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off",
-      "disabled": "disabled"
-    },
-    model: {
-      value: (_vm.editForm.roomintroduce),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roomintroduce", $$v)
-      },
-      expression: "editForm.roomintroduce"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "图片地址",
-      "prop": "roomimage"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "textarea"
-    },
-    model: {
-      value: (_vm.editForm.roomimage),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roomimage", $$v)
-      },
-      expression: "editForm.roomimage"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "房间面积(m²)",
-      "prop": "roomarea"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.editForm.roomarea),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roomarea", $$v)
-      },
-      expression: "editForm.roomarea"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "wifi",
-      "prop": "roomwifi"
-    }
-  }, [_c('el-radio-group', {
-    model: {
-      value: (_vm.editForm.roomwifi),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roomwifi", $$v)
-      },
-      expression: "editForm.roomwifi"
-    }
-  }, [_c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 1
-    }
-  }, [_vm._v("有")]), _vm._v(" "), _c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 0
-    }
-  }, [_vm._v("无")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "床大小(m)",
-      "prop": "roombed"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.editForm.roombed),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roombed", $$v)
-      },
-      expression: "editForm.roombed"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "早餐",
-      "prop": "roombreakfast"
-    }
-  }, [_c('el-radio-group', {
-    model: {
-      value: (_vm.editForm.roombreakfast),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roombreakfast", $$v)
-      },
-      expression: "editForm.roombreakfast"
-    }
-  }, [_c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 1
-    }
-  }, [_vm._v("有")]), _vm._v(" "), _c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 0
-    }
-  }, [_vm._v("无")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "可住人数",
-      "prop": "roomnum"
-    }
-  }, [_c('el-input-number', {
-    attrs: {
-      "min": 1,
-      "max": 200
-    },
-    model: {
-      value: (_vm.editForm.roomnum),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roomnum", $$v)
-      },
-      expression: "editForm.roomnum"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "价格",
-      "prop": "roomprice"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.editForm.roomprice),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "roomprice", $$v)
-      },
-      expression: "editForm.roomprice"
-    }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.editFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.editLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.editSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "新增",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.addFormVisible),
-      callback: function($$v) {
-        _vm.addFormVisible = $$v
-      },
-      expression: "addFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "addForm",
-    attrs: {
-      "model": _vm.addForm,
-      "label-width": "80px",
-      "rules": _vm.addFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "房间名称",
-      "prop": "roomintroduce"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.roomintroduce),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roomintroduce", $$v)
-      },
-      expression: "addForm.roomintroduce"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "房间总数",
-      "prop": "roomnumber"
-    }
-  }, [_c('el-input-number', {
-    attrs: {
-      "min": 1,
-      "max": 10000
-    },
-    model: {
-      value: (_vm.addForm.roomnumber),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roomnumber", $$v)
-      },
-      expression: "addForm.roomnumber"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "图片地址",
-      "prop": "roomimage"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "textarea"
-    },
-    model: {
-      value: (_vm.addForm.roomimage),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roomimage", $$v)
-      },
-      expression: "addForm.roomimage"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "房间面积(m²)",
-      "prop": "roomarea"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.roomarea),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roomarea", $$v)
-      },
-      expression: "addForm.roomarea"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "wifi",
-      "prop": "roomwifi"
-    }
-  }, [_c('el-radio-group', {
-    model: {
-      value: (_vm.addForm.roomwifi),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roomwifi", $$v)
-      },
-      expression: "addForm.roomwifi"
-    }
-  }, [_c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 1
-    }
-  }, [_vm._v("有")]), _vm._v(" "), _c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 0
-    }
-  }, [_vm._v("无")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "床大小(m)",
-      "prop": "roombed"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.roombed),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roombed", $$v)
-      },
-      expression: "addForm.roombed"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "早餐",
-      "prop": "roombreakfast"
-    }
-  }, [_c('el-radio-group', {
-    model: {
-      value: (_vm.addForm.roombreakfast),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roombreakfast", $$v)
-      },
-      expression: "addForm.roombreakfast"
-    }
-  }, [_c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 1
-    }
-  }, [_vm._v("有")]), _vm._v(" "), _c('el-radio', {
-    staticClass: "radio",
-    attrs: {
-      "label": 0
-    }
-  }, [_vm._v("无")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "可住人数",
-      "prop": "roomnum"
-    }
-  }, [_c('el-input-number', {
-    attrs: {
-      "min": 1,
-      "max": 20
-    },
-    model: {
-      value: (_vm.addForm.roomnum),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roomnum", $$v)
-      },
-      expression: "addForm.roomnum"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "价格",
-      "prop": "roomprice"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.roomprice),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "roomprice", $$v)
-      },
-      expression: "addForm.roomprice"
-    }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.addFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.addLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.addSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 567:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('el-form', {
-    ref: "ruleForm2",
-    staticClass: "demo-ruleForm login-container",
-    attrs: {
-      "model": _vm.ruleForm2,
-      "rules": _vm.rules2,
-      "label-position": "left",
-      "label-width": "0px"
-    }
-  }, [_c('h3', {
-    staticClass: "title"
-  }, [_vm._v("系统登录")]), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "prop": "account"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "text",
-      "auto-complete": "off",
-      "placeholder": "账号"
-    },
-    model: {
-      value: (_vm.ruleForm2.account),
-      callback: function($$v) {
-        _vm.$set(_vm.ruleForm2, "account", $$v)
-      },
-      expression: "ruleForm2.account"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "prop": "checkPass"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "password",
-      "auto-complete": "off",
-      "placeholder": "密码"
-    },
-    model: {
-      value: (_vm.ruleForm2.checkPass),
-      callback: function($$v) {
-        _vm.$set(_vm.ruleForm2, "checkPass", $$v)
-      },
-      expression: "ruleForm2.checkPass"
-    }
-  })], 1), _vm._v(" "), _c('el-checkbox', {
-    staticClass: "remember",
-    attrs: {
-      "checked": ""
-    },
-    model: {
-      value: (_vm.checked),
-      callback: function($$v) {
-        _vm.checked = $$v
-      },
-      expression: "checked"
-    }
-  }, [_vm._v("记住密码")]), _vm._v(" "), _c('el-form-item', {
-    staticStyle: {
-      "width": "100%"
-    }
-  }, [_c('el-button', {
-    staticStyle: {
-      "width": "100%"
-    },
-    attrs: {
-      "type": "primary",
-      "loading": _vm.logining
-    },
-    nativeOn: {
-      "click": function($event) {
-        $event.preventDefault();
-        return _vm.handleSubmit2($event)
-      }
-    }
-  }, [_vm._v("登录")])], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 568:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('el-col', {
-    staticClass: "toolbar",
-    staticStyle: {
-      "padding-bottom": "0px"
-    },
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-form', {
-    attrs: {
-      "inline": true,
-      "model": _vm.filters
-    }
-  }, [_c('el-form-item', [_c('el-input', {
-    attrs: {
-      "placeholder": "优惠券名称"
-    },
-    model: {
-      value: (_vm.filters.cname),
-      callback: function($$v) {
-        _vm.$set(_vm.filters, "cname", $$v)
-      },
-      expression: "filters.cname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.findCoupon
-    }
-  }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.handleAdd
-    }
-  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
-    directives: [{
-      name: "loading",
-      rawName: "v-loading",
-      value: (_vm.listLoading),
-      expression: "listLoading"
-    }],
-    staticStyle: {
-      "width": "100%"
-    },
-    attrs: {
-      "data": _vm.coupons,
-      "highlight-current-row": ""
-    },
-    on: {
-      "selection-change": _vm.selsChange
-    }
-  }, [_c('el-table-column', {
-    attrs: {
-      "type": "selection",
-      "width": "55"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "type": "index",
-      "width": "60"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "cname",
-      "label": "优惠券名称",
-      "width": "150",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "minAmount",
-      "label": "满xx",
-      "width": "150",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "amount",
-      "label": "减xx",
-      "width": "150",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "sendStartDate",
-      "label": "开始时间",
-      "width": "250",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "sendEndDate",
-      "label": "结束时间",
-      "width": "250",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "label": "操作",
-      "min-width": "150"
-    },
-    scopedSlots: _vm._u([{
-      key: "default",
-      fn: function(scope) {
-        return [_c('el-button', {
-          attrs: {
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handleEdit(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
-          attrs: {
-            "type": "danger",
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handleDel(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("删除")])]
-      }
-    }])
-  })], 1), _vm._v(" "), _c('el-col', {
-    staticClass: "toolbar",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-pagination', {
-    staticStyle: {
-      "float": "right"
-    },
-    attrs: {
-      "layout": "prev, pager, next",
-      "page-size": 20,
-      "total": _vm.total
-    },
-    on: {
-      "current-change": _vm.handleCurrentChange
-    }
-  })], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "编辑",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.editFormVisible),
-      callback: function($$v) {
-        _vm.editFormVisible = $$v
-      },
-      expression: "editFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "editForm",
-    attrs: {
-      "model": _vm.editForm,
-      "label-width": "80px",
-      "rules": _vm.editFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "优惠券名称",
-      "prop": "cname"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.editForm.cname),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "cname", $$v)
-      },
-      expression: "editForm.cname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "满xx",
-      "prop": "minAmount"
-    }
-  }, [_c('el-input-number', {
-    attrs: {
-      "min": 0,
-      "max": 10000
-    },
-    model: {
-      value: (_vm.editForm.minAmount),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "minAmount", $$v)
-      },
-      expression: "editForm.minAmount"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "减xx",
-      "prop": "amount"
-    }
-  }, [_c('el-input-number', {
-    attrs: {
-      "min": 0,
-      "max": 10000
-    },
-    model: {
-      value: (_vm.editForm.amount),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "amount", $$v)
-      },
-      expression: "editForm.amount"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "开始时间",
-      "prop": "sendStartDate"
-    }
-  }, [_c('el-date-picker', {
-    attrs: {
-      "type": "date",
-      "placeholder": "选择日期"
-    },
-    model: {
-      value: (_vm.editForm.sendStartDate),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "sendStartDate", $$v)
-      },
-      expression: "editForm.sendStartDate"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "结束时间",
-      "prop": "sendEndDate"
-    }
-  }, [_c('el-date-picker', {
-    attrs: {
-      "type": "date",
-      "placeholder": "选择日期"
-    },
-    model: {
-      value: (_vm.editForm.sendEndDate),
-      callback: function($$v) {
-        _vm.$set(_vm.editForm, "sendEndDate", $$v)
-      },
-      expression: "editForm.sendEndDate"
-    }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.editFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.editLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.editSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "新增",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.addFormVisible),
-      callback: function($$v) {
-        _vm.addFormVisible = $$v
-      },
-      expression: "addFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "addForm",
-    attrs: {
-      "model": _vm.addForm,
-      "label-width": "80px",
-      "rules": _vm.addFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "优惠券名称",
-      "prop": "cname"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.cname),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "cname", $$v)
-      },
-      expression: "addForm.cname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "满xx",
-      "prop": "minAmount"
-    }
-  }, [_c('el-input-number', {
-    attrs: {
-      "min": 0,
-      "max": 100000
-    },
-    model: {
-      value: (_vm.addForm.minAmount),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "minAmount", $$v)
-      },
-      expression: "addForm.minAmount"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "减xx",
-      "prop": "amount"
-    }
-  }, [_c('el-input-number', {
-    attrs: {
-      "min": 0,
-      "max": 100000
-    },
-    model: {
-      value: (_vm.addForm.amount),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "amount", $$v)
-      },
-      expression: "addForm.amount"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "开始时间",
-      "prop": "sendStartDate"
-    }
-  }, [_c('el-date-picker', {
-    attrs: {
-      "type": "date",
-      "placeholder": "选择日期"
-    },
-    model: {
-      value: (_vm.addForm.sendStartDate),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "sendStartDate", $$v)
-      },
-      expression: "addForm.sendStartDate"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "结束时间",
-      "prop": "sendEndDate"
-    }
-  }, [_c('el-date-picker', {
-    attrs: {
-      "type": "date",
-      "placeholder": "选择日期"
-    },
-    model: {
-      value: (_vm.addForm.sendEndDate),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "sendEndDate", $$v)
-      },
-      expression: "addForm.sendEndDate"
-    }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.addFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.addLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.addSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 569:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('el-col', {
-    staticClass: "toolbar",
-    staticStyle: {
-      "padding-bottom": "0px"
-    },
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-form', {
-    attrs: {
-      "inline": true,
-      "model": _vm.filters
-    }
-  }, [_c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.handleAdd
-    }
-  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
-    directives: [{
-      name: "loading",
-      rawName: "v-loading",
-      value: (_vm.listLoading),
-      expression: "listLoading"
-    }],
-    staticStyle: {
-      "width": "100%"
-    },
-    attrs: {
-      "data": _vm.picture,
-      "highlight-current-row": ""
-    },
-    on: {
-      "selection-change": _vm.selsChange
-    }
-  }, [_c('el-table-column', {
-    attrs: {
-      "type": "selection",
-      "width": "55"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "type": "index",
-      "width": "60"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "pname",
-      "label": "图片标题",
-      "width": "200",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "purl",
-      "label": "图片地址",
-      "width": "400",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "label": "操作",
-      "min-width": "150"
-    },
-    scopedSlots: _vm._u([{
-      key: "default",
-      fn: function(scope) {
-        return [_c('el-button', {
-          attrs: {
-            "type": "danger",
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handleDel(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("删除")])]
-      }
-    }])
-  })], 1), _vm._v(" "), _c('el-col', {
-    staticClass: "toolbar",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-pagination', {
-    staticStyle: {
-      "float": "right"
-    },
-    attrs: {
-      "layout": "prev, pager, next",
-      "page-size": 20,
-      "total": _vm.total
-    },
-    on: {
-      "current-change": _vm.handleCurrentChange
-    }
-  })], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "新增",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.addFormVisible),
-      callback: function($$v) {
-        _vm.addFormVisible = $$v
-      },
-      expression: "addFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "addForm",
-    attrs: {
-      "model": _vm.addForm,
-      "label-width": "80px",
-      "rules": _vm.addFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "图片标题",
-      "prop": "pname"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.pname),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "pname", $$v)
-      },
-      expression: "addForm.pname"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "图片地址",
-      "prop": "purl"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "textarea",
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.purl),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "purl", $$v)
-      },
-      expression: "addForm.purl"
-    }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.addFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.addLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.addSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 570:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('el-col', {
-    staticClass: "toolbar",
-    staticStyle: {
-      "padding-bottom": "0px"
-    },
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-form', {
-    attrs: {
-      "inline": true,
-      "model": _vm.filters
-    }
-  }, [_c('el-form-item', [_c('el-input', {
-    attrs: {
-      "placeholder": "标题"
-    },
-    model: {
-      value: (_vm.filters.tiile),
-      callback: function($$v) {
-        _vm.$set(_vm.filters, "tiile", $$v)
-      },
-      expression: "filters.tiile"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.getBanner
-    }
-  }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
-    attrs: {
-      "type": "primary"
-    },
-    on: {
-      "click": _vm.handleAdd
-    }
-  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
-    directives: [{
-      name: "loading",
-      rawName: "v-loading",
-      value: (_vm.listLoading),
-      expression: "listLoading"
-    }],
-    staticStyle: {
-      "width": "100%"
-    },
-    attrs: {
-      "data": _vm.banner,
-      "highlight-current-row": ""
-    },
-    on: {
-      "selection-change": _vm.selsChange
-    }
-  }, [_c('el-table-column', {
-    attrs: {
-      "type": "selection",
-      "width": "55"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "type": "index",
-      "width": "60"
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "imageurl",
-      "label": "图片地址",
-      "width": "400",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "label": "操作",
-      "min-width": "150"
-    },
-    scopedSlots: _vm._u([{
-      key: "default",
-      fn: function(scope) {
-        return [_c('el-button', {
-          attrs: {
-            "type": "danger",
-            "size": "small"
-          },
-          on: {
-            "click": function($event) {
-              return _vm.handleDel(scope.$index, scope.row)
-            }
-          }
-        }, [_vm._v("删除")])]
-      }
-    }])
-  })], 1), _vm._v(" "), _c('el-col', {
-    staticClass: "toolbar",
-    attrs: {
-      "span": 24
-    }
-  }, [_c('el-pagination', {
-    staticStyle: {
-      "float": "right"
-    },
-    attrs: {
-      "layout": "prev, pager, next",
-      "page-size": 20,
-      "total": _vm.total
-    },
-    on: {
-      "current-change": _vm.handleCurrentChange
-    }
-  })], 1), _vm._v(" "), _c('el-dialog', {
-    attrs: {
-      "title": "新增",
-      "close-on-click-modal": false
-    },
-    model: {
-      value: (_vm.addFormVisible),
-      callback: function($$v) {
-        _vm.addFormVisible = $$v
-      },
-      expression: "addFormVisible"
-    }
-  }, [_c('el-form', {
-    ref: "addForm",
-    attrs: {
-      "model": _vm.addForm,
-      "label-width": "80px",
-      "rules": _vm.addFormRules
-    }
-  }, [_c('el-form-item', {
-    attrs: {
-      "label": "图片地址",
-      "prop": "imageurl"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "textarea",
-      "auto-complete": "off"
-    },
-    model: {
-      value: (_vm.addForm.imageurl),
-      callback: function($$v) {
-        _vm.$set(_vm.addForm, "imageurl", $$v)
-      },
-      expression: "addForm.imageurl"
-    }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "dialog-footer",
-    attrs: {
-      "slot": "footer"
-    },
-    slot: "footer"
-  }, [_c('el-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.addFormVisible = false
-      }
-    }
-  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
-    attrs: {
-      "type": "primary",
-      "loading": _vm.addLoading
-    },
-    nativeOn: {
-      "click": function($event) {
-        return _vm.addSubmit($event)
-      }
-    }
-  }, [_vm._v("提交")])], 1)], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-
-/***/ 571:
+/***/ 561:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -7212,83 +5045,1989 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 572:
+/***/ 562:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('el-form', {
-    ref: "form",
+  return _c('section', [_c('el-col', {
+    staticClass: "toolbar",
     staticStyle: {
-      "margin": "20px",
-      "width": "60%",
-      "min-width": "600px"
+      "padding-bottom": "0px"
     },
     attrs: {
-      "model": _vm.form,
-      "label-width": "80px"
-    },
-    on: {
-      "submit": function($event) {
-        $event.preventDefault();
-        return _vm.onSubmit($event)
-      }
+      "span": 24
     }
-  }, [_c('el-form-item', {
+  }, [_c('el-form', {
     attrs: {
-      "label": "酒店地址"
+      "inline": true,
+      "model": _vm.filters
     }
-  }, [_c('el-input', {
-    model: {
-      value: (_vm.form.address),
-      callback: function($$v) {
-        _vm.$set(_vm.form, "address", $$v)
-      },
-      expression: "form.address"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
+  }, [_c('el-form-item', [_c('el-input', {
     attrs: {
-      "label": "酒店电话"
-    }
-  }, [_c('el-input', {
-    model: {
-      value: (_vm.form.phone),
-      callback: function($$v) {
-        _vm.$set(_vm.form, "phone", $$v)
-      },
-      expression: "form.phone"
-    }
-  })], 1), _vm._v(" "), _c('el-form-item', {
-    attrs: {
-      "label": "酒店简介"
-    }
-  }, [_c('el-input', {
-    attrs: {
-      "type": "textarea"
+      "placeholder": "房间名称"
     },
     model: {
-      value: (_vm.form.content),
+      value: (_vm.filters.roomintroduce),
       callback: function($$v) {
-        _vm.$set(_vm.form, "content", $$v)
+        _vm.$set(_vm.filters, "roomintroduce", $$v)
       },
-      expression: "form.content"
+      expression: "filters.roomintroduce"
     }
   })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
     attrs: {
       "type": "primary"
     },
     on: {
-      "click": _vm.editCompany
+      "click": _vm.getAllRooms
     }
-  }, [_vm._v("确定修改")]), _vm._v(" "), _c('el-button', {
+  }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
     on: {
-      "click": _vm.getCompanys
+      "click": _vm.handleAdd
     }
-  }, [_vm._v("重置")])], 1)], 1)
+  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
+    directives: [{
+      name: "loading",
+      rawName: "v-loading",
+      value: (_vm.listLoading),
+      expression: "listLoading"
+    }],
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "data": _vm.rooms,
+      "highlight-current-row": ""
+    },
+    on: {
+      "selection-change": _vm.selsChange
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "type": "selection",
+      "width": "55"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "type": "index",
+      "width": "60"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roomintroduce",
+      "label": "房间名称",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roomarea",
+      "label": "房间面积(m²)",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roomwifi",
+      "label": "wifi",
+      "width": "100",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roombed",
+      "label": "床大小(m)",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roombreakfast",
+      "label": "早餐",
+      "width": "100",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roomnum",
+      "label": "可住人数",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roomnumber",
+      "label": "剩余数量",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roomprice",
+      "label": "价格",
+      "width": "120",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "min-width": "150"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handleEdit(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "danger",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handleDel(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "toolbar",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-pagination', {
+    staticStyle: {
+      "float": "right"
+    },
+    attrs: {
+      "layout": "prev, pager, next",
+      "page-size": 20,
+      "total": _vm.total
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "编辑",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.editFormVisible),
+      callback: function($$v) {
+        _vm.editFormVisible = $$v
+      },
+      expression: "editFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "editForm",
+    attrs: {
+      "model": _vm.editForm,
+      "label-width": "80px",
+      "rules": _vm.editFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "房间名称",
+      "prop": "roomintroduce"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off",
+      "disabled": "disabled"
+    },
+    model: {
+      value: (_vm.editForm.roomintroduce),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roomintroduce", $$v)
+      },
+      expression: "editForm.roomintroduce"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "图片地址",
+      "prop": "roomimage"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea"
+    },
+    model: {
+      value: (_vm.editForm.roomimage),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roomimage", $$v)
+      },
+      expression: "editForm.roomimage"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "房间面积(m²)",
+      "prop": "roomarea"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.editForm.roomarea),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roomarea", $$v)
+      },
+      expression: "editForm.roomarea"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "wifi",
+      "prop": "roomwifi"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.editForm.roomwifi),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roomwifi", $$v)
+      },
+      expression: "editForm.roomwifi"
+    }
+  }, [_c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("有")]), _vm._v(" "), _c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("无")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "床大小(m)",
+      "prop": "roombed"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.editForm.roombed),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roombed", $$v)
+      },
+      expression: "editForm.roombed"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "早餐",
+      "prop": "roombreakfast"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.editForm.roombreakfast),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roombreakfast", $$v)
+      },
+      expression: "editForm.roombreakfast"
+    }
+  }, [_c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("有")]), _vm._v(" "), _c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("无")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "可住人数",
+      "prop": "roomnum"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 1,
+      "max": 200
+    },
+    model: {
+      value: (_vm.editForm.roomnum),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roomnum", $$v)
+      },
+      expression: "editForm.roomnum"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "剩余数量",
+      "prop": "roomnumber"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 1,
+      "max": 200
+    },
+    model: {
+      value: (_vm.editForm.roomnumber),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roomnumber", $$v)
+      },
+      expression: "editForm.roomnumber"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "价格",
+      "prop": "roomprice"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.editForm.roomprice),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roomprice", $$v)
+      },
+      expression: "editForm.roomprice"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.editFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.editLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.editSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "新增",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.addFormVisible),
+      callback: function($$v) {
+        _vm.addFormVisible = $$v
+      },
+      expression: "addFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "addForm",
+    attrs: {
+      "model": _vm.addForm,
+      "label-width": "80px",
+      "rules": _vm.addFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "房间名称",
+      "prop": "roomintroduce"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.roomintroduce),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roomintroduce", $$v)
+      },
+      expression: "addForm.roomintroduce"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "房间总数",
+      "prop": "roomnumber"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 1,
+      "max": 10000
+    },
+    model: {
+      value: (_vm.addForm.roomnumber),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roomnumber", $$v)
+      },
+      expression: "addForm.roomnumber"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "图片地址",
+      "prop": "roomimage"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea"
+    },
+    model: {
+      value: (_vm.addForm.roomimage),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roomimage", $$v)
+      },
+      expression: "addForm.roomimage"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "房间面积(m²)",
+      "prop": "roomarea"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.roomarea),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roomarea", $$v)
+      },
+      expression: "addForm.roomarea"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "wifi",
+      "prop": "roomwifi"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.addForm.roomwifi),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roomwifi", $$v)
+      },
+      expression: "addForm.roomwifi"
+    }
+  }, [_c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("有")]), _vm._v(" "), _c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("无")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "床大小(m)",
+      "prop": "roombed"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.roombed),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roombed", $$v)
+      },
+      expression: "addForm.roombed"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "早餐",
+      "prop": "roombreakfast"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.addForm.roombreakfast),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roombreakfast", $$v)
+      },
+      expression: "addForm.roombreakfast"
+    }
+  }, [_c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 1
+    }
+  }, [_vm._v("有")]), _vm._v(" "), _c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 0
+    }
+  }, [_vm._v("无")])], 1)], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "可住人数",
+      "prop": "roomnum"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 1,
+      "max": 20
+    },
+    model: {
+      value: (_vm.addForm.roomnum),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roomnum", $$v)
+      },
+      expression: "addForm.roomnum"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "剩余数量",
+      "prop": "roomnumber"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 1,
+      "max": 200
+    },
+    model: {
+      value: (_vm.addForm.roomnumber),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roomnumber", $$v)
+      },
+      expression: "addForm.roomnumber"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "价格",
+      "prop": "roomprice"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.roomprice),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "roomprice", $$v)
+      },
+      expression: "addForm.roomprice"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.addFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.addLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.addSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1)], 1)
 },staticRenderFns: []}
 
 /***/ }),
 
-/***/ 573:
+/***/ 563:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('el-form', {
+    ref: "ruleForm2",
+    staticClass: "demo-ruleForm login-container",
+    attrs: {
+      "model": _vm.ruleForm2,
+      "rules": _vm.rules2,
+      "label-position": "left",
+      "label-width": "0px"
+    }
+  }, [_c('h3', {
+    staticClass: "title"
+  }, [_vm._v("系统登录")]), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "prop": "account"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "text",
+      "auto-complete": "off",
+      "placeholder": "账号"
+    },
+    model: {
+      value: (_vm.ruleForm2.account),
+      callback: function($$v) {
+        _vm.$set(_vm.ruleForm2, "account", $$v)
+      },
+      expression: "ruleForm2.account"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "prop": "checkPass"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "password",
+      "auto-complete": "off",
+      "placeholder": "密码"
+    },
+    model: {
+      value: (_vm.ruleForm2.checkPass),
+      callback: function($$v) {
+        _vm.$set(_vm.ruleForm2, "checkPass", $$v)
+      },
+      expression: "ruleForm2.checkPass"
+    }
+  })], 1), _vm._v(" "), _c('el-checkbox', {
+    staticClass: "remember",
+    attrs: {
+      "checked": ""
+    },
+    model: {
+      value: (_vm.checked),
+      callback: function($$v) {
+        _vm.checked = $$v
+      },
+      expression: "checked"
+    }
+  }, [_vm._v("记住密码")]), _vm._v(" "), _c('el-form-item', {
+    staticStyle: {
+      "width": "100%"
+    }
+  }, [_c('el-button', {
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "type": "primary",
+      "loading": _vm.logining
+    },
+    nativeOn: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.handleSubmit2($event)
+      }
+    }
+  }, [_vm._v("登录")])], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 564:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_vm._v("roomOrder...\n")])
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 565:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('el-col', {
+    staticClass: "toolbar",
+    staticStyle: {
+      "padding-bottom": "0px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "inline": true,
+      "model": _vm.filters
+    }
+  }, [_c('el-form-item', [_c('el-input', {
+    attrs: {
+      "placeholder": "客户姓名"
+    },
+    model: {
+      value: (_vm.filters.uname),
+      callback: function($$v) {
+        _vm.$set(_vm.filters, "uname", $$v)
+      },
+      expression: "filters.uname"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.getAllPayOrders
+    }
+  }, [_vm._v("查询")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
+    directives: [{
+      name: "loading",
+      rawName: "v-loading",
+      value: (_vm.listLoading),
+      expression: "listLoading"
+    }],
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "data": _vm.allPayOrder,
+      "highlight-current-row": ""
+    },
+    on: {
+      "selection-change": _vm.selsChange
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "type": "selection",
+      "width": "55"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "type": "index",
+      "width": "60"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "orderid",
+      "label": "订单ID",
+      "width": "120",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "uname",
+      "label": "客户姓名",
+      "width": "120",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "uphone",
+      "label": "联系方式",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roomname",
+      "label": "房间类型",
+      "width": "120",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "roomnumber",
+      "label": "房间数量",
+      "width": "120",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "orderday",
+      "label": "入住天数",
+      "width": "120",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "totalprice",
+      "label": "总价格",
+      "width": "120",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "arrivetime",
+      "label": "到店时间",
+      "width": "120",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "ordertime",
+      "label": "订单时间",
+      "width": "200",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "leavetime",
+      "label": "离开时间",
+      "width": "200",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "min-width": "150"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "primary",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handle(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("入住")])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "toolbar",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-pagination', {
+    staticStyle: {
+      "float": "right"
+    },
+    attrs: {
+      "layout": "prev, pager, next",
+      "page-size": 20,
+      "total": _vm.total
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "更改状态",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.editFormVisible),
+      callback: function($$v) {
+        _vm.editFormVisible = $$v
+      },
+      expression: "editFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "editForm",
+    attrs: {
+      "model": _vm.editForm,
+      "label-width": "80px",
+      "rules": _vm.editFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "客户ID",
+      "prop": "uid"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off",
+      "disabled": "disabled"
+    },
+    model: {
+      value: (_vm.editForm.uid),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "uid", $$v)
+      },
+      expression: "editForm.uid"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "订单ID",
+      "prop": "orderid"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off",
+      "disabled": "disabled"
+    },
+    model: {
+      value: (_vm.editForm.orderid),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "orderid", $$v)
+      },
+      expression: "editForm.orderid"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "房间名称",
+      "prop": "roomname"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.editForm.roomname),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "roomname", $$v)
+      },
+      expression: "editForm.roomname"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "订单状态",
+      "prop": "orderstatus"
+    }
+  }, [_c('el-radio-group', {
+    model: {
+      value: (_vm.editForm.orderstatus),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "orderstatus", $$v)
+      },
+      expression: "editForm.orderstatus"
+    }
+  }, [_c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 2
+    }
+  }, [_vm._v("待入住")]), _vm._v(" "), _c('el-radio', {
+    staticClass: "radio",
+    attrs: {
+      "label": 4
+    }
+  }, [_vm._v("已入住")])], 1)], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.editFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.editLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.editSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 566:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('el-col', {
+    staticClass: "toolbar",
+    staticStyle: {
+      "padding-bottom": "0px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "inline": true,
+      "model": _vm.filters
+    }
+  }, [_c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.handleAdd
+    }
+  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
+    directives: [{
+      name: "loading",
+      rawName: "v-loading",
+      value: (_vm.listLoading),
+      expression: "listLoading"
+    }],
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "data": _vm.picture,
+      "highlight-current-row": ""
+    },
+    on: {
+      "selection-change": _vm.selsChange
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "type": "selection",
+      "width": "55"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "type": "index",
+      "width": "60"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "pname",
+      "label": "图片标题",
+      "width": "200",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "purl",
+      "label": "图片地址",
+      "width": "400",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "min-width": "150"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "danger",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handleDel(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "toolbar",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-pagination', {
+    staticStyle: {
+      "float": "right"
+    },
+    attrs: {
+      "layout": "prev, pager, next",
+      "page-size": 20,
+      "total": _vm.total
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "新增",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.addFormVisible),
+      callback: function($$v) {
+        _vm.addFormVisible = $$v
+      },
+      expression: "addFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "addForm",
+    attrs: {
+      "model": _vm.addForm,
+      "label-width": "80px",
+      "rules": _vm.addFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "图片标题",
+      "prop": "pname"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.pname),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "pname", $$v)
+      },
+      expression: "addForm.pname"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "图片地址",
+      "prop": "purl"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea",
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.purl),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "purl", $$v)
+      },
+      expression: "addForm.purl"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.addFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.addLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.addSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 567:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('el-col', {
+    staticClass: "toolbar",
+    staticStyle: {
+      "padding-bottom": "0px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "inline": true,
+      "model": _vm.filters
+    }
+  }, [_c('el-form-item', [_c('el-input', {
+    attrs: {
+      "placeholder": "优惠券名称"
+    },
+    model: {
+      value: (_vm.filters.cname),
+      callback: function($$v) {
+        _vm.$set(_vm.filters, "cname", $$v)
+      },
+      expression: "filters.cname"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.findCoupon
+    }
+  }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.handleAdd
+    }
+  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
+    directives: [{
+      name: "loading",
+      rawName: "v-loading",
+      value: (_vm.listLoading),
+      expression: "listLoading"
+    }],
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "data": _vm.coupons,
+      "highlight-current-row": ""
+    },
+    on: {
+      "selection-change": _vm.selsChange
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "type": "selection",
+      "width": "55"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "type": "index",
+      "width": "60"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "cname",
+      "label": "优惠券名称",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "minAmount",
+      "label": "满xx",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "amount",
+      "label": "减xx",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "number",
+      "label": "剩余数量",
+      "width": "150",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "sendStartDate",
+      "label": "开始时间",
+      "width": "250",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "sendEndDate",
+      "label": "结束时间",
+      "width": "250",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "min-width": "150"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handleEdit(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "danger",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handleDel(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "toolbar",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-pagination', {
+    staticStyle: {
+      "float": "right"
+    },
+    attrs: {
+      "layout": "prev, pager, next",
+      "page-size": 20,
+      "total": _vm.total
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "编辑",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.editFormVisible),
+      callback: function($$v) {
+        _vm.editFormVisible = $$v
+      },
+      expression: "editFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "editForm",
+    attrs: {
+      "model": _vm.editForm,
+      "label-width": "80px",
+      "rules": _vm.editFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "优惠券名称",
+      "prop": "cname"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.editForm.cname),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "cname", $$v)
+      },
+      expression: "editForm.cname"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "满xx",
+      "prop": "minAmount"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0,
+      "max": 10000
+    },
+    model: {
+      value: (_vm.editForm.minAmount),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "minAmount", $$v)
+      },
+      expression: "editForm.minAmount"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "减xx",
+      "prop": "amount"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0,
+      "max": 10000
+    },
+    model: {
+      value: (_vm.editForm.amount),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "amount", $$v)
+      },
+      expression: "editForm.amount"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "剩余数量",
+      "prop": "number"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0,
+      "max": 10000
+    },
+    model: {
+      value: (_vm.editForm.number),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "number", $$v)
+      },
+      expression: "editForm.number"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "开始时间",
+      "prop": "sendStartDate"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    model: {
+      value: (_vm.editForm.sendStartDate),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "sendStartDate", $$v)
+      },
+      expression: "editForm.sendStartDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "结束时间",
+      "prop": "sendEndDate"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    model: {
+      value: (_vm.editForm.sendEndDate),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "sendEndDate", $$v)
+      },
+      expression: "editForm.sendEndDate"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.editFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.editLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.editSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "新增",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.addFormVisible),
+      callback: function($$v) {
+        _vm.addFormVisible = $$v
+      },
+      expression: "addFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "addForm",
+    attrs: {
+      "model": _vm.addForm,
+      "label-width": "80px",
+      "rules": _vm.addFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "优惠券名称",
+      "prop": "cname"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.cname),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "cname", $$v)
+      },
+      expression: "addForm.cname"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "满xx",
+      "prop": "minAmount"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0,
+      "max": 100000
+    },
+    model: {
+      value: (_vm.addForm.minAmount),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "minAmount", $$v)
+      },
+      expression: "addForm.minAmount"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "减xx",
+      "prop": "amount"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0,
+      "max": 100000
+    },
+    model: {
+      value: (_vm.addForm.amount),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "amount", $$v)
+      },
+      expression: "addForm.amount"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "剩余数量",
+      "prop": "number"
+    }
+  }, [_c('el-input-number', {
+    attrs: {
+      "min": 0,
+      "max": 100000
+    },
+    model: {
+      value: (_vm.addForm.number),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "number", $$v)
+      },
+      expression: "addForm.number"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "开始时间",
+      "prop": "sendStartDate"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    model: {
+      value: (_vm.addForm.sendStartDate),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "sendStartDate", $$v)
+      },
+      expression: "addForm.sendStartDate"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "结束时间",
+      "prop": "sendEndDate"
+    }
+  }, [_c('el-date-picker', {
+    attrs: {
+      "type": "date",
+      "placeholder": "选择日期"
+    },
+    model: {
+      value: (_vm.addForm.sendEndDate),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "sendEndDate", $$v)
+      },
+      expression: "addForm.sendEndDate"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.addFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.addLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.addSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 568:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('el-col', {
+    staticClass: "toolbar",
+    staticStyle: {
+      "padding-bottom": "0px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "inline": true,
+      "model": _vm.filters
+    }
+  }, [_c('el-form-item', [_c('el-input', {
+    attrs: {
+      "placeholder": "标题"
+    },
+    model: {
+      value: (_vm.filters.tiile),
+      callback: function($$v) {
+        _vm.$set(_vm.filters, "tiile", $$v)
+      },
+      expression: "filters.tiile"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.getBanner
+    }
+  }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.handleAdd
+    }
+  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
+    directives: [{
+      name: "loading",
+      rawName: "v-loading",
+      value: (_vm.listLoading),
+      expression: "listLoading"
+    }],
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "data": _vm.banner,
+      "highlight-current-row": ""
+    },
+    on: {
+      "selection-change": _vm.selsChange
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "type": "selection",
+      "width": "55"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "type": "index",
+      "width": "60"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "imageurl",
+      "label": "图片地址",
+      "width": "400",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "操作",
+      "min-width": "150"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "type": "danger",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handleDel(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "toolbar",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-pagination', {
+    staticStyle: {
+      "float": "right"
+    },
+    attrs: {
+      "layout": "prev, pager, next",
+      "page-size": 20,
+      "total": _vm.total
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "新增",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.addFormVisible),
+      callback: function($$v) {
+        _vm.addFormVisible = $$v
+      },
+      expression: "addFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "addForm",
+    attrs: {
+      "model": _vm.addForm,
+      "label-width": "80px",
+      "rules": _vm.addFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "图片地址",
+      "prop": "imageurl"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea",
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.imageurl),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "imageurl", $$v)
+      },
+      expression: "addForm.imageurl"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.addFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.addLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.addSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 569:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('el-row', {
+    staticClass: "container"
+  }, [_c('el-col', {
+    staticClass: "header",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-col', {
+    staticClass: "logo",
+    class: _vm.collapsed ? 'logo-collapse-width' : 'logo-width',
+    attrs: {
+      "span": 10
+    }
+  }, [_vm._v("\n\t\t\t" + _vm._s(_vm.collapsed ? '' : _vm.sysName) + "\n\t\t")]), _vm._v(" "), _c('el-col', {
+    attrs: {
+      "span": 10
+    }
+  }), _vm._v(" "), _c('el-col', {
+    staticClass: "userinfo",
+    attrs: {
+      "span": 4
+    }
+  }, [_c('el-dropdown', {
+    attrs: {
+      "trigger": "hover"
+    }
+  }, [_c('span', {
+    staticClass: "el-dropdown-link userinfo-inner"
+  }, [_vm._v("\n\t\t\t\t\t管理员")]), _vm._v(" "), _c('el-dropdown-menu', {
+    attrs: {
+      "slot": "dropdown"
+    },
+    slot: "dropdown"
+  }, [_c('el-dropdown-item', {
+    nativeOn: {
+      "click": function($event) {
+        return _vm.logout($event)
+      }
+    }
+  }, [_vm._v("退出登录")])], 1)], 1)], 1)], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "main",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('aside', {
+    class: _vm.collapsed ? 'menu-collapsed' : 'menu-expanded'
+  }, [_c('el-menu', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.collapsed),
+      expression: "!collapsed"
+    }],
+    staticClass: "el-menu-vertical-demo",
+    attrs: {
+      "default-active": _vm.$route.path,
+      "unique-opened": "",
+      "router": ""
+    },
+    on: {
+      "open": _vm.handleopen,
+      "close": _vm.handleclose,
+      "select": _vm.handleselect
+    }
+  }, [_vm._l((_vm.$router.options.routes), function(item, index) {
+    return (!item.hidden) ? [(!item.leaf) ? _c('el-submenu', {
+      attrs: {
+        "index": index + ''
+      }
+    }, [_c('template', {
+      slot: "title"
+    }, [_c('i', {
+      class: item.iconCls
+    }), _vm._v(_vm._s(item.name))]), _vm._v(" "), _vm._l((item.children), function(child) {
+      return (!child.hidden) ? _c('el-menu-item', {
+        key: child.path,
+        attrs: {
+          "index": child.path
+        }
+      }, [_vm._v(_vm._s(child.name))]) : _vm._e()
+    })], 2) : _vm._e(), _vm._v(" "), (item.leaf && item.children.length > 0) ? _c('el-menu-item', {
+      attrs: {
+        "index": item.children[0].path
+      }
+    }, [_c('i', {
+      class: item.iconCls
+    }), _vm._v(_vm._s(item.children[0].name))]) : _vm._e()] : _vm._e()
+  })], 2), _vm._v(" "), _c('ul', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.collapsed),
+      expression: "collapsed"
+    }],
+    ref: "menuCollapsed",
+    staticClass: "el-menu el-menu-vertical-demo collapsed"
+  }, _vm._l((_vm.$router.options.routes), function(item, index) {
+    return (!item.hidden) ? _c('li', {
+      staticClass: "el-submenu item"
+    }, [(!item.leaf) ? [_c('div', {
+      staticClass: "el-submenu__title",
+      staticStyle: {
+        "padding-left": "20px"
+      },
+      on: {
+        "mouseover": function($event) {
+          return _vm.showMenu(index, true)
+        },
+        "mouseout": function($event) {
+          return _vm.showMenu(index, false)
+        }
+      }
+    }, [_c('i', {
+      class: item.iconCls
+    })]), _vm._v(" "), _c('ul', {
+      staticClass: "el-menu submenu",
+      class: 'submenu-hook-' + index,
+      on: {
+        "mouseover": function($event) {
+          return _vm.showMenu(index, true)
+        },
+        "mouseout": function($event) {
+          return _vm.showMenu(index, false)
+        }
+      }
+    }, _vm._l((item.children), function(child) {
+      return (!child.hidden) ? _c('li', {
+        key: child.path,
+        staticClass: "el-menu-item",
+        class: _vm.$route.path == child.path ? 'is-active' : '',
+        staticStyle: {
+          "padding-left": "40px"
+        },
+        on: {
+          "click": function($event) {
+            return _vm.$router.push(child.path)
+          }
+        }
+      }, [_vm._v(_vm._s(child.name))]) : _vm._e()
+    }), 0)] : [_c('li', {
+      staticClass: "el-submenu"
+    }, [_c('div', {
+      staticClass: "el-submenu__title el-menu-item",
+      class: _vm.$route.path == item.children[0].path ? 'is-active' : '',
+      staticStyle: {
+        "padding-left": "20px",
+        "height": "56px",
+        "line-height": "56px",
+        "padding": "0 20px"
+      },
+      on: {
+        "click": function($event) {
+          return _vm.$router.push(item.children[0].path)
+        }
+      }
+    }, [_c('i', {
+      class: item.iconCls
+    })])])]], 2) : _vm._e()
+  }), 0)], 1), _vm._v(" "), _c('section', {
+    staticClass: "content-container"
+  }, [_c('div', {
+    staticClass: "grid-content bg-purple-light"
+  }, [_c('el-col', {
+    staticClass: "breadcrumb-container",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('strong', {
+    staticClass: "title"
+  }, [_vm._v(_vm._s(_vm.$route.name))]), _vm._v(" "), _c('el-breadcrumb', {
+    staticClass: "breadcrumb-inner",
+    attrs: {
+      "separator": "/"
+    }
+  }, _vm._l((_vm.$route.matched), function(item) {
+    return _c('el-breadcrumb-item', {
+      key: item.path
+    }, [_vm._v("\n\t\t\t\t\t\t\t" + _vm._s(item.name) + "\n\t\t\t\t\t\t")])
+  }), 1)], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "content-wrapper",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('transition', {
+    attrs: {
+      "name": "fade",
+      "mode": "out-in"
+    }
+  }, [_c('router-view')], 1)], 1)], 1)])])], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 570:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -7442,7 +7181,132 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 574:
+/***/ 571:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('el-col', {
+    staticClass: "toolbar",
+    staticStyle: {
+      "padding-bottom": "0px"
+    },
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-form', {
+    attrs: {
+      "inline": true,
+      "model": _vm.filters
+    }
+  }, [_c('el-form-item', [_c('el-input', {
+    attrs: {
+      "placeholder": "手机号码"
+    },
+    model: {
+      value: (_vm.filters.phone),
+      callback: function($$v) {
+        _vm.$set(_vm.filters, "phone", $$v)
+      },
+      expression: "filters.phone"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.getAllVips
+    }
+  }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.handleAdd
+    }
+  }, [_vm._v("新增")])], 1)], 1)], 1), _vm._v(" "), _c('el-table', {
+    directives: [{
+      name: "loading",
+      rawName: "v-loading",
+      value: (_vm.listLoading),
+      expression: "listLoading"
+    }],
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "data": _vm.vips,
+      "highlight-current-row": ""
+    },
+    on: {
+      "selection-change": _vm.selsChange
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "type": "selection",
+      "width": "55"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "type": "index",
+      "width": "60"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "vid",
+      "label": "会员号",
+      "width": "200",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "username",
+      "label": "姓名",
+      "width": "180",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "phone",
+      "label": "手机号",
+      "width": "180",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "gender",
+      "label": "性别",
+      "width": "180",
+      "sortable": ""
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "prop": "",
+      "label": "",
+      "min-width": "180"
+    }
+  })], 1), _vm._v(" "), _c('el-col', {
+    staticClass: "toolbar",
+    attrs: {
+      "span": 24
+    }
+  }, [_c('el-pagination', {
+    staticStyle: {
+      "float": "right"
+    },
+    attrs: {
+      "layout": "prev, pager, next",
+      "page-size": 20,
+      "total": _vm.total
+    },
+    on: {
+      "current-change": _vm.handleCurrentChange
+    }
+  })], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 572:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -7798,6 +7662,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
+/***/ 573:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_vm._v("\n\tWelcome...\n")])
+},staticRenderFns: []}
+
+/***/ }),
+
+/***/ 574:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "page-container"
+  }, [_vm._v("404 page not found")])
+},staticRenderFns: []}
+
+/***/ }),
+
 /***/ 575:
 /***/ (function(module, exports) {
 
@@ -7817,21 +7701,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('el-form-item', [_c('el-input', {
     attrs: {
-      "placeholder": "手机号码"
+      "placeholder": "登录名"
     },
     model: {
-      value: (_vm.filters.phone),
+      value: (_vm.filters.uname),
       callback: function($$v) {
-        _vm.$set(_vm.filters, "phone", $$v)
+        _vm.$set(_vm.filters, "uname", $$v)
       },
-      expression: "filters.phone"
+      expression: "filters.uname"
     }
   })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
     attrs: {
       "type": "primary"
     },
     on: {
-      "click": _vm.getAllVips
+      "click": _vm.findAdmin
     }
   }, [_vm._v("查询")])], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
     attrs: {
@@ -7851,7 +7735,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "width": "100%"
     },
     attrs: {
-      "data": _vm.vips,
+      "data": _vm.admins,
       "highlight-current-row": ""
     },
     on: {
@@ -7869,38 +7753,48 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
-      "prop": "vid",
-      "label": "会员号",
-      "width": "200",
+      "prop": "uname",
+      "label": "登录名",
+      "width": "250",
       "sortable": ""
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
-      "prop": "username",
-      "label": "姓名",
-      "width": "180",
+      "prop": "password",
+      "label": "密码",
+      "width": "250",
       "sortable": ""
     }
   }), _vm._v(" "), _c('el-table-column', {
     attrs: {
-      "prop": "phone",
-      "label": "手机号",
-      "width": "180",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "gender",
-      "label": "性别",
-      "width": "180",
-      "sortable": ""
-    }
-  }), _vm._v(" "), _c('el-table-column', {
-    attrs: {
-      "prop": "",
-      "label": "",
-      "min-width": "180"
-    }
+      "label": "操作",
+      "min-width": "150"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('el-button', {
+          attrs: {
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handleEdit(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
+          attrs: {
+            "type": "danger",
+            "size": "small"
+          },
+          on: {
+            "click": function($event) {
+              return _vm.handleDel(scope.$index, scope.row)
+            }
+          }
+        }, [_vm._v("删除")])]
+      }
+    }])
   })], 1), _vm._v(" "), _c('el-col', {
     staticClass: "toolbar",
     attrs: {
@@ -7918,7 +7812,153 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "current-change": _vm.handleCurrentChange
     }
-  })], 1)], 1)
+  })], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "编辑",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.editFormVisible),
+      callback: function($$v) {
+        _vm.editFormVisible = $$v
+      },
+      expression: "editFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "editForm",
+    attrs: {
+      "model": _vm.editForm,
+      "label-width": "80px",
+      "rules": _vm.editFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "姓名",
+      "prop": "uname"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.editForm.uname),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "uname", $$v)
+      },
+      expression: "editForm.uname"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "密码",
+      "prop": "password"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "password"
+    },
+    model: {
+      value: (_vm.editForm.password),
+      callback: function($$v) {
+        _vm.$set(_vm.editForm, "password", $$v)
+      },
+      expression: "editForm.password"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.editFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.editLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.editSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "新增",
+      "close-on-click-modal": false
+    },
+    model: {
+      value: (_vm.addFormVisible),
+      callback: function($$v) {
+        _vm.addFormVisible = $$v
+      },
+      expression: "addFormVisible"
+    }
+  }, [_c('el-form', {
+    ref: "addForm",
+    attrs: {
+      "model": _vm.addForm,
+      "label-width": "80px",
+      "rules": _vm.addFormRules
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "登录名",
+      "prop": "uname"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "auto-complete": "off"
+    },
+    model: {
+      value: (_vm.addForm.uname),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "uname", $$v)
+      },
+      expression: "addForm.uname"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "密码",
+      "prop": "password"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "password"
+    },
+    model: {
+      value: (_vm.addForm.password),
+      callback: function($$v) {
+        _vm.$set(_vm.addForm, "password", $$v)
+      },
+      expression: "addForm.password"
+    }
+  })], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "dialog-footer",
+    attrs: {
+      "slot": "footer"
+    },
+    slot: "footer"
+  }, [_c('el-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.addFormVisible = false
+      }
+    }
+  }, [_vm._v("取消")]), _vm._v(" "), _c('el-button', {
+    attrs: {
+      "type": "primary",
+      "loading": _vm.addLoading
+    },
+    nativeOn: {
+      "click": function($event) {
+        return _vm.addSubmit($event)
+      }
+    }
+  }, [_vm._v("提交")])], 1)], 1)], 1)
 },staticRenderFns: []}
 
 /***/ }),
@@ -7927,10 +7967,77 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_vm._v("roomOrder...\n")])
+  return _c('el-form', {
+    ref: "form",
+    staticStyle: {
+      "margin": "20px",
+      "width": "60%",
+      "min-width": "600px"
+    },
+    attrs: {
+      "model": _vm.form,
+      "label-width": "80px"
+    },
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        return _vm.onSubmit($event)
+      }
+    }
+  }, [_c('el-form-item', {
+    attrs: {
+      "label": "酒店地址"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.address),
+      callback: function($$v) {
+        _vm.$set(_vm.form, "address", $$v)
+      },
+      expression: "form.address"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "酒店电话"
+    }
+  }, [_c('el-input', {
+    model: {
+      value: (_vm.form.phone),
+      callback: function($$v) {
+        _vm.$set(_vm.form, "phone", $$v)
+      },
+      expression: "form.phone"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', {
+    attrs: {
+      "label": "酒店简介"
+    }
+  }, [_c('el-input', {
+    attrs: {
+      "type": "textarea"
+    },
+    model: {
+      value: (_vm.form.content),
+      callback: function($$v) {
+        _vm.$set(_vm.form, "content", $$v)
+      },
+      expression: "form.content"
+    }
+  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
+    attrs: {
+      "type": "primary"
+    },
+    on: {
+      "click": _vm.editCompany
+    }
+  }, [_vm._v("确定修改")]), _vm._v(" "), _c('el-button', {
+    on: {
+      "click": _vm.getCompanys
+    }
+  }, [_vm._v("重置")])], 1)], 1)
 },staticRenderFns: []}
 
 /***/ })
 
 },[270]);
-//# sourceMappingURL=app.7f0f7d98511464c8173b.js.map
+//# sourceMappingURL=app.2dbf47a7782fa761c10c.js.map

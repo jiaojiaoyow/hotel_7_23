@@ -3,8 +3,13 @@ package com.example.hotel.model;
 public class BalanceOrder {
     private String orderid;
 
-    //为1即已支付
     private Integer flag;
+
+    private Double balance;
+
+    private String openid;
+
+    private String createTime;
 
     public String getOrderid() {
         return orderid;
@@ -20,5 +25,29 @@ public class BalanceOrder {
 
     public void setFlag(Integer flag) {
         this.flag = flag;
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid == null ? null : openid.trim();
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime == null ? null : createTime.trim();
     }
 }
