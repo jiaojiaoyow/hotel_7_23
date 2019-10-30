@@ -208,7 +208,24 @@
     -->
     <!--<logger name="com.example.hotel.Controller.LoginController" level="INFO"/>-->
     <!--单纯记录某一个类的-->
-    <logger name="com.example.hotel.Controller.LoginController,com.example.hotel.Controller.RoomController,com.example.hotel.Controller.Mycontroller" level="info">
+
+    <!--这部分是记录于支付相关的代码-->
+    <logger name="com.example.hotel.Controller.LoginController" level="info">
+        <appender-ref ref="MONEY_INFO_FILE" />
+    </logger>
+
+    <logger name="com.example.hotel.Controller.RoomController" level="info">
+        <appender-ref ref="MONEY_INFO_FILE" />
+    </logger>
+
+    <logger name="com.example.hotel.Controller.Mycontroller" level="info">
+        <appender-ref ref="MONEY_INFO_FILE" />
+    </logger>
+    <logger name="com.example.hotel.Controller.WeChatPay" level="info">
+        <appender-ref ref="MONEY_INFO_FILE" />
+    </logger>
+
+    <logger name="com.example.hotel.service.Impl.BalanceOrderServiceImpl" level="info">
         <appender-ref ref="MONEY_INFO_FILE" />
     </logger>
 
@@ -231,7 +248,6 @@
     <root level="info">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="LOGFILE" />
-        <appender-ref ref="MONEY_INFO_FILE" />
         <appender-ref ref="DEBUG_FILE" />
         <appender-ref ref="INFO_FILE" />
         <appender-ref ref="ERROR_FILE" />
@@ -250,9 +266,7 @@
 
     <!-- 测试环境:输出到文档-->
     <springProfile name="test">
-        <logger name="com.example.hotel.service.Impl.BalanceOrderServiceImpl,com.example.hotel.Controller.WeChatPay,com.example.hotel.Controller.LoginController,com.example.hotel.Controller.RoomController,com.example.hotel.Controller.Mycontroller" level="info">
-            <appender-ref ref="MONEY_INFO_FILE" />
-        </logger>
+
         <root level="info">
             <appender-ref ref="LOGFILE" />
             <appender-ref ref="MONEY_INFO_FILE" />
@@ -265,9 +279,7 @@
 
     <!-- 生产环境:输出到文档-->
     <springProfile name="prod">
-        <logger name="com.example.hotel.service.Impl.BalanceOrderServiceImpl,com.example.hotel.Controller.WeChatPay,com.example.hotel.Controller.LoginController,com.example.hotel.Controller.RoomController,com.example.hotel.Controller.Mycontroller" level="info">
-            <appender-ref ref="MONEY_INFO_FILE" />
-        </logger>
+
         <root level="info">
             <appender-ref ref="LOGFILE" />
             <appender-ref ref="MONEY_INFO_FILE" />
