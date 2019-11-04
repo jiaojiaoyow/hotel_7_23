@@ -37,7 +37,7 @@ public class ActivityController {
 
     @RequestMapping("/api/selActivity")
     public ResultDTO selActivity(){
-        log.info("活动");
+
         ResultDTO resultDTO=new ResultDTO();
         try {
 

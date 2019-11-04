@@ -6,6 +6,8 @@ public class WXConst {
     public static String appId = "wx7ef227238cff0fe0";
     //微信小程序appsecret
     public static String appSecret = "f46ecb9014738dd62359b22408e86126";
+
+
     //微信支付主体
     public static String title = "order_room";
     public static String orderNo = "";

@@ -92,7 +92,7 @@ public class CreateOrderController {
     public JSONObject  TestPay(@RequestBody String openid, HttpServletRequest request) {
 
         String []temp;
-        String tem="\"";
+        String tem="";
         temp=openid.split(tem);
         System.out.println(temp[3]);
         Date date=new Date();
@@ -201,7 +201,7 @@ public class CreateOrderController {
 
             if(user.getUbalance()> roomOrder.getTotalprice()) {
                 //HttpServletRequest request
-                if (roomOrder != null && roomOrder.getUid() != null && user.getUid() != null && !user.getUid().equals("")) {
+                if (roomOrder != null && roomOrder.getUid() != null ) {
 
                     String uid = roomOrder.getUid();                 //"1234";
                     String roomname = roomOrder.getRoomname();       //"阳光大床房";
@@ -242,13 +242,14 @@ public class CreateOrderController {
                             order.setCreatedate(s);
 
                             OrderException oe = roomOrderService.beforehandOrder(order);  //预创建订单
+                            System.out.println("---------预创建订单成功--------------");
                             if (oe.isFlag()) {
                                 //调用余额支付
                                 RoomOrder roo = new RoomOrder();
                                 roo.setUid(uid);
                                 roo.setOrderid(orderid);
                                 roo.setRoomname(roomname);
-                                roomOrder.setOrderstatus(2);
+                                roo.setOrderstatus(2);
                                 roomOrderService.updateByPrimaryKeySelective(roo);//更改订单为2 成功
                                 userService.updateByPrimaryKeyForBalance(uid, price);//减余额
                                 setCoupon(uid, roomOrder.getCid());//优惠卷生效

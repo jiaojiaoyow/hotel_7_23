@@ -416,6 +416,15 @@
     </select>
 
 
+    <select id="selectByPhone"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from roomorder
+        where uphone= #{uphone} and orderstatus= #{ostatus}
+
+    </select>
+
+
     <!--通过用户id，订单起始时间，房间名确认id-->
     <select id="selectByRDU" parameterType="com.example.hotel.model.RoomOrder" resultType="java.lang.String">
     select
@@ -450,6 +459,20 @@
         from roomorder
         where orderstatus = 4 limit #{begin},#{num}
     </select>
+
+<!--已经退房的订单，即5-->
+    <select id="selectAllTuiOrder" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from roomorder
+        where orderstatus = 5 limit #{begin},#{num}
+    </select>
+
+    <!--查询已完成退房的订单数量，5-->
+    <select id="selectTuiCount" resultType="java.lang.Integer">
+    select count(*) from roomorder
+    where  orderstatus = 5
+  </select>
 
     <!--查询已完成订单数量-->
     <select id="selectCount" resultType="java.lang.Integer">

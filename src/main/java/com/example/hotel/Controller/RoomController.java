@@ -86,6 +86,36 @@ public class RoomController {
         }
     }
 
+
+
+
+    @RequestMapping("/api/back/getAllTuiOrder")
+    public ResultDTO getAllTuiOrder(int currPage, int pageSize) {  //所有已退房订单，5
+        ResultDTO resultDTO = new ResultDTO();
+        try {
+
+            int total=roomOrderService.selectTuiCount();
+            if((currPage-1)*pageSize>total){
+                return resultDTO.ok(null);
+            }
+            PageUtil peoplePageBean = new PageUtil(currPage, pageSize, total);
+            Map<String, Integer> parameter = new HashMap<>(2);
+            parameter.put("begin", peoplePageBean.getCurrPage() * peoplePageBean.getPageSize() - peoplePageBean.getPageSize());
+            parameter.put("num", peoplePageBean.getPageSize());
+            List<RoomOrder> data = new ArrayList<RoomOrder>();
+
+            data = roomOrderService.selectAllTuiOrder(parameter);
+
+            ObjectDTO object=new ObjectDTO(total,data);
+            return resultDTO.ok(object);
+        } catch (org.springframework.jdbc.BadSqlGrammarException e){
+            return resultDTO.fail();
+        }catch (Exception e) {
+            return resultDTO.unkonwFail(e.toString());
+        }
+    }
+
+
     @RequestMapping("/api/back/disposeorder")  //客人到店后，处理订单
     public ResultDTO disposeOrder(   RoomOrder roomOrder) {
         ResultDTO resultDTO = new ResultDTO();
@@ -94,7 +124,7 @@ public class RoomController {
                 roomOrder.setOrderstatus(4); //设为4，表明已经处理
                 int w = roomOrderService.updateByPrimaryKeySelective(roomOrder);
                 if (w == 0)
-                    return resultDTO.fail("数据库插入失败");
+                    return resultDTO.fail("数据库更新失败");
                 return resultDTO.ok(null);
             }
             return resultDTO.fail("接收数据为空或状态有误");
@@ -107,14 +137,17 @@ public class RoomController {
 
 
     //退房
-    ResultDTO resultDTO = new ResultDTO();
+
     @RequestMapping("api/back/CheckOutRoom")
     public ResultDTO CheckOutRoom(String orderid){
+        ResultDTO resultDTO = new ResultDTO();
         try {
+
         RoomOrder roomOrder=roomOrderService.selectByOrderidqu(orderid);
         if (roomOrder.getOrderstatus() == 4){
             roomOrder.setOrderstatus(5);
             roomOrderService.updateByPrimaryKeySelective(roomOrder);
+            roomService.updateByPrimaryKeyForNum(roomOrder.getRoomname(),roomOrder.getRoomnumber());
             return resultDTO.ok(null);
         }
         System.out.println("无效的orderid");

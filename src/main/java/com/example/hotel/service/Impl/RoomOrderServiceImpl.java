@@ -113,6 +113,11 @@ public class RoomOrderServiceImpl implements RoomOrderService {
         return roomOrderMapper.selectPage(map);
     }
 
+    @Override
+    public List<RoomOrder> selectAllTuiOrder(Map map) {
+        return roomOrderMapper.selectAllTuiOrder(map);
+    }
+
 
     @Override
     public List<RoomOrder> selectAllOrder(Map map) {
@@ -125,6 +130,11 @@ public class RoomOrderServiceImpl implements RoomOrderService {
     }
 
     @Override
+    public List<RoomOrder>  selectByPhone(int ostatus, String uphone) {
+        return roomOrderMapper.selectByPhone(ostatus,uphone);
+    }
+
+    @Override
     public int selectCount() {
         return roomOrderMapper.selectCount();
     }
@@ -132,6 +142,11 @@ public class RoomOrderServiceImpl implements RoomOrderService {
     @Override
     public int selectPayCount() {
         return roomOrderMapper.selectPayCount();
+    }
+
+    @Override
+    public int selectTuiCount() {
+        return roomOrderMapper.selectTuiCount();
     }
 
 

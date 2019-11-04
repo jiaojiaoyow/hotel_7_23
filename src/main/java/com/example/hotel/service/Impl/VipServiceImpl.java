@@ -64,6 +64,11 @@ public class VipServiceImpl implements VipService {
     }
 
     @Override
+    public List<VipCard> selectVipByUphone(String uphone) {
+        return vipCardMapper.selectVipByUphone(uphone);
+    }
+
+    @Override
     public int selectCount() {
         return vipCardMapper.selectCount();
     }

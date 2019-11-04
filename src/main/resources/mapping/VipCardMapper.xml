@@ -270,12 +270,21 @@
     </if>
   </select>
 
-  <select id="selectAllCard"  resultMap="BaseResultMap">
+  <select id="selectAllCard" parameterType="java.util.Map" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from vipcard
+    from vipcard  limit #{begin},#{num}
 
   </select>
+
+  <select id="selectVipByUphone"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from vipcard  where phone=#{uphone}
+
+  </select>
+
+
 
   <select id="selectCount" resultType="java.lang.Integer">
     select count(*) from vipcard

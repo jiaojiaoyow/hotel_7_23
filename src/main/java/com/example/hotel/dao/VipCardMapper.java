@@ -36,5 +36,7 @@ public interface VipCardMapper {
     //自己添加的
     List<VipCard> selectAllCard(Map map);
 
+    List<VipCard> selectVipByUphone(@Param("uphone") String uphone);
+
     int selectCount();
 }

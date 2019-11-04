@@ -46,6 +46,8 @@ public interface RoomOrderMapper {
 
     List<RoomOrder> selectAllCompleteOrder(Map map);
 
+    List<RoomOrder> selectAllTuiOrder(Map map);
+
     List<RoomOrder> selectPage(Map map);
 
 
@@ -57,9 +59,15 @@ public interface RoomOrderMapper {
 
     int selectPayCount();
 
+    int selectTuiCount();
+
     RoomOrder findOrderid(String orderid);
 
     int updateByOrderidForStatus(String orderid);
 
     int  selectByCount();
+
+    List<RoomOrder>  selectByPhone(@Param("ostatus") int ostatus,@Param("uphone") String uphone);
+
+
 }

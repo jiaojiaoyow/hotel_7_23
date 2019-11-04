@@ -52,14 +52,18 @@ public interface RoomOrderService {
 
     List<RoomOrder> selectPage(Map map);
 
-
+    List<RoomOrder> selectAllTuiOrder(Map map);
     List<RoomOrder> selectAllOrder(Map map);
 
     List<RoomOrder> selectAllPayOrder(Map map);
 
+    List<RoomOrder>  selectByPhone(@Param("ostatus") int ostatus,@Param("uphone") String uphone);
+
     int selectCount();
 
     int selectPayCount();
+
+    int selectTuiCount();
 
     OrderException checkOrder(String orderid);
 
