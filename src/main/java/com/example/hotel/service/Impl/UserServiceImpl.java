@@ -55,5 +55,10 @@ public class UserServiceImpl implements UserService {
         return userMapper.updateByPrimaryKeySelective(record);
     }
 
+    @Override
+    public int updateByPrimaryKeyForGrade(User record) {
+        return userMapper.updateByPrimaryKeyForGrade(record);
+    }
+
 
 }

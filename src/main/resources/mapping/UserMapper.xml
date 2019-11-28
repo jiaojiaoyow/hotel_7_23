@@ -324,6 +324,14 @@
     where uid = #{userid,jdbcType=CHAR}
   </update>
 
+  <!--增加积分-->
+
+  <update id="updateByPrimaryKeyForGrade" parameterType="com.example.hotel.model.User">
+    update user
+    set ugrade = ugrade + #{ugrade,jdbcType=INTEGER}
+    where uid = #{uid,jdbcType=CHAR}
+  </update>
+
   <select id="selectByVip" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

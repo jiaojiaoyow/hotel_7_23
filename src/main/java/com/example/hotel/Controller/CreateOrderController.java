@@ -57,7 +57,7 @@ public class CreateOrderController {
     }
 
     //设定优惠卷生效
-    public  void setCoupon(String uid,int cid){
+    public void setCoupon(String uid,int cid){
         if(cid!=0 ) {
             Byte x = 1;
             GetCoupon key = new GetCoupon();
@@ -301,13 +301,7 @@ public class CreateOrderController {
                 roomOrder.setRoomname(re.getRoomname());
                 roomOrder.setOrderstatus(2);
                 roomOrderService.updateByPrimaryKeySelective(roomOrder);//更改订单为2 成功
-                /*余额操作
-                if (Dt.getStatus() == 2) {  //支付成功
 
-                    if (Dt.getBalance() != 0.0 && u.getUbalance() -Dt.getBalance() >=0) {//余额
-                        userService.updateByPrimaryKeyForBalance(u.getUid(),Dt.getBalance());//更新余额，减操作
-                    }
-                   */
                     //设定优惠卷生效
                     setCoupon(re.getUid(),re.getCid());
                     //积分
@@ -336,7 +330,8 @@ public class CreateOrderController {
         int jifen=((int) price)*5;
         user.setUid(openid);
         user.setUgrade(jifen);
-        userService.updateByPrimaryKeySelective(user);
+        userService.updateByPrimaryKeyForGrade(user);
+        System.out.println("增加积分成功:"+jifen);
 
 
     }
