@@ -224,7 +224,7 @@
   </select>
   <!--自己添加的-->
   <select id="selectByUid" resultType="com.example.hotel.model.GetCoupon" parameterType="java.lang.String">
-    select * from GetCoupon where GetCoupon.cid=any(select cid from getcoupon where uid=#{uid} and status= 0 )
+    select * from GetCoupon  where uid=#{uid}
   </select>
 
 </mapper>

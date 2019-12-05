@@ -34,4 +34,7 @@ public interface UserMapper {
      int updateByPrimaryKeyForBalance(@Param("userid")String userid,@Param("rebalance") Double rebalance);
 
     User  selectByVip(String vip);
+
+
+    int  updateByPrimaryKeyForGrade(User record);
 }

@@ -21,6 +21,7 @@ public class WeChatPay {
 
     /*
      * 微信支付调用
+     * orderid是订单号，price是支付金额，backAddress是回调地址
      *
      * */
     public static JSONObject wxPay(String openid, String orderid,Double price,String backAddress, HttpServletRequest request){

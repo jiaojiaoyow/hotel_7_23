@@ -57,7 +57,7 @@ public class CreateOrderController {
     }
 
     //设定优惠卷生效
-    public  void setCoupon(String uid,int cid){
+    public void setCoupon(String uid,int cid){
         if(cid!=0 ) {
             Byte x = 1;
             GetCoupon key = new GetCoupon();
@@ -99,7 +99,7 @@ public class CreateOrderController {
         System.out.println("openid:"+temp[3]);
         openid= temp[3];
         JSONObject json=WeChatPay.wxPay(openid,"100"+change_str2(date),0.01,"https://wx.gdcpo.cn/api/backPay",request);//调用微信支付
-         return json;
+        return json;
 
     }
 
@@ -108,7 +108,7 @@ public class CreateOrderController {
     public ResultDTO createOrder( RoomOrder roomOrder, HttpServletRequest request){
         ResultDTO resultDTO = new ResultDTO();
         try {
-           System.out.println(roomOrder.toString());
+            System.out.println(roomOrder.toString());
             User user=userService.selectByPrimaryKey(roomOrder.getUid());
             System.out.println("user.uid"+user.getUid());
             //ookL25Q9bypvjSm8uYYJud6R0JIU
@@ -127,7 +127,7 @@ public class CreateOrderController {
                 if (r != null) {
                     int num = r.getRoomnumber(); //剩余房间数
                     if (num > 0 && num - roomnumber >= 0) {
-                       // double amount = getCoupon(roomOrder.getCid(), uid);
+                        // double amount = getCoupon(roomOrder.getCid(), uid);
                         //double price = r.getRoomprice() * roomnumber * days - amount; //总价，算优惠卷
                         double price=roomOrder.getTotalprice();
                         Date date=new Date();
@@ -281,33 +281,27 @@ public class CreateOrderController {
 
 
     /*
-    *
-    * @param uid
-    * @param orderid
-    * @param  status 订单状态
-    * */
+     *
+     * @param uid
+     * @param orderid
+     * @param  status 订单状态
+     * */
     public  ResultDTO JudgeOrder( cOrderDTO Dt){
         ResultDTO resultDTO = new ResultDTO();
         try {
 
             if(Dt !=null){
-            User u=userService.selectByPrimaryKey(Dt.getUid());//查用户是否存在
-            RoomOrder re=roomOrderService.selectByOrderidqu(Dt.getOrderid());//查订单信息
+                User u=userService.selectByPrimaryKey(Dt.getUid());//查用户是否存在
+                RoomOrder re=roomOrderService.selectByOrderidqu(Dt.getOrderid());//查订单信息
 
-            if( Dt.getUid().equals(re.getUid()) &&  re.getOrderstatus()==1 && re.getUid().equals(u.getUid())) { //uid相同且订单状态为1,and uid存在
-                RoomOrder roomOrder=new RoomOrder();
-                roomOrder.setUid(Dt.getUid());
-                roomOrder.setOrderid(re.getOrderid());
-                roomOrder.setRoomname(re.getRoomname());
-                roomOrder.setOrderstatus(2);
-                roomOrderService.updateByPrimaryKeySelective(roomOrder);//更改订单为2 成功
-                /*余额操作
-                if (Dt.getStatus() == 2) {  //支付成功
+                if( Dt.getUid().equals(re.getUid()) &&  re.getOrderstatus()==1 && re.getUid().equals(u.getUid())) { //uid相同且订单状态为1,and uid存在
+                    RoomOrder roomOrder=new RoomOrder();
+                    roomOrder.setUid(Dt.getUid());
+                    roomOrder.setOrderid(re.getOrderid());
+                    roomOrder.setRoomname(re.getRoomname());
+                    roomOrder.setOrderstatus(2);
+                    roomOrderService.updateByPrimaryKeySelective(roomOrder);//更改订单为2 成功
 
-                    if (Dt.getBalance() != 0.0 && u.getUbalance() -Dt.getBalance() >=0) {//余额
-                        userService.updateByPrimaryKeyForBalance(u.getUid(),Dt.getBalance());//更新余额，减操作
-                    }
-                   */
                     //设定优惠卷生效
                     setCoupon(re.getUid(),re.getCid());
                     //积分
@@ -316,8 +310,8 @@ public class CreateOrderController {
 
                 }
                 return  resultDTO.fail("数据有误，用户id不符合");
-                }
-                return  resultDTO.fail("数据为空");
+            }
+            return  resultDTO.fail("数据为空");
 
         } catch (Exception e) {
             return resultDTO.unkonwFail(e.toString());
@@ -328,15 +322,16 @@ public class CreateOrderController {
 
 
     /*
-    * 增加积分
-    * */
+     * 增加积分
+     * */
     public void SetCard(String openid, double price){
 
         User user =new User();
         int jifen=((int) price)*5;
         user.setUid(openid);
         user.setUgrade(jifen);
-        userService.updateByPrimaryKeySelective(user);
+        userService.updateByPrimaryKeyForGrade(user);
+        System.out.println("增加积分成功:"+jifen);
 
 
     }

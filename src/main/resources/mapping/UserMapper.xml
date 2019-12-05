@@ -330,4 +330,11 @@
     from user
     where vip = #{vid,jdbcType=CHAR}
   </select>
+
+  <update id="updateByPrimaryKeyForGrade" parameterType="com.example.hotel.model.User">
+    update user
+    set ugrade = ugrade + #{ugrade,jdbcType=INTEGER}
+    where uid = #{uid,jdbcType=CHAR}
+  </update>
+
 </mapper>

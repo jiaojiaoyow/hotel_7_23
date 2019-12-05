@@ -21,6 +21,7 @@ public interface UserService {
     int updateByPrimaryKeySelective(User record);
 
 
+    int  updateByPrimaryKeyForGrade(User record);
 
 
 

@@ -74,13 +74,20 @@ public class CouponController {
             List<Coupon> UserCoupon=new ArrayList<Coupon>();
             List<GetCoupon> mess=new ArrayList<GetCoupon>();
             mess=getCouponService.selectByUid(uid);
-            for (GetCoupon temp:mess
-            ) {
+            for (int j=0;j<mess.size();j++)
+            {
+                GetCoupon temp=mess.get(j);
                 if(temp.getStatus()!=1&&DateUtil.change_Date(temp.getUseEndDate()).getTime()>nowtime.getTime()){//未使用和未过期
-                    UserCoupon.add(couponService.selectByPrimaryKey(temp.getCid()));
+                    Coupon coupon=couponService.selectByPrimaryKey(temp.getCid());
+                    if(coupon!=null){
+                        UserCoupon.add(coupon);
+                    }else {
+                        couponService.deleteByPrimaryKey(temp.getCid());
+                        getCouponService.deleteByPrimaryKey(temp);
+                    }
                 }
                 else {
-                    int i=couponService.deleteByPrimaryKey(temp.getCid());
+                    int i=getCouponService.deleteByPrimaryKey(temp);
                 }
             }
             if(UserCoupon.size()==0){
@@ -98,7 +105,7 @@ public class CouponController {
 
     //领取优惠卷,需要前端传回uid，cid
     @RequestMapping("/api/getCoupon")
-    public ResultDTO get_coupon(@RequestBody GetCoupon getCoupon){
+    public synchronized ResultDTO get_coupon(@RequestBody GetCoupon getCoupon){
 
         ResultDTO resultDTO=new ResultDTO();
         try {

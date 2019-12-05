@@ -126,6 +126,7 @@ public class LoginController {
             if(map!=null){
                 log.info("回调函数的下一步,修改数据库"+map.toString());
                 String openid=(String) map.get("openid");
+                log.info("openid为"+openid);
                 double price=Double.parseDouble((String)map.get("total_fee"));
                 String orderid=(String) map.get("out_trade_no");
                 BalanceOrder balanceOrder=balanceOrderService.selectByPrimaryKey(orderid);
@@ -138,6 +139,9 @@ public class LoginController {
                     User user=userService.selectByPrimaryKey(openid);
                     //贵宾卡，金额是以百元为单位（精确到分），所以要除一百，变成以元为单位
                     price/=100;
+                    if(user.getUgrade()==null){
+                        user.setUgrade(0);
+                    }
                     if(price>=5000){
                         log.info("金额超过5000");
                         user.setUgrade(user.getUgrade()+1288);
@@ -159,23 +163,25 @@ public class LoginController {
                         user.setUbalance(price);
                     }else {
                         user.setUbalance(price+user.getUbalance());
+                        log.info("改变用户充值金额为"+user.getUbalance());
                     }
                     log.info("改变用户充值金额为"+user.getUbalance());
-                    VipCard vipCard=vipService.selectByPrimaryKey(user.getVip());
+                    VipCard vipCard=null;
                     if(user.getVip()!=null){
+                        vipCard=vipService.selectByPrimaryKey(user.getVip());
                         //累积的金额到达限额就升级会员
-                        if(user.getTotalamount()!=null&&user.getTotalamount()<5000){
-                            log.info("改变用户的累计充值金额");
+                        log.info("改变用户的累计充值金额");
+                        if(user.getTotalamount()==null){
+                            user.setTotalamount((int)price);
+                        } else {
                             user.setTotalamount(user.getTotalamount()+(int)price);
                             int totalamount=user.getTotalamount();
                             if(totalamount>=5000){
                                 log.info("累计金额超过5000");
-
                                 vipCard.setViplevel(3);
                             }else if(totalamount>=3000){
                                 log.info("累计金额超过3000");
                                 vipCard.setViplevel(2);
-
                             }
                         }
                     }
@@ -195,6 +201,7 @@ public class LoginController {
     }
 
     //获取所有的信息，包括是否会员，会员等级，余额，昵称，累计充值金额，
+    //获取所有的信息，包括是否会员，会员等级，余额，昵称，累计充值金额，
     @RequestMapping("/api/selUserMessage")
     public ResultDTO getmessage(String openid){
         ResultDTO resultDTO=new ResultDTO();
@@ -204,9 +211,10 @@ public class LoginController {
         try{
             AllUserMesDto allUserMesDto=new AllUserMesDto();
             User user=userService.selectByPrimaryKey(openid);
+            VipCard vip=null;
             if(user!=null){
                 if(user.getVip()!=null){
-                    VipCard vip=vipService.selectByPrimaryKey(user.getVip());
+                    vip=vipService.selectByPrimaryKey(user.getVip());
                     if(vip!=null){
                         allUserMesDto.setViplevel(vip.getViplevel());
                     }else {
@@ -217,6 +225,8 @@ public class LoginController {
                 }
             }
 
+            allUserMesDto.setPhone(vip.getPhone());
+            allUserMesDto.setUsername(vip.getUsername());
             allUserMesDto.setNickname(user.getNickname());
             allUserMesDto.setTotalamount(user.getTotalamount());
             allUserMesDto.setUbalance(user.getUbalance());
