@@ -36,5 +36,7 @@ public interface UserMapper {
     User  selectByVip(String vip);
 
 
+
     int  updateByPrimaryKeyForGrade(User record);
+
 }
