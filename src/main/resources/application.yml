@@ -22,8 +22,8 @@ server:
 
 # 记得替换成你的id和secret
 wechat:
-  appid: wx7ef227238cff0fe0
-  secret: f46ecb9014738dd62359b22408e86126
+  appid:
+  secret: 
 ## h2
 #db:
 #  url: jdbc:h2:~/jiuask
